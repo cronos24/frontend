@@ -1,0 +1,69 @@
+<div class="container-fluid col-md-12">
+  <div class="card">
+    <div class="card-header">
+      <p><button class="btn btn-danger" [routerLink]="['/paises']"><i class="fas fa-arrow-left"></i>Atras</button></p>
+      <h3>Editar Pais {{pais.pasi_nombre}}</h3>
+    </div>
+
+    <div class="card-body">
+      <div class="alert alert-danger" *ngIf="status == 422">
+        <li *ngFor="let item of validationErrors | keyvalue">
+          {{ item.value }}
+        </li>
+      </div>
+
+      <form name="form" (ngSubmit)="f.form.valid && Save()" #f="ngForm" novalidate>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="" class="control-label">Numero</label>
+            <input type="text" class="form-control" [(ngModel)]="pais.pais_isonum" name="pais_isonum"
+              #pais_isonum="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pais_isonum.invalid }" required />
+            <div *ngIf="f.submitted && pais_isonum.invalid" class="invalid-feedback">
+              <div *ngIf="pais_isonum.errors.required">
+                "Numero" es obligatorio
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-group col-md-6">
+            <label for="" class="control-label">Iso 2</label>
+            <input type="text" class="form-control" [(ngModel)]="pais.pais_iso2" name="pais_iso2" #pais_iso2="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && pais_iso2.invalid }" required maxlength="2" />
+            <div *ngIf="f.submitted && pais_iso2.invalid" class="invalid-feedback">
+              <div *ngIf="pais_iso2.errors.required">"Iso 2" es obligatorio</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="" class="control-label">Iso 3</label>
+            <input type="text" class="form-control" [(ngModel)]="pais.pais_iso3" name="pais_iso3" #pais_iso3="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && pais_iso3.invalid }" required maxlength="3" />
+            <div *ngIf="f.submitted && pais_iso3.invalid" class="invalid-feedback">
+              <div *ngIf="pais_iso3.errors.required">
+                "Iso 3" es obligatorio
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="" class="control-label">Nombre</label>
+            <input type="text" class="form-control" [(ngModel)]="pais.pais_nombre" name="pais_nombre"
+              #pais_nombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pais_nombre.invalid }" required />
+            <div *ngIf="f.submitted && pais_nombre.invalid" class="invalid-feedback">
+              <div *ngIf="pais_nombre.errors.required">
+                "Nombre" es obligatorio
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button class="btn btn-primary">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

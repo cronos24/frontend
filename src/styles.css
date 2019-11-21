@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~admin-lte/dist/css/adminlte.css'; */
+
+.alert-danger {
+  color: #721c24 !important;
+  background-color: #f8d7da !important;
+  border-color: #f5c6cb !important;
+}
+
+.alert-success {
+  color: #155724 !important;
+  background-color: #d4edda !important;
+  border-color: #c3e6cb !important;
+}
+
+
+
+
+
+#toast-container .toast {
+  color: #383d41 !important;
+  background-color: #e2e3e5 !important;
+  border-color: #d6d8db !important;
+}
+
+#toast-container .toast-success {
+  background-image: none !important;
+  color: #155724 !important;
+  background-color: #d4edda !important;
+  border-color: #c3e6cb !important;
+
+}
+
+#toast-container .toast-error {
+  background-image: none !important;
+  color: #721c24 !important;
+  background-color: #f8d7da !important;
+  border-color: #f5c6cb !important;
+}
+
+#toast-container .toast-info {
+  background-image: none !important;
+  color: #004085 !important;
+  background-color: #cce5ff !important;
+  border-color: #b8daff !important;
+}
+
+#toast-container .toast-warning {
+  background-image: none !important;
+  color: #856404 !important;
+  background-color: #fff3cd !important;
+  border-color: #ffeeba !important;
+}
+
+.toast-custom {
+  background-color: purple;
+}
