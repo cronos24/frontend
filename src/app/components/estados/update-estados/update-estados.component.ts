@@ -12,7 +12,6 @@ import { Route } from "@angular/compiler/src/core";
 })
 export class UpdateEstadosComponent implements OnInit {
   estado: Estado = {
-    esta_code: 0,
     esta_nomb: "",
     esta_codi: "",
     esta_tipo: "",

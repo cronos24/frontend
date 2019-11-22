@@ -2,11 +2,11 @@
   <div class="card">
     <div class="card-header">
       <p><button class="btn btn-danger" [routerLink]="['/estados']"><i class="fas fa-arrow-left"></i>Atras</button></p>
-      <h3>Crear Estado</h3>
+      <h3>Crear Estado {{estado.esta_codi}}</h3>
     </div>
 
     <div class="card-body">
-      <div class="alert alert-danger" *ngIf="status == 422">
+      <div class="alert alert-danger" *ngIf="status == 0">
         <li *ngFor="let item of validationErrors | keyvalue">
           {{ item.value }}
         </li>
@@ -15,12 +15,12 @@
       <form name="form" (ngSubmit)="f.form.valid && Save()" #f="ngForm" novalidate>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="" class="control-label">Inicial</label>
+            <label for="" class="control-label">Codigo</label>
             <input type="text" class="form-control" [(ngModel)]="estado.esta_codi" name="esta_codi" #esta_codi="ngModel"
               [ngClass]="{ 'is-invalid': f.submitted && esta_codi.invalid }" required maxlength="2" />
             <div *ngIf="f.submitted && esta_codi.invalid" class="invalid-feedback">
               <div *ngIf="esta_codi.errors.required">
-                "Inicial" es obligatorio
+                "Codigo" es obligatorio
               </div>
             </div>
           </div>
