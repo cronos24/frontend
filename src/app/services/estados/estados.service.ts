@@ -30,6 +30,6 @@ export class EstadosService {
   }
 
   public sendPutRequest(estado: Estado, id) {
-    return this.httpClient.put(this.url + "/" + id, estado);
+    return this.httpClient.put(this.url + "/editar?id=" + id, estado);
   }
 }
