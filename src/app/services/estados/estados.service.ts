@@ -24,8 +24,7 @@ export class EstadosService {
     return this.httpClient.delete(this.url + "/borrar?id=" + id);
   }
 
-  public sendPostRequest(estado: Estado) {
-    console.log(estado);
+  public sendPostRequest(estado: Estado) {    
     return this.httpClient.post(this.url + "/crear", estado);
   }
 
