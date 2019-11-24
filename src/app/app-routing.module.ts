@@ -14,6 +14,11 @@ import { CreatePaisesComponent } from "./components/paises/create-paises/create-
 import { UpdatePaisesComponent } from "./components/paises/update-paises/update-paises.component";
 import { ViewPaisesComponent } from "./components/paises/view-paises/view-paises.component";
 
+import { ViewEmpresaComponent } from './components/empresas/view-empresa/view-empresa.component';
+import { UpdateEmpresaComponent } from './components/empresas/update-empresa/update-empresa.component';
+import { CreateEmpresaComponent } from './components/empresas/create-empresa/create-empresa.component';
+import { IndexEmpresaComponent } from './components/empresas/index-empresa/index-empresa.component';
+
 //This is my case
 const routes: Routes = [
   { path: "home", component: HomeComponent },
@@ -53,6 +58,24 @@ const routes: Routes = [
   {
     path: "paises/view/:id",
     component: ViewPaisesComponent
+  },
+
+  //Empresa
+  {
+    path: "empresas",
+    component: IndexEmpresaComponent
+  },
+  {
+    path: "empresas/create",
+    component: CreateEmpresaComponent
+  },
+  {
+    path: "empresas/update/:id",
+    component: UpdateEmpresaComponent
+  },
+  {
+    path: "empresas/view/:id",
+    component: ViewEmpresaComponent
   }
 ];
 

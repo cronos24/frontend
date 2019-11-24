@@ -1,0 +1,121 @@
+
+      <form name="form" (ngSubmit)="f.form.valid && Save()" #f="ngForm" novalidate>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="" class="control-label">NIT</label>
+            <input type="text" class="form-control" [(ngModel)]="model.cias_nit" name="cias_nit" #cias_nit="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && cias_nit.invalid }" />
+            <div *ngIf="f.submitted && cias_nit.invalid" class="invalid-feedback">
+              <div *ngIf="cias_nit.errors.required">
+                "NIT" es obligatorio
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group col-md-4">
+              <label for="" class="control-label">Digito de Verificación</label>
+              <input type="text" class="form-control" [(ngModel)]="model.cias_dive" name="cias_dive" />
+            </div>
+
+          <div class="form-group col-md-4">
+            <label for="" class="control-label">Registro</label>
+            <input type="text" class="form-control" [(ngModel)]="model.cias_regi" name="cias_regi" #cias_regi="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && cias_regi.invalid }" required />
+            <div *ngIf="f.submitted && cias_regi.invalid" class="invalid-feedback">
+              <div *ngIf="cias_regi.errors.required">"Registro" es obligatorio</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="" class="control-label">Nombre</label>
+            <input type="text" class="form-control" [(ngModel)]="model.cias_rsoc" name="cias_rsoc" #cias_rsoc="ngModel"
+              [ngClass]="{ 'is-invalid': f.submitted && cias_rsoc.invalid }" required />
+            <div *ngIf="f.submitted && cias_rsoc.invalid" class="invalid-feedback">
+              <div *ngIf="cias_rsoc.errors.required">
+                "Nombre" es obligatorio
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="" class="control-label">Direccion</label>
+                <input type="text" class="form-control" [(ngModel)]="model.cias_dire" name="cias_dire" #cias_dire="ngModel" />
+
+              </div>
+
+              <div class="form-group col-md-4">
+                  <label for="" class="control-label">Telefono</label>
+                  <input type="text" class="form-control" [(ngModel)]="model.cias_tels" name="cias_tels" #cias_tels="ngModel"/>
+                </div>
+
+              <div class="form-group col-md-4">
+                <label for="" class="control-label">Celular</label>
+                <input type="text" class="form-control" [(ngModel)]="model.cias_celu" name="cias_celu" #cias_celu="ngModel"/>
+              </div>
+          </div>
+
+          <div class="form-row">
+              <div class="form-group col-md-6">
+                  <label for="" class="control-label">Correo</label>
+                  <input type="email" class="form-control center-ele"
+                    [(ngModel)]="model.cias_mail"
+                    name="cias_mail"
+                    #cias_mail="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && cias_mail.invalid }"
+                    email
+                />
+
+                <div *ngIf="f.submitted && cias_mail.invalid" class="invalid-feedback">
+                    <div *ngIf="cias_mail.errors.email">la Direccion de Correo es Invalida </div>
+                </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="" class="control-label">Web</label>
+                    <input type="text" class="form-control" [(ngModel)]="model.cias_web" name="cias_web" #cias_web="ngModel"/>
+                  </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="" class="control-label">Slogan</label>
+                    <input type="text" class="form-control" [(ngModel)]="model.cias_slog" name="cias_slog" #cias_slog="ngModel" />
+
+                  </div>
+
+                  <div class="form-group col-md-4">
+                      <label for="" class="control-label">Notificaciones</label>
+                      <select class="form-control" [(ngModel)]="model.cias_notf" name="cias_notf" #cias_notf="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cias_notf.invalid }" required>
+                          <option value="S">Si</option>
+                          <option value="N">No</option>
+                      </select>
+                      <div *ngIf="f.submitted && cias_notf.invalid" class="invalid-feedback">
+                          <div *ngIf="cias_notf.errors.required">
+                            "Notificaciones" es obligatorio
+                          </div>
+                      </div>
+                    </div>
+
+                  <div class="form-group col-md-4">
+                    <label for="" class="control-label">Tipo</label>
+                    <select  class="form-control" [(ngModel)]="model.cias_tipo" name="cias_tipo" #cias_tipo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cias_tipo.invalid }" required>
+                        <option value="1">Principal</option>
+                        <option value="2">Sucursal</option>
+                    </select>
+                    <div *ngIf="f.submitted && cias_tipo.invalid" class="invalid-feedback">
+                        <div *ngIf="cias_tipo.errors.required">
+                          "Tipo" es obligatorio
+                        </div>
+                    </div>
+                  </div>
+              </div>
+
+        <div class="text-right">
+          <button class="btn btn-primary">Guardar</button>
+        </div>
+      </form>

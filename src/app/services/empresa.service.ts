@@ -1,15 +1,15 @@
+import { Empresa } from './../Models/general/Empresa';
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Estado } from "../../Models/general/Estado";
 import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: "root"
 })
-export class EstadosService {
+export class EmpresaService {
   constructor(private httpClient: HttpClient) {}
 
-  url = environment.server_url + "General/ge-testa";
+  url = environment.server_url + "General/ge-tcias";
 
   public sendGetRequest() {
     return this.httpClient.get(this.url);
@@ -23,11 +23,11 @@ export class EstadosService {
     return this.httpClient.delete(this.url + "/borrar?id=" + id);
   }
 
-  public sendPostRequest(estado: Estado) {
-    return this.httpClient.post(this.url + "/crear", estado);
+  public sendPostRequest(model: Empresa) {
+    return this.httpClient.post(this.url + "/crear", model);
   }
 
-  public sendPutRequest(estado: Estado, id) {
-    return this.httpClient.put(this.url + "/editar?id=" + id, estado);
+  public sendPutRequest(model: Empresa, id) {
+    return this.httpClient.put(this.url + "/editar?id=" + id, model);
   }
 }
