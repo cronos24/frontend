@@ -1,1 +1,37 @@
-<p>form-logo works!</p>
+<form name="form" (ngSubmit)="f.form.valid && Save()" #f="ngForm" novalidate>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="" class="control-label">Empresa</label>
+      <input type="text" class="form-control" [(ngModel)]="model.cias_codi" name="cias_codi" #cias_codi="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && cias_codi.invalid }" required />
+      <div *ngIf="f.submitted && cias_codi.invalid" class="invalid-feedback">
+        <div *ngIf="cias_codi.errors.required">"Registro" es obligatorio</div>
+      </div>
+    </div>
+
+
+    <div class="form-group col-md-6">
+      <label for="" class="control-label">Tipo</label>
+      <input type="text" class="form-control" [(ngModel)]="model.logo_tipo" name="logo_tipo" #logo_tipo="ngModel" />
+    </div>
+
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="" class="control-label">Ancho</label>
+      <input type="text" class="form-control" [(ngModel)]="model.logo_anch" name="logo_anch" #logo_anch="ngModel" />
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="" class="control-label">Alto</label>
+      <input type="text" class="form-control" [(ngModel)]="model.logo_alto" name="logo_alto" #logo_anch="ngModel" />
+    </div>
+  </div>
+
+
+
+  <div class="text-left">
+    <button class="btn btn-primary">Guardar</button>
+  </div>
+</form>
