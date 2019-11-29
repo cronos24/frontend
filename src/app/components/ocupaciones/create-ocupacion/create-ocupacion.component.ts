@@ -1,35 +1,23 @@
 import { Component, OnInit } from "@angular/core";
-import { Empresa } from "src/app/Models/general/Empresa";
-import { EmpresaService } from "src/app/services/empresa.service";
+import { Ocupacion } from "src/app/Models/general/Ocupacion";
+import { OcupacionService } from "src/app/services/ocupacion.service";
 import { ToastrService } from "ngx-toastr";
 import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
-  selector: "app-create-empresa",
-  templateUrl: "./create-empresa.component.html",
+  selector: "app-create-ocupacion",
+  templateUrl: "./create-ocupacion.component.html",
   styles: []
 })
-export class CreateEmpresaComponent implements OnInit {
-  model: Empresa = {
-    cias_codi: null,
-    cias_nit: null,
-    cias_dive: null,
-    cias_rsoc: "",
-    cias_dire: "",
-    cias_tels: null,
-    cias_celu: null,
-    cias_mail: "",
-    cias_web: "",
-    cias_slog: "",
-    cias_regi: "",
-    cias_notf: "",
-    cias_tipo: "",
-    esta_codi: ""
+export class CreateOcupacionComponent implements OnInit {
+  model: Ocupacion = {
+    ocup_codi: null,
+    ocup_nomb: null
   };
   validationErrors: any[] = [];
   status: any;
   constructor(
-    private dataService: EmpresaService,
+    private dataService: OcupacionService,
     private toastr: ToastrService,
     private route: ActivatedRoute,
     private route2: Router
@@ -46,7 +34,7 @@ export class CreateEmpresaComponent implements OnInit {
           this.toastr.success(
             "<i class='far fa-thumbs-up fa-2x'></i>  Registro Guardado con Exito!!!"
           );
-          this.route2.navigate(["empresas/view", this.model.cias_codi]);
+          this.route2.navigate(["ocupaciones/view", this.model.ocup_codi]);
         } else {
           this.toastr.error(
             " <i class='fas fa-ban fa-2x'></i> El formulario tiene algunos errores."
@@ -60,8 +48,6 @@ export class CreateEmpresaComponent implements OnInit {
         this.toastr.error(
           " <i class='fas fa-ban fa-2x'></i> Se produjo un error en la transferencia de datos."
         );
-        // this.validationErrors = error.error.errors;
-        // this.status = error.status;
       }
     );
   }

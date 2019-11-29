@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { EmpresaService } from 'src/app/services/empresa.service';
-import { ActivatedRoute } from '@angular/router';
-import { Empresa } from 'src/app/Models/general/Empresa';
+import { Component, OnInit } from "@angular/core";
+import { EmpresaService } from "src/app/services/empresa.service";
+import { ActivatedRoute } from "@angular/router";
+import { Empresa } from "src/app/Models/general/Empresa";
 
 @Component({
-  selector: 'app-view-empresa',
-  templateUrl: './view-empresa.component.html',
+  selector: "app-view-empresa",
+  templateUrl: "./view-empresa.component.html",
   styles: []
 })
 export class ViewEmpresaComponent implements OnInit {
-
   id: any;
   sub: any;
   model: Empresa = {
@@ -47,6 +46,4 @@ export class ViewEmpresaComponent implements OnInit {
       this.model = data[0];
     });
   }
-
-
 }

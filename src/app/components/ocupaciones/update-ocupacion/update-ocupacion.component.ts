@@ -1,32 +1,20 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { Empresa } from "src/app/Models/general/Empresa";
-import { EmpresaService } from "src/app/services/empresa.service";
+import { Ocupacion } from "src/app/Models/general/Ocupacion";
+import { OcupacionService } from "src/app/services/ocupacion.service";
 import { ToastrService } from "ngx-toastr";
 import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
-  selector: "app-update-empresa",
-  templateUrl: "./update-empresa.component.html",
+  selector: "app-update-ocupacion",
+  templateUrl: "./update-ocupacion.component.html",
   styles: []
 })
-export class UpdateEmpresaComponent implements OnInit {
+export class UpdateOcupacionComponent implements OnInit {
   @ViewChild("form", { static: false }) form;
 
-  model: Empresa = {
-    cias_codi: null,
-    cias_nit: null,
-    cias_dive: null,
-    cias_rsoc: "",
-    cias_dire: "",
-    cias_tels: null,
-    cias_celu: null,
-    cias_mail: "",
-    cias_web: "",
-    cias_slog: "",
-    cias_regi: "",
-    cias_notf: "",
-    cias_tipo: "",
-    esta_codi: ""
+  model: Ocupacion = {
+    ocup_codi: null,
+    ocup_nomb: null
   };
 
   validationErrors: any[] = [];
@@ -35,7 +23,7 @@ export class UpdateEmpresaComponent implements OnInit {
   sub: any;
 
   constructor(
-    private dataService: EmpresaService,
+    private dataService: OcupacionService,
     private toastr: ToastrService,
     private route: ActivatedRoute,
     private route2: Router
@@ -64,7 +52,7 @@ export class UpdateEmpresaComponent implements OnInit {
           this.toastr.success(
             "<i class='far fa-thumbs-up fa-2x'></i>  Registro Modificado con Exito!!!"
           );
-          this.route2.navigate(["empresas/view", this.model.cias_codi]);
+          this.route2.navigate(["ocupaciones/view", this.model.ocup_codi]);
         } else {
           this.toastr.error(
             " <i class='fas fa-ban fa-2x'></i> El formulario tiene algunos errores."

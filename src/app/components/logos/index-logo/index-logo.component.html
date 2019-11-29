@@ -1,11 +1,11 @@
 <div class="container-fluid">
   <div class="card">
     <div class="card-header">
-      <h3>EMPRESAS</h3>
+      <h4>Logos Empresa {{ parent_id }}</h4>
     </div>
     <div class="card-body">
-      <p><button (click)="this.createEmpresa()" type="button" class="btn btn-primary"><i class="fas fa-plus"
-            style="color: white;"></i> Crear Empresa</button></p>
+      <p><button (click)="this.createLogo(parent_id)" type="button" class="btn btn-primary"><i class="fas fa-plus"
+            style="color: white;"></i> Crear Logo</button></p>
 
       <div class="table-responsive">
         <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
@@ -23,24 +23,17 @@
                 <b><i class="fas fa-spinner fa-spin fa-fw"></i> <span>Cargando ...</span></b>
               </td>
             </tr>
-            <tr *ngFor="let model of this.models" id="{{model.cias_codi}}">
-              <td>{{model.cias_codi}}</td>
-              <td>{{model.cias_nit}}</td>
-              <td>{{model.cias_rsoc}}</td>
-              <td>{{model.cias_dire}}</td>
-              <td>{{model.cias_celu}}</td>
+            <tr *ngFor="let model of this.models" id="{{model.vinc_codi}}">
+              <td style="width: 8%;text-align: center;">{{model.logo_codi}}</td>
+              <td style="width: 8%;text-align: center;">{{model.logo_tipo}}</td>
+              <td style="width: 55%;">{{model.logo_imag}}</td>
               <td>{{model.estaCodi.esta_nomb}}</td>
 
 
-
-
               <td width="15%">
-                <!-- <button *ngFor="let button of this.buttons" id="{{ button.id }}"
-                    (click)="this[button.method](model.esta_code)" type="button" class="{{button.class}}"
-                    style="margin: 2px;"><i class="{{button.icon}}" style="color: white;"></i>
-                    {{ button.label }}</button> -->
 
-                <a *ngFor="let button of this.buttons" (click)="this[button.method](model.cias_codi)"
+
+                <a *ngFor="let button of this.buttons" (click)="this[button.method](model.logo_codi)"
                   id="{{ button.id }}" class="{{button.class}}" style="margin: 2px;"> <i class="{{button.icon}}"
                     style="color: white;"></i>
                   {{ button.label }}</a></td>

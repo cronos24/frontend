@@ -1,32 +1,21 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { Empresa } from "src/app/Models/general/Empresa";
-import { EmpresaService } from "src/app/services/empresa.service";
+import { Vinculacion } from "src/app/Models/general/Vinculacion";
+import { VinculacionService } from "src/app/services/vinculacion.service";
 import { ToastrService } from "ngx-toastr";
 import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
-  selector: "app-update-empresa",
-  templateUrl: "./update-empresa.component.html",
+  selector: "app-update-vinculacion",
+  templateUrl: "./update-vinculacion.component.html",
   styles: []
 })
-export class UpdateEmpresaComponent implements OnInit {
+export class UpdateVinculacionComponent implements OnInit {
   @ViewChild("form", { static: false }) form;
 
-  model: Empresa = {
-    cias_codi: null,
-    cias_nit: null,
-    cias_dive: null,
-    cias_rsoc: "",
-    cias_dire: "",
-    cias_tels: null,
-    cias_celu: null,
-    cias_mail: "",
-    cias_web: "",
-    cias_slog: "",
-    cias_regi: "",
-    cias_notf: "",
-    cias_tipo: "",
-    esta_codi: ""
+  model: Vinculacion = {
+    vinc_codi: null,
+    vinc_nomb: null,
+    vinc_cons: null
   };
 
   validationErrors: any[] = [];
@@ -35,7 +24,7 @@ export class UpdateEmpresaComponent implements OnInit {
   sub: any;
 
   constructor(
-    private dataService: EmpresaService,
+    private dataService: VinculacionService,
     private toastr: ToastrService,
     private route: ActivatedRoute,
     private route2: Router
@@ -64,7 +53,7 @@ export class UpdateEmpresaComponent implements OnInit {
           this.toastr.success(
             "<i class='far fa-thumbs-up fa-2x'></i>  Registro Modificado con Exito!!!"
           );
-          this.route2.navigate(["empresas/view", this.model.cias_codi]);
+          this.route2.navigate(["vinculaciones/view", this.model.vinc_codi]);
         } else {
           this.toastr.error(
             " <i class='fas fa-ban fa-2x'></i> El formulario tiene algunos errores."

@@ -14,10 +14,24 @@ import { CreatePaisesComponent } from "./components/paises/create-paises/create-
 import { UpdatePaisesComponent } from "./components/paises/update-paises/update-paises.component";
 import { ViewPaisesComponent } from "./components/paises/view-paises/view-paises.component";
 
-import { ViewEmpresaComponent } from './components/empresas/view-empresa/view-empresa.component';
-import { UpdateEmpresaComponent } from './components/empresas/update-empresa/update-empresa.component';
-import { CreateEmpresaComponent } from './components/empresas/create-empresa/create-empresa.component';
-import { IndexEmpresaComponent } from './components/empresas/index-empresa/index-empresa.component';
+import { ViewEmpresaComponent } from "./components/empresas/view-empresa/view-empresa.component";
+import { UpdateEmpresaComponent } from "./components/empresas/update-empresa/update-empresa.component";
+import { CreateEmpresaComponent } from "./components/empresas/create-empresa/create-empresa.component";
+import { IndexEmpresaComponent } from "./components/empresas/index-empresa/index-empresa.component";
+
+import { IndexVinculacionComponent } from "./components/vinculaciones/index-vinculacion/index-vinculacion.component";
+import { CreateVinculacionComponent } from "./components/vinculaciones/create-vinculacion/create-vinculacion.component";
+import { UpdateVinculacionComponent } from "./components/vinculaciones/update-vinculacion/update-vinculacion.component";
+import { ViewVinculacionComponent } from "./components/vinculaciones/view-vinculacion/view-vinculacion.component";
+
+import { IndexOcupacionComponent } from "./components/ocupaciones/index-ocupacion/index-ocupacion.component";
+import { CreateOcupacionComponent } from "./components/ocupaciones/create-ocupacion/create-ocupacion.component";
+import { UpdateOcupacionComponent } from "./components/ocupaciones/update-ocupacion/update-ocupacion.component";
+import { ViewOcupacionComponent } from "./components/ocupaciones/view-ocupacion/view-ocupacion.component";
+
+import { CreateLogoComponent } from "./components/logos/create-logo/create-logo.component";
+import { ViewLogoComponent } from "./components/logos/view-logo/view-logo.component";
+import { UpdateLogoComponent } from "./components/logos/update-logo/update-logo.component";
 
 //This is my case
 const routes: Routes = [
@@ -76,6 +90,54 @@ const routes: Routes = [
   {
     path: "empresas/view/:id",
     component: ViewEmpresaComponent
+  },
+
+  //vinculaciones
+  {
+    path: "vinculaciones",
+    component: IndexVinculacionComponent
+  },
+  {
+    path: "vinculaciones/create",
+    component: CreateVinculacionComponent
+  },
+  {
+    path: "vinculaciones/update/:id",
+    component: UpdateVinculacionComponent
+  },
+  {
+    path: "vinculaciones/view/:id",
+    component: ViewVinculacionComponent
+  },
+  //Ocupaciones
+  {
+    path: "ocupaciones",
+    component: IndexOcupacionComponent
+  },
+  {
+    path: "ocupaciones/create",
+    component: CreateOcupacionComponent
+  },
+  {
+    path: "ocupaciones/update/:id",
+    component: UpdateOcupacionComponent
+  },
+  {
+    path: "ocupaciones/view/:id",
+    component: ViewOcupacionComponent
+  },
+  //Logos
+  {
+    path: "logos/create/:id",
+    component: CreateLogoComponent
+  },
+  {
+    path: "logos/update/:id",
+    component: UpdateLogoComponent
+  },
+  {
+    path: "logos/view/:id",
+    component: ViewLogoComponent
   }
 ];
 
