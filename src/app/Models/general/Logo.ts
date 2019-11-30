@@ -6,4 +6,13 @@ export class Logo {
   logo_anch: number;
   logo_alto: number;
   esta_codi: String;
+  ciasCodi:{
+    cias_rsoc:string;
+  };
+  estaCodi:{
+    esta_nomb:string;
+    esta_colo: string,
+    esta_tipo: String
+  }
+
 }

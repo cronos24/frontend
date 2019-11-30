@@ -87,7 +87,7 @@ export class EstadosIndexComponent implements OnInit {
   deleteEstado(id) {
     if (confirm("Esta seguro de Borrar el registro?")) {
       this.dataService.sendDeleteRequest(id).subscribe(data => {
-        console.log(data);
+        //console.log(data);
         if (data === 1) {
           const index = this.estados.findIndex(item => item.esta_codi === id);
           this.estados.splice(index, 1);

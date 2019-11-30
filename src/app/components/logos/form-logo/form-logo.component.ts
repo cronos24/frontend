@@ -1,3 +1,4 @@
+import { EmpresaService } from 'src/app/services/empresa.service';
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
@@ -8,10 +9,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 export class FormLogoComponent implements OnInit {
   @Input("model") model: any;
   @Output() save = new EventEmitter<MouseEvent>();
+  datos: any[];
 
-  constructor() {}
+  constructor(private dataService: EmpresaService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.dataService.sendGetRequest().subscribe((data: any[]) => {
+      this.datos = data;
+    });
+  }
 
   Save() {
     this.save.emit(this.model);

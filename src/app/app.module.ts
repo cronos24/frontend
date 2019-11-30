@@ -45,6 +45,11 @@ import { IndexLogoComponent } from "./components/logos/index-logo/index-logo.com
 import { FormLogoComponent } from "./components/logos/form-logo/form-logo.component";
 import { ViewLogoComponent } from "./components/logos/view-logo/view-logo.component";
 import { UpdateLogoComponent } from "./components/logos/update-logo/update-logo.component";
+import { IndexMarcaComponent } from './components/marcas/index-marca/index-marca.component';
+import { FormMarcaComponent } from './components/marcas/form-marca/form-marca.component';
+import { CreateMarcaComponent } from './components/marcas/create-marca/create-marca.component';
+import { UpdateMarcaComponent } from './components/marcas/update-marca/update-marca.component';
+import { ViewMarcaComponent } from './components/marcas/view-marca/view-marca.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +94,12 @@ import { UpdateLogoComponent } from "./components/logos/update-logo/update-logo.
     IndexLogoComponent,
     FormLogoComponent,
     ViewLogoComponent,
-    UpdateLogoComponent
+    UpdateLogoComponent,
+    IndexMarcaComponent,
+    FormMarcaComponent,
+    CreateMarcaComponent,
+    UpdateMarcaComponent,
+    ViewMarcaComponent
   ],
   imports: [
     BrowserModule,

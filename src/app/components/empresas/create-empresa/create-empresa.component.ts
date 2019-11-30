@@ -24,7 +24,10 @@ export class CreateEmpresaComponent implements OnInit {
     cias_regi: "",
     cias_notf: "",
     cias_tipo: "",
-    esta_codi: ""
+    esta_codi: "",
+    estaCodi: {
+      esta_nomb:""
+    }
   };
   validationErrors: any[] = [];
   status: any;

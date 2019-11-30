@@ -48,7 +48,6 @@ export class IndexLogoComponent implements OnInit {
 
   getLogos() {
     this.dataService.sendGetRequest().subscribe((data: any[]) => {
-      console.log(data);
       this.models = data;
       this.buttons = [
         {
@@ -87,16 +86,10 @@ export class IndexLogoComponent implements OnInit {
   deleteLogo(id) {
     if (confirm("Esta seguro de Inactivar el registro?")) {
       this.dataService.sendDeleteRequest(id).subscribe(data => {
-        console.log(data);
         if (data["status"] === 1) {
           const index = this.models.findIndex(item => item.logo_codi === id);
           this.models[index].esta_codi = data["model"].esta_codi;
-          this.models[index].esta_nomb = "INACTIVO";
-          // this.models.splice(index, 1);
-          // this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
-          //   dtInstance.row("#" + id).remove();
-          //   dtInstance.draw();
-          // });
+          this.models[index].estaCodi.esta_nomb = "INACTIVO";
           this.toastr.warning(
             "<i class='fas fa-exclamation-triangle fa-2x'></i> Registro Inactivado con Exito!!!"
           );

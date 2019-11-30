@@ -19,7 +19,15 @@ export class UpdateLogoComponent implements OnInit {
     logo_imag: null,
     logo_alto: null,
     logo_anch: null,
-    esta_codi: null
+    esta_codi: null,
+    ciasCodi:{
+      cias_rsoc:""
+    },
+    estaCodi:{
+      esta_nomb:"",
+      esta_colo:"",
+      esta_tipo:""
+    }
   };
 
   validationErrors: any[] = [];

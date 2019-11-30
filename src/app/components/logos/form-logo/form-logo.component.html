@@ -2,10 +2,15 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="" class="control-label">Empresa</label>
-      <input type="text" class="form-control" [(ngModel)]="model.cias_codi" name="cias_codi" #cias_codi="ngModel"
-        [ngClass]="{ 'is-invalid': f.submitted && cias_codi.invalid }" required />
+      <!-- <input type="text" class="form-control" [(ngModel)]="model.cias_codi" name="cias_codi" #cias_codi="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && cias_codi.invalid }" required /> -->
+        <select class="form-control" [(ngModel)]="model.cias_codi" name="cias_codi" #cias_codi="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && cias_codi.invalid }" required disabled>
+          <option disabled selected>Selecciona una Empresa</option>
+          <option [value]="item.cias_codi" *ngFor="let item of this.datos">{{item.cias_rsoc}}</option>
+          </select>
       <div *ngIf="f.submitted && cias_codi.invalid" class="invalid-feedback">
-        <div *ngIf="cias_codi.errors.required">"Registro" es obligatorio</div>
+        <div *ngIf="cias_codi.errors.required">"Empresa" es obligatorio</div>
       </div>
     </div>
 
@@ -13,6 +18,20 @@
     <div class="form-group col-md-6">
       <label for="" class="control-label">Tipo</label>
       <input type="text" class="form-control" [(ngModel)]="model.logo_tipo" name="logo_tipo" #logo_tipo="ngModel" />
+    </div>
+
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="" class="control-label">Imagen</label>
+      <input type="text" class="form-control" [(ngModel)]="model.logo_imag" name="logo_imag" #logo_imag="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && logo_imag.invalid }" required />
+      <div *ngIf="f.submitted && logo_imag.invalid" class="invalid-feedback">
+        <div *ngIf="logo_imag.errors.required">
+          "Imagen" es obligatorio
+        </div>
+      </div>
     </div>
 
   </div>
@@ -28,6 +47,8 @@
       <input type="text" class="form-control" [(ngModel)]="model.logo_alto" name="logo_alto" #logo_anch="ngModel" />
     </div>
   </div>
+
+
 
 
 

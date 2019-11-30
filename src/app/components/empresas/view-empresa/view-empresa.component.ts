@@ -25,7 +25,10 @@ export class ViewEmpresaComponent implements OnInit {
     cias_regi: "",
     cias_notf: "",
     cias_tipo: "",
-    esta_codi: ""
+    esta_codi: "",
+    estaCodi: {
+      esta_nomb:""
+    }
   };
 
   constructor(

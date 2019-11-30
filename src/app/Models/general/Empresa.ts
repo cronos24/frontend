@@ -13,4 +13,7 @@ export class Empresa {
   cias_notf: string;
   cias_tipo: string;
   esta_codi: string;
+  estaCodi: {
+    esta_nomb: string;
+  };
 }
