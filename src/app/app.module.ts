@@ -45,6 +45,7 @@ import { IndexLogoComponent } from "./components/logos/index-logo/index-logo.com
 import { FormLogoComponent } from "./components/logos/form-logo/form-logo.component";
 import { ViewLogoComponent } from "./components/logos/view-logo/view-logo.component";
 import { UpdateLogoComponent } from "./components/logos/update-logo/update-logo.component";
+
 import { IndexMarcaComponent } from './components/marcas/index-marca/index-marca.component';
 import { FormMarcaComponent } from './components/marcas/form-marca/form-marca.component';
 import { CreateMarcaComponent } from './components/marcas/create-marca/create-marca.component';
@@ -95,6 +96,8 @@ import { ViewMarcaComponent } from './components/marcas/view-marca/view-marca.co
     FormLogoComponent,
     ViewLogoComponent,
     UpdateLogoComponent,
+
+    //Marca
     IndexMarcaComponent,
     FormMarcaComponent,
     CreateMarcaComponent,

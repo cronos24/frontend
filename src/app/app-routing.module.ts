@@ -33,6 +33,11 @@ import { CreateLogoComponent } from "./components/logos/create-logo/create-logo.
 import { ViewLogoComponent } from "./components/logos/view-logo/view-logo.component";
 import { UpdateLogoComponent } from "./components/logos/update-logo/update-logo.component";
 
+import { IndexMarcaComponent } from './components/marcas/index-marca/index-marca.component';
+import { CreateMarcaComponent } from './components/marcas/create-marca/create-marca.component';
+import { UpdateMarcaComponent } from './components/marcas/update-marca/update-marca.component';
+import { ViewMarcaComponent } from './components/marcas/view-marca/view-marca.component';
+
 //This is my case
 const routes: Routes = [
   { path: "home", component: HomeComponent },
@@ -138,7 +143,24 @@ const routes: Routes = [
   {
     path: "logos/view/:id",
     component: ViewLogoComponent
-  }
+  },
+  //Marcas
+  {
+    path: "marcas",
+    component: IndexMarcaComponent
+  },
+  {
+    path: "marcas/create",
+    component: CreateMarcaComponent
+  },
+  {
+    path: "marcas/update/:id",
+    component: UpdateMarcaComponent
+  },
+  {
+    path: "marcas/view/:id",
+    component: ViewMarcaComponent
+  },
 ];
 
 @NgModule({
