@@ -19,13 +19,13 @@ export class ViewLogoComponent implements OnInit {
     logo_alto: null,
     logo_anch: null,
     esta_codi: null,
-    ciasCodi:{
-      cias_rsoc:""
+    ciasCodi: {
+      cias_rsoc: ""
     },
-    estaCodi:{
-      esta_nomb:"",
-      esta_colo:"",
-      esta_tipo:""
+    estaCodi: {
+      esta_nomb: "",
+      esta_colo: "",
+      esta_tipo: ""
     }
   };
 
@@ -43,7 +43,6 @@ export class ViewLogoComponent implements OnInit {
 
   view(id) {
     this.dataService.sendShowRequest(id).subscribe(data => {
-      //console.log(data);
       this.model = data[0];
     });
   }

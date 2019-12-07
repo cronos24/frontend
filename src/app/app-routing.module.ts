@@ -9,11 +9,6 @@ import { ViewEstadosComponent } from "./components/estados/view-estados/view-est
 import { CreateEstadosComponent } from "./components/estados/create-estados/create-estados.component";
 import { UpdateEstadosComponent } from "./components/estados/update-estados/update-estados.component";
 
-import { IndexPaisesComponent } from "./components/paises/index-paises/index-paises.component";
-import { CreatePaisesComponent } from "./components/paises/create-paises/create-paises.component";
-import { UpdatePaisesComponent } from "./components/paises/update-paises/update-paises.component";
-import { ViewPaisesComponent } from "./components/paises/view-paises/view-paises.component";
-
 import { ViewEmpresaComponent } from "./components/empresas/view-empresa/view-empresa.component";
 import { UpdateEmpresaComponent } from "./components/empresas/update-empresa/update-empresa.component";
 import { CreateEmpresaComponent } from "./components/empresas/create-empresa/create-empresa.component";
@@ -33,16 +28,25 @@ import { CreateLogoComponent } from "./components/logos/create-logo/create-logo.
 import { ViewLogoComponent } from "./components/logos/view-logo/view-logo.component";
 import { UpdateLogoComponent } from "./components/logos/update-logo/update-logo.component";
 
-import { IndexMarcaComponent } from './components/marcas/index-marca/index-marca.component';
-import { CreateMarcaComponent } from './components/marcas/create-marca/create-marca.component';
-import { UpdateMarcaComponent } from './components/marcas/update-marca/update-marca.component';
-import { ViewMarcaComponent } from './components/marcas/view-marca/view-marca.component';
+import { IndexMarcaComponent } from "./components/marcas/index-marca/index-marca.component";
+import { CreateMarcaComponent } from "./components/marcas/create-marca/create-marca.component";
+import { UpdateMarcaComponent } from "./components/marcas/update-marca/update-marca.component";
+import { ViewMarcaComponent } from "./components/marcas/view-marca/view-marca.component";
 
-import { IndexEntidadComponent } from './components/entidades/index-entidad/index-entidad.component';
-import { CreateEntidadComponent } from './components/entidades/create-entidad/create-entidad.component';
-import { UpdateEntidadComponent } from './components/entidades/update-entidad/update-entidad.component';
-import { ViewEntidadComponent } from './components/entidades/view-entidad/view-entidad.component';
+import { IndexEntidadComponent } from "./components/entidades/index-entidad/index-entidad.component";
+import { CreateEntidadComponent } from "./components/entidades/create-entidad/create-entidad.component";
+import { UpdateEntidadComponent } from "./components/entidades/update-entidad/update-entidad.component";
+import { ViewEntidadComponent } from "./components/entidades/view-entidad/view-entidad.component";
 
+import { IndexPaisComponent } from "./components/paises/index-pais/index-pais.component";
+import { CreatePaisComponent } from "./components/paises/create-pais/create-pais.component";
+import { UpdatePaisComponent } from "./components/paises/update-pais/update-pais.component";
+import { ViewPaisComponent } from "./components/paises/view-pais/view-pais.component";
+
+import { IndexTerceroComponent } from "./components/terceros/index-tercero/index-tercero.component";
+import { CreateTerceroComponent } from "./components/terceros/create-tercero/create-tercero.component";
+import { UpdateTerceroComponent } from "./components/terceros/update-tercero/update-tercero.component";
+import { ViewTerceroComponent } from "./components/terceros/view-tercero/view-tercero.component";
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
@@ -66,22 +70,22 @@ const routes: Routes = [
     component: ViewEstadosComponent
   },
 
-  //Estados
+  //Paises
   {
     path: "paises",
-    component: IndexPaisesComponent
+    component: IndexPaisComponent
   },
   {
     path: "paises/create",
-    component: CreatePaisesComponent
+    component: CreatePaisComponent
   },
   {
     path: "paises/update/:id",
-    component: UpdatePaisesComponent
+    component: UpdatePaisComponent
   },
   {
     path: "paises/view/:id",
-    component: ViewPaisesComponent
+    component: ViewPaisComponent
   },
 
   //Empresa
@@ -184,6 +188,23 @@ const routes: Routes = [
     path: "entidades/view/:id",
     component: ViewEntidadComponent
   },
+  //Terceros
+  {
+    path: "terceros",
+    component: IndexTerceroComponent
+  },
+  {
+    path: "terceros/create",
+    component: CreateTerceroComponent
+  },
+  {
+    path: "terceros/update/:id",
+    component: UpdateTerceroComponent
+  },
+  {
+    path: "terceros/view/:id",
+    component: ViewTerceroComponent
+  }
 ];
 
 @NgModule({

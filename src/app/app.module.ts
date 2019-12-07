@@ -17,11 +17,6 @@ import { CreateEstadosComponent } from "./components/estados/create-estados/crea
 import { UpdateEstadosComponent } from "./components/estados/update-estados/update-estados.component";
 import { ViewEstadosComponent } from "./components/estados/view-estados/view-estados.component";
 
-import { CreatePaisesComponent } from "./components/paises/create-paises/create-paises.component";
-import { IndexPaisesComponent } from "./components/paises/index-paises/index-paises.component";
-import { UpdatePaisesComponent } from "./components/paises/update-paises/update-paises.component";
-import { ViewPaisesComponent } from "./components/paises/view-paises/view-paises.component";
-
 import { UpdateEmpresaComponent } from "./components/empresas/update-empresa/update-empresa.component";
 import { FormEmpresaComponent } from "./components/empresas/form-empresa/form-empresa.component";
 import { CreateEmpresaComponent } from "./components/empresas/create-empresa/create-empresa.component";
@@ -58,6 +53,17 @@ import { UpdateEntidadComponent } from "./components/entidades/update-entidad/up
 import { ViewEntidadComponent } from "./components/entidades/view-entidad/view-entidad.component";
 import { IndexEntidadComponent } from "./components/entidades/index-entidad/index-entidad.component";
 
+import { IndexPaisComponent } from "./components/paises/index-pais/index-pais.component";
+import { CreatePaisComponent } from "./components/paises/create-pais/create-pais.component";
+import { FormPaisComponent } from "./components/paises/form-pais/form-pais.component";
+import { ViewPaisComponent } from "./components/paises/view-pais/view-pais.component";
+import { UpdatePaisComponent } from "./components/paises/update-pais/update-pais.component";
+import { IndexTerceroComponent } from './components/terceros/index-tercero/index-tercero.component';
+import { UpdateTerceroComponent } from './components/terceros/update-tercero/update-tercero.component';
+import { FormTerceroComponent } from './components/terceros/form-tercero/form-tercero.component';
+import { CreateTerceroComponent } from './components/terceros/create-tercero/create-tercero.component';
+import { ViewTerceroComponent } from './components/terceros/view-tercero/view-tercero.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,10 +76,6 @@ import { IndexEntidadComponent } from "./components/entidades/index-entidad/inde
     UpdateEstadosComponent,
     ViewEstadosComponent,
     //paises
-    CreatePaisesComponent,
-    IndexPaisesComponent,
-    UpdatePaisesComponent,
-    ViewPaisesComponent,
 
     //Empresa
     UpdateEmpresaComponent,
@@ -115,7 +117,19 @@ import { IndexEntidadComponent } from "./components/entidades/index-entidad/inde
     FormEntidadComponent,
     CreateEntidadComponent,
     UpdateEntidadComponent,
-    ViewEntidadComponent
+    ViewEntidadComponent,
+
+    //Paises
+    IndexPaisComponent,
+    CreatePaisComponent,
+    FormPaisComponent,
+    ViewPaisComponent,
+    UpdatePaisComponent,
+    IndexTerceroComponent,
+    UpdateTerceroComponent,
+    FormTerceroComponent,
+    CreateTerceroComponent,
+    ViewTerceroComponent
   ],
   imports: [
     BrowserModule,

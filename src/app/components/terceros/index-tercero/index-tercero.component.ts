@@ -1,16 +1,18 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, Input, ViewChild } from "@angular/core";
 import { DataTableDirective } from "angular-datatables";
 import { Subject } from "rxjs";
-import { EntidadService } from "src/app/services/entidad.service";
 import { ToastrService } from "ngx-toastr";
 import { Router } from "@angular/router";
+import { TercerosService } from "src/app/services/terceros.service";
 
 @Component({
-  selector: "app-index-entidad",
-  templateUrl: "./index-entidad.component.html",
+  selector: "app-index-tercero",
+  templateUrl: "./index-tercero.component.html",
   styles: []
 })
-export class IndexEntidadComponent implements OnInit {
+export class IndexTerceroComponent implements OnInit {
+  @Input("parent_id") parent_id: any;
+
   @ViewChild(DataTableDirective, { static: false })
   dtElement: DataTableDirective;
   dtOptions: DataTables.Settings = {};
@@ -24,18 +26,26 @@ export class IndexEntidadComponent implements OnInit {
   temp = false;
 
   constructor(
-    private dataService: EntidadService,
+    private dataService: TercerosService,
     private toastr: ToastrService,
     private route: Router
   ) {}
 
   ngOnInit() {
-    this.headers = ["Codigo", "Nombre", "Estado"];
+    this.headers = [
+      "Codigo",
+      "No. Documento",
+      "Nombre",
+      "Ciudad de Residencia",
+      "No. Celular",
+      "Correo",
+      "Estado"
+    ];
     this.dtOptions = {
       pagingType: "full_numbers",
       pageLength: 10
     };
-    this.getEntidades();
+    this.getTerceros();
   }
 
   displayToConsole(datatableElement: DataTableDirective): void {
@@ -44,7 +54,7 @@ export class IndexEntidadComponent implements OnInit {
     );
   }
 
-  getEntidades() {
+  getTerceros() {
     this.dataService.sendGetRequest().subscribe((data: any[]) => {
       this.models = data;
       this.buttons = [
@@ -55,7 +65,7 @@ export class IndexEntidadComponent implements OnInit {
           icon: "fas fa-eye",
           style: "2px;",
           href: "#",
-          method: "showEntidad"
+          method: "showTercero"
         },
         {
           id: "update",
@@ -64,16 +74,16 @@ export class IndexEntidadComponent implements OnInit {
           icon: "fas fa-pencil-alt",
           style: "margin:2px;",
           href: "#",
-          method: "editEntidad"
+          method: "editTercero"
         },
         {
           id: "delete",
           label: "",
           class: "btn btn-danger btn-sm",
-          icon: "fas fa-trash-alt",
+          icon: "fas fa-ban",
           style: "margin:2px;",
           href: "#",
-          method: "deleteEntidad"
+          method: "deleteTercero"
         }
       ];
 
@@ -81,11 +91,11 @@ export class IndexEntidadComponent implements OnInit {
     });
   }
 
-  deleteEntidad(id) {
+  deleteTercero(id) {
     if (confirm("Esta seguro de Inactivar el registro?")) {
       this.dataService.sendDeleteRequest(id).subscribe(data => {
         if (data["status"] === 1) {
-          const index = this.models.findIndex(item => item.enad_codi === id);
+          const index = this.models.findIndex(item => item.pers_auxi === id);
           this.models[index].esta_codi = data["model"].esta_codi;
           this.models[index].estaCodi.esta_nomb = "INACTIVO";
           this.toastr.warning(
@@ -98,25 +108,25 @@ export class IndexEntidadComponent implements OnInit {
     }
   }
 
-  showEntidad(id) {
-    this.route.navigate(["entidades/view", id]);
+  showTercero(id) {
+    this.route.navigate(["terceros/view", id]);
     //console.log("showEstado: " + id);
   }
 
-  editEntidad(id) {
-    this.route.navigate(["entidades/update", id]);
+  editTercero(id) {
+    this.route.navigate(["terceros/update", id]);
     //console.log("editEstado: " + id);
   }
 
-  createEntidad() {
-    this.route.navigate(["entidades/create"]);
+  createTercero(id) {
+    this.route.navigate(["terceros/create", id]);
     //console.log("createEstado");
   }
 
   rerender() {
     this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
       dtInstance.destroy();
-      this.getEntidades();
+      this.getTerceros();
     });
   }
 }
