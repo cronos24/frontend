@@ -38,7 +38,12 @@ import { CreateMarcaComponent } from './components/marcas/create-marca/create-ma
 import { UpdateMarcaComponent } from './components/marcas/update-marca/update-marca.component';
 import { ViewMarcaComponent } from './components/marcas/view-marca/view-marca.component';
 
-//This is my case
+import { IndexEntidadComponent } from './components/entidades/index-entidad/index-entidad.component';
+import { CreateEntidadComponent } from './components/entidades/create-entidad/create-entidad.component';
+import { UpdateEntidadComponent } from './components/entidades/update-entidad/update-entidad.component';
+import { ViewEntidadComponent } from './components/entidades/view-entidad/view-entidad.component';
+
+
 const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "about", component: AboutComponent },
@@ -160,6 +165,24 @@ const routes: Routes = [
   {
     path: "marcas/view/:id",
     component: ViewMarcaComponent
+  },
+
+  //Marcas
+  {
+    path: "entidades",
+    component: IndexEntidadComponent
+  },
+  {
+    path: "entidades/create",
+    component: CreateEntidadComponent
+  },
+  {
+    path: "entidades/update/:id",
+    component: UpdateEntidadComponent
+  },
+  {
+    path: "entidades/view/:id",
+    component: ViewEntidadComponent
   },
 ];
 

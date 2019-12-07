@@ -46,11 +46,17 @@ import { FormLogoComponent } from "./components/logos/form-logo/form-logo.compon
 import { ViewLogoComponent } from "./components/logos/view-logo/view-logo.component";
 import { UpdateLogoComponent } from "./components/logos/update-logo/update-logo.component";
 
-import { IndexMarcaComponent } from './components/marcas/index-marca/index-marca.component';
-import { FormMarcaComponent } from './components/marcas/form-marca/form-marca.component';
-import { CreateMarcaComponent } from './components/marcas/create-marca/create-marca.component';
-import { UpdateMarcaComponent } from './components/marcas/update-marca/update-marca.component';
-import { ViewMarcaComponent } from './components/marcas/view-marca/view-marca.component';
+import { IndexMarcaComponent } from "./components/marcas/index-marca/index-marca.component";
+import { FormMarcaComponent } from "./components/marcas/form-marca/form-marca.component";
+import { CreateMarcaComponent } from "./components/marcas/create-marca/create-marca.component";
+import { UpdateMarcaComponent } from "./components/marcas/update-marca/update-marca.component";
+import { ViewMarcaComponent } from "./components/marcas/view-marca/view-marca.component";
+
+import { FormEntidadComponent } from "./components/entidades/form-entidad/form-entidad.component";
+import { CreateEntidadComponent } from "./components/entidades/create-entidad/create-entidad.component";
+import { UpdateEntidadComponent } from "./components/entidades/update-entidad/update-entidad.component";
+import { ViewEntidadComponent } from "./components/entidades/view-entidad/view-entidad.component";
+import { IndexEntidadComponent } from "./components/entidades/index-entidad/index-entidad.component";
 
 @NgModule({
   declarations: [
@@ -102,7 +108,14 @@ import { ViewMarcaComponent } from './components/marcas/view-marca/view-marca.co
     FormMarcaComponent,
     CreateMarcaComponent,
     UpdateMarcaComponent,
-    ViewMarcaComponent
+    ViewMarcaComponent,
+
+    //Entidades
+    IndexEntidadComponent,
+    FormEntidadComponent,
+    CreateEntidadComponent,
+    UpdateEntidadComponent,
+    ViewEntidadComponent
   ],
   imports: [
     BrowserModule,

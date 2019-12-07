@@ -1,16 +1,16 @@
 <div class="container-fluid">
   <div class="card">
     <div class="card-header">
-      <h3>MARCAS</h3>
+      <h3>ENTIDADES</h3>
     </div>
     <div class="card-body">
       <p>
         <button
-          (click)="this.createMarca()"
+          (click)="this.createEntidad()"
           type="button"
           class="btn btn-primary"
         >
-          <i class="fas fa-plus" style="color: white;"></i> Crear Marca
+          <i class="fas fa-plus" style="color: white;"></i> Crear Entidad
         </button>
       </p>
 
@@ -44,16 +44,17 @@
                 >
               </td>
             </tr>
-            <tr *ngFor="let model of this.models" id="{{ model.marc_codi }}">
+            <tr *ngFor="let model of this.models" id="{{ model.enad_codi }}">
               <td style="width: 8%; text-align: center;">
-                {{ model.marc_codi }}
+                {{ model.enad_codi }}
               </td>
-              <td>{{ model.marc_nomb }}</td>
+              <td>{{ model.enad_nomb }}</td>
+              <td>{{ model.estaCodi.esta_nomb }}</td>
 
               <td width="15%">
                 <a
                   *ngFor="let button of this.buttons"
-                  (click)="this[button.method](model.marc_codi)"
+                  (click)="this[button.method](model.enad_codi)"
                   id="{{ button.id }}"
                   class="{{ button.class }}"
                   style="margin: 2px;"
