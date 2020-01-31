@@ -1,1 +1,98 @@
-<p>view-tercero works!</p>
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            <p><button class="btn btn-danger" [routerLink]="['/terceros']"><i class="fas fa-arrow-left"></i>Atras</button></p>
+            <h3>Tercero No. {{model.pers_auxi}}</h3>
+        </div>
+        <div class="card-body">
+
+
+            <div class="table-responsive">
+                <div class="col-md-12">
+                    <table class="table table-striped table-bordered table-sm">
+                        <tbody>
+
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center; width: 20%;">Codigo</th>
+                                <td style="width: 20%;">{{model.pers_auxi}}</td>
+                                <th class="alert alert-success" style="text-align: center; width: 18%;">Naturaleza</th>
+                                <td>{{model.pers_natu}}</td>
+                                <th class="alert alert-success" style="text-align: center; width: 18%;">Tipo de Documento</th>
+                                <td>{{model.pers_tdoc}}</td>
+
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">No. Documento</th>
+                                <td>{{model.pers_ndoc}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Lugar Exp</th>
+                                <td>{{model.pers_lexp}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Digito de verificacion</th>
+                                <td>{{model.pers_dv}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Razon Social</th>
+                                <td colspan="7">{{model.pers_rsoc}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Nombre Comercial</th>
+                                <td colspan="7">{{model.pers_ncom}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center; ">Sexo</th>
+                                <td>{{model.pers_sexo}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Grupo Sanguineo</th>
+                                <td>{{model.pers_grh}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Fecha de Nacimiento</th>
+                                <td colspan="3">{{model.pers_fnac}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">EPS</th>
+                                <td colspan="7">{{model.enadCodi.enad_nomb}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center; ">Ciudad Recidencia</th>
+                                <td>{{model.pers_ciur}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Direccion Recidencia</th>
+                                <td colspan="3">{{model.pers_dirr}}</td>
+
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center; ">Dir. Correspondencia</th>
+                                <td colspan="3">{{model.pers_dirc}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Telefono Fijo</th>
+                                <td colspan="3">{{model.pers_telf}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Celular</th>
+                                <td>{{model.pers_telc}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Email</th>
+                                <td colspan="3">{{model.pers_mail}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Email Alternativo</th>
+                                <td>{{model.pers_malt}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Pagina WEB</th>
+                                <td colspan="3">{{model.pers_pweb}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Ocupacion</th>
+                                <td colspan="7">{{model.ocupCodi.ocup_nomb}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Observacion</th>
+                                <td colspan="7">{{model.pers_obse}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Estado</th>
+                                <td colspan="7">{{model.estaCodi.esta_nomb}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <app-index-logo [parent_id]="id"></app-index-logo>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

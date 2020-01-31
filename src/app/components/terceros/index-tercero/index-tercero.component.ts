@@ -34,11 +34,9 @@ export class IndexTerceroComponent implements OnInit {
   ngOnInit() {
     this.headers = [
       "Codigo",
-      "No. Documento",
+      "# Documento",
       "Nombre",
-      "Ciudad de Residencia",
-      "No. Celular",
-      "Correo",
+      "# Celular",
       "Estado"
     ];
     this.dtOptions = {
@@ -118,8 +116,8 @@ export class IndexTerceroComponent implements OnInit {
     //console.log("editEstado: " + id);
   }
 
-  createTercero(id) {
-    this.route.navigate(["terceros/create", id]);
+  createTercero() {
+    this.route.navigate(["terceros/create"]);
     //console.log("createEstado");
   }
 

@@ -1,4 +1,7 @@
 import { Estado } from "./Estado";
+import { Pais } from "./Pais";
+import { Ocupacion } from './Ocupacion';
+import { Entidad } from './Entidad';
 export class Tercero {
   pers_auxi: number;
   pers_natu: String;
@@ -35,4 +38,7 @@ export class Tercero {
   pais_codi: number;
   sede_codi: number;
   estaCodi: Estado;
+  paisCodi: Pais;
+  ocupCodi: Ocupacion;
+  enadCodi: Entidad;
 }

@@ -10,7 +10,7 @@ export class ParametrosService {
 
   url = environment.server_url + "General/ge-tpargs";
 
-  public sendGetRequest(id) {
+  public sendGetRequest() {
     return this.httpClient.get(this.url);
   }
 }

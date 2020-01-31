@@ -125,6 +125,8 @@ import { ViewTerceroComponent } from './components/terceros/view-tercero/view-te
     FormPaisComponent,
     ViewPaisComponent,
     UpdatePaisComponent,
+
+    //Terceros
     IndexTerceroComponent,
     UpdateTerceroComponent,
     FormTerceroComponent,
