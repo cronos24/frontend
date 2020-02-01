@@ -30,10 +30,28 @@ export class FormTerceroComponent implements OnInit {
     
   }
 
+  changeNatu(value){
+    switch(value) { 
+      case 'J': { 
+        this.model.pers_nom1=null;
+        this.model.pers_nom2=null;
+        this.model.pers_ape1=null;
+        this.model.pers_ape2=null;
+         break; 
+      } 
+      case 'N': { 
+         this.model.pers_rsoc=null;
+         break; 
+      } 
+   } 
+    
+  
+  }
+
   getParams() {
     this.paramsService.sendGetRequest().subscribe(data => {      
       this.parametros = data;
-      console.log(this.parametros);
+      //console.log(this.parametros);
 
       this.Params_tipodoc = this.parametros.filter(function(par){
         return par.parg_nomb == 'TD';

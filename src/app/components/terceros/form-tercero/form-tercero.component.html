@@ -32,16 +32,16 @@
 
     <div class="form-row">
 
-        <div class="form-group col-md-8">
+        <div class="form-group col-md-6">
             <label for="" class="control-label">Lugar de Expedición</label>
             <select class="form-control" [(ngModel)]="model.pers_lexp" name="pers_lexp" #pers_lexp="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pers_lexp.invalid }">
                           <option *ngFor="let ciud of ciudades" value="{{ciud.ciud_nomb}}">{{ ciud.ciud_nomb }}</option>                          
-                      </select>           
+                      </select>
         </div>
 
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
             <label for="" class="control-label">Naturaleza</label>
-            <select class="form-control" [(ngModel)]="model.pers_natu" name="pers_natu" #pers_natu="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pers_natu.invalid }" required>
+            <select class="form-control" [(ngModel)]="model.pers_natu" name="pers_natu" #pers_natu="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pers_natu.invalid }" (change)="changeNatu(pers_natu.value)" required>
                         <option value="N">Natural</option>
                         <option value="J">Juridico</option>                        
                       </select>
@@ -51,88 +51,199 @@
                 </div>
             </div>
         </div>
-      
+
+        
+
     </div>
 
-    <div class="form-row">
-        <div class="form-group col-md-12">
-            <label for="" class="control-label">Nombre</label>
-            <input type="text" class="form-control" [(ngModel)]="model.cias_rsoc" name="cias_rsoc" #cias_rsoc="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cias_rsoc.invalid }" required />
-            <div *ngIf="f.submitted && cias_rsoc.invalid" class="invalid-feedback">
-                <div *ngIf="cias_rsoc.errors.required">
-                    "Nombre" es obligatorio
+    <div class="form-row" *ngIf="model.pers_natu == 'N'">
+
+        <div class="form-group col-md-6">
+            <label for="" class="control-label">Primer Nombre</label>
+            <input type="text" class="form-control" [(ngModel)]="model.pers_nom1" name="pers_nom1" #pers_nom1="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pers_nom1.invalid }" [required]="model.pers_natu == 'N'" />
+            <div *ngIf="f.submitted && pers_nom1.invalid" class="invalid-feedback">
+                <div *ngIf="pers_nom1.errors.required">
+                    "Primer Nombre" es obligatorio
                 </div>
             </div>
         </div>
 
+        <div class="form-group col-md-6">
+            <label for="" class="control-label">Segundo Nombre</label>
+            <input type="text" class="form-control" [(ngModel)]="model.pers_nom2" name="pers_nom2" #pers_nom2="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pers_nom2.invalid }" />
+            <div *ngIf="f.submitted && pers_nom2.invalid" class="invalid-feedback">
+                <div *ngIf="pers_nom2.errors.required">
+                    "Segundo Nombre" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="" class="control-label">Primer Apellido</label>
+            <input type="text" class="form-control" [(ngModel)]="model.pers_ape1" name="pers_ape1" #pers_ape1="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pers_ape1.invalid }" [required]="model.pers_natu == 'N'" />
+            <div *ngIf="f.submitted && pers_ape1.invalid" class="invalid-feedback">
+                <div *ngIf="pers_ape1.errors.required">
+                    "Primer Apellido" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="" class="control-label">Segundo Apellido</label>
+            <input type="text" class="form-control" [(ngModel)]="model.pers_ape2" name="pers_ape2" #pers_ape2="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pers_ape2.invalid }" />
+            <div *ngIf="f.submitted && pers_ape2.invalid" class="invalid-feedback">
+                <div *ngIf="pers_ape2.errors.required">
+                    "Segundo Apellido" es obligatorio
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="form-row" *ngIf="model.pers_natu == 'J'">
+
+        <div class="form-group col-md-12">
+            <label for="" class="control-label">Razon Social</label>
+            <input type="text" class="form-control" [(ngModel)]="model.pers_rsoc" name="pers_rsoc" #pers_rsoc="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pers_rsoc.invalid }" [required]="model.pers_natu == 'J'" />
+            <div *ngIf="f.submitted && pers_rsoc.invalid" class="invalid-feedback">
+                <div *ngIf="pers_rsoc.errors.required">
+                    "Razon Social" es obligatorio
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+
+        <div class="form-group col-md-12">
+            <label for="" class="control-label">Nombre Comercia</label>
+            <input type="text" class="form-control" [(ngModel)]="model.pers_ncom" name="pers_ncom" #pers_ncom="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pers_ncom.invalid }"  />
+            <div *ngIf="f.submitted && pers_ncom.invalid" class="invalid-feedback">
+                <div *ngIf="pers_ncom.errors.required">
+                    "Nombre Comercia" es obligatorio
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="form-row">
         <div class="form-group col-md-4">
-            <label for="" class="control-label">Direccion</label>
-            <input type="text" class="form-control" [(ngModel)]="model.cias_dire" name="cias_dire" #cias_dire="ngModel" />
+            <label for="" class="control-label">Sexo</label>
+            <select class="form-control" [(ngModel)]="model.pers_sexo" name="pers_sexo" #pers_sexo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pers_sexo.invalid }" required>
+                          <option *ngFor="let sexo of Params_sexo" value="{{sexo.parg_tdoc}}">{{ sexo.parg_tdoc }}</option>                          
+                      </select>
+            <div *ngIf="f.submitted && pers_sexo.invalid" class="invalid-feedback">
+                <div *ngIf="pers_sexo.errors.required">
+                    "Sexo" no puede ir vacio
+                </div>
+            </div>
+        </div>
 
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Fecha de Nacimiento</label>
+            <input type="date" class="form-control" [(ngModel)]="model.pers_fnac" name="pers_fnac" #pers_fnac="ngModel" />
+        </div>
+
+        
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Grupo Sanguineo</label>
+            <select class="form-control" [(ngModel)]="model.pers_grh" name="pers_grh" #pers_grh="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pers_grh.invalid }" required>
+                          <option *ngFor="let gsan of Params_gruposan" value="{{gsan.parg_tdoc}}">{{ gsan.parg_tdoc }}</option>                          
+                      </select>
+            <div *ngIf="f.submitted && pers_grh.invalid" class="invalid-feedback">
+                <div *ngIf="pers_grh.errors.required">
+                    "Grupo Sanguineo" es obligatorio
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Pais de Residencia</label>
+            <select class="form-control" [(ngModel)]="model.pais_codi" name="pais_codi" #pais_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pais_codi.invalid }" required>
+                          <option *ngFor="let pais of paises" value="{{pais.pais_codi}}">{{ pais.pais_nombre }}</option>                          
+                      </select>                      
+            <div *ngIf="f.submitted && pais_codi.invalid" class="invalid-feedback">
+                <div *ngIf="pais_codi.errors.required">
+                    "Naturaleza" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Ciudad de Residencia</label>
+            <select class="form-control" [(ngModel)]="model.pers_ciur" name="pers_ciur" #pers_ciur="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pers_ciur.invalid }">
+                          <option *ngFor="let ciud of ciudades" value="{{ciud.ciud_nomb}}">{{ ciud.ciud_nomb }}</option>                          
+                      </select>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Direccion de Residencia</label>
+            <input type="text" class="form-control" [(ngModel)]="model.pers_dirr" name="pers_dirr" #pers_dirr="ngModel" />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Direccion de Correspondencia</label>
+            <input type="text" class="form-control" [(ngModel)]="model.pers_dirc" name="pers_dirc" #pers_dirc="ngModel" />
         </div>
 
         <div class="form-group col-md-4">
             <label for="" class="control-label">Telefono</label>
-            <input type="text" class="form-control" [(ngModel)]="model.cias_tels" name="cias_tels" #cias_tels="ngModel" />
+            <input type="text" class="form-control" [(ngModel)]="model.pers_telf" name="pers_telf" #pers_telf="ngModel" />
         </div>
 
         <div class="form-group col-md-4">
             <label for="" class="control-label">Celular</label>
-            <input type="text" class="form-control" [(ngModel)]="model.cias_celu" name="cias_celu" #cias_celu="ngModel" />
+            <input type="text" class="form-control" [(ngModel)]="model.pers_telc" name="pers_telc" #pers_telc="ngModel" />
         </div>
     </div>
 
     <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="" class="control-label">Correo</label>
-            <input type="email" class="form-control center-ele" [(ngModel)]="model.cias_mail" name="cias_mail" #cias_mail="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cias_mail.invalid }" email />
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">E-mail</label>
+            <input type="text" class="form-control" [(ngModel)]="model.pers_mail" name="pers_mail" #pers_mail="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pers_mail.invalid }" email />
+            <div *ngIf="f.submitted && pers_mail.invalid" class="invalid-feedback">
+                <div *ngIf="pers_mail.errors.email">la Direccion de Correo es Invalida </div>
+            </div>           
+            
+        </div>
 
-            <div *ngIf="f.submitted && cias_mail.invalid" class="invalid-feedback">
-                <div *ngIf="cias_mail.errors.email">la Direccion de Correo es Invalida </div>
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">E-mail Alternativo</label>
+            <input type="text" class="form-control" [(ngModel)]="model.pers_malt" name="pers_malt" #pers_malt="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pers_malt.invalid }" email />
+            <div *ngIf="f.submitted && pers_malt.invalid" class="invalid-feedback">
+                <div *ngIf="pers_malt.errors.email">la Direccion de Correo es Invalida </div>
             </div>
         </div>
 
-        <div class="form-group col-md-6">
-            <label for="" class="control-label">Web</label>
-            <input type="text" class="form-control" [(ngModel)]="model.cias_web" name="cias_web" #cias_web="ngModel" />
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Ocupación</label>
+            <select class="form-control" [(ngModel)]="model.ocup_codi" name="ocup_codi" #ocup_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ocup_codi.invalid }">
+                    <option *ngFor="let ocup of ocupaciones" value="{{ocup.ocup_codi}}">{{ ocup.ocup_nomb }}</option>                          
+            </select>
         </div>
     </div>
 
     <div class="form-row">
-        <div class="form-group col-md-4">
-            <label for="" class="control-label">Slogan</label>
-            <input type="text" class="form-control" [(ngModel)]="model.cias_slog" name="cias_slog" #cias_slog="ngModel" />
 
-        </div>
-
-        <div class="form-group col-md-4">
-            <label for="" class="control-label">Notificaciones</label>
-            <select class="form-control" [(ngModel)]="model.cias_notf" name="cias_notf" #cias_notf="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cias_notf.invalid }" required>
-                          <option value="S">Si</option>
-                          <option value="N">No</option>
+        <div class="form-group col-md-6">
+            <label for="" class="control-label">Entidad de Salud</label>
+            <select class="form-control" [(ngModel)]="model.enad_codi" name="enad_codi" #enad_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && enad_codi.invalid }">
+                          <option *ngFor="let ent of entidades" value="{{ent.enad_codi}}">{{ ent.enad_nomb }}</option>                          
                       </select>
-            <div *ngIf="f.submitted && cias_notf.invalid" class="invalid-feedback">
-                <div *ngIf="cias_notf.errors.required">
-                    "Notificaciones" es obligatorio
-                </div>
-            </div>
         </div>
 
-        <div class="form-group col-md-4">
-            <label for="" class="control-label">Tipo</label>
-            <select class="form-control" [(ngModel)]="model.cias_tipo" name="cias_tipo" #cias_tipo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cias_tipo.invalid }" required>
-                        <option value="1">Principal</option>
-                        <option value="2">Sucursal</option>
-                    </select>
-            <div *ngIf="f.submitted && cias_tipo.invalid" class="invalid-feedback">
-                <div *ngIf="cias_tipo.errors.required">
-                    "Tipo" es obligatorio
-                </div>
-            </div>
+        <div class="form-group col-md-6">
+            <label for="" class="control-label">Pagina Web</label>
+            <input type="text" class="form-control" [(ngModel)]="model.pers_pweb" name="pers_pweb" #pers_pweb="ngModel" />
         </div>
+
+        
     </div>
 
     <div class="text-right">

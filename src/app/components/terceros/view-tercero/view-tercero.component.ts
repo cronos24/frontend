@@ -85,7 +85,7 @@ export class ViewTerceroComponent implements OnInit {
 
   view(id) {
     this.dataService.sendShowRequest(id).subscribe(data => {
-      console.log(data[0]);
+      //console.log(data[0]);
       this.model = data[0];
     });
   }

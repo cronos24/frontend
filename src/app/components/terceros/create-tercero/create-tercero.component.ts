@@ -43,7 +43,7 @@ export class CreateTerceroComponent implements OnInit {
     username: "",
     esta_usua: "",
     pais_codi: null,
-    sede_codi: null,
+    sede_codi: 1,
     esta_codi: "",
     estaCodi: {
       esta_codi: null,
