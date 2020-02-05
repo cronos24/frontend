@@ -45,6 +45,8 @@ export class CreateTerceroComponent implements OnInit {
     pais_codi: null,
     sede_codi: 1,
     esta_codi: "",
+    pers_codp: "000000",
+    pers_regi: null,
     estaCodi: {
       esta_codi: null,
       esta_tipo: "",

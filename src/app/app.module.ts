@@ -71,6 +71,19 @@ import { CreateVipeComponent } from './components/terceros-vinculaciones/create-
 import { UpdateVipeComponent } from './components/terceros-vinculaciones/update-vipe/update-vipe.component';
 import { FormVipeComponent } from './components/terceros-vinculaciones/form-vipe/form-vipe.component';
 
+import { CreatePetrComponent } from './components/terceros-impuestos/create-petr/create-petr.component';
+import { IndexPetrComponent } from './components/terceros-impuestos/index-petr/index-petr.component';
+import { UpdatePetrComponent } from './components/terceros-impuestos/update-petr/update-petr.component';
+import { FormPetrComponent } from './components/terceros-impuestos/form-petr/form-petr.component';
+import { ViewPetrComponent } from './components/terceros-impuestos/view-petr/view-petr.component';
+
+import { FormImpuestosComponent } from './components/impuestos/form-impuestos/form-impuestos.component';
+import { CreateImpuestosComponent } from './components/impuestos/create-impuestos/create-impuestos.component';
+import { UpdateImpuestosComponent } from './components/impuestos/update-impuestos/update-impuestos.component';
+import { IndexImpuestosComponent } from './components/impuestos/index-impuestos/index-impuestos.component';
+import { ViewImpuestosComponent } from './components/impuestos/view-impuestos/view-impuestos.component';
+
+
 
 @NgModule({
   declarations: [
@@ -147,7 +160,22 @@ import { FormVipeComponent } from './components/terceros-vinculaciones/form-vipe
     CreateVipeComponent,
     UpdateVipeComponent,
     FormVipeComponent,
- 
+
+    //TercerosImpuestos
+    CreatePetrComponent,
+    IndexPetrComponent,
+    UpdatePetrComponent,
+    FormPetrComponent,
+    ViewPetrComponent,
+
+    //Impuestos
+    FormImpuestosComponent,
+    CreateImpuestosComponent,
+    UpdateImpuestosComponent,
+    IndexImpuestosComponent,
+    ViewImpuestosComponent,
+   
+    
 
   ],
   imports: [

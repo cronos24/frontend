@@ -32,14 +32,14 @@
 
     <div class="form-row">
 
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
             <label for="" class="control-label">Lugar de Expedición</label>
             <select class="form-control" [(ngModel)]="model.pers_lexp" name="pers_lexp" #pers_lexp="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pers_lexp.invalid }">
                           <option *ngFor="let ciud of ciudades" value="{{ciud.ciud_nomb}}">{{ ciud.ciud_nomb }}</option>                          
                       </select>
         </div>
 
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
             <label for="" class="control-label">Naturaleza</label>
             <select class="form-control" [(ngModel)]="model.pers_natu" name="pers_natu" #pers_natu="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pers_natu.invalid }" (change)="changeNatu(pers_natu.value)" required>
                         <option value="N">Natural</option>
@@ -52,7 +52,17 @@
             </div>
         </div>
 
-
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Regimen Fiscal</label>
+            <select class="form-control" [(ngModel)]="model.pers_regi" name="pers_regi" #pers_regi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pers_regi.invalid }" (change)="changeNatu(pers_regi.value)" required>
+                <option *ngFor="let reg of Params_regimen" value="{{reg.parg_tdoc}}">{{ reg.parg_tdoc+'-'+reg.parg_obse }}</option>
+                      </select>
+            <div *ngIf="f.submitted && pers_regi.invalid" class="invalid-feedback">
+                <div *ngIf="pers_regi.errors.required">
+                    "Regimen Fiscal" es obligatorio
+                </div>
+            </div>
+        </div>
 
     </div>
 
@@ -187,23 +197,40 @@
     </div>
 
     <div class="form-row">
+
         <div class="form-group col-md-4">
-            <label for="" class="control-label">Direccion de Correspondencia</label>
-            <input type="text" class="form-control" [(ngModel)]="model.pers_dirc" name="pers_dirc" #pers_dirc="ngModel" />
+            <label for="" class="control-label">Direccion de Fiscal</label>
+            <input type="text" class="form-control" [(ngModel)]="model.pers_dirc" name="pers_dirc" #pers_dirc="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pers_dirc.invalid }" required/>
+            <div *ngIf="f.submitted && pers_dirc.invalid" class="invalid-feedback">
+                <div *ngIf="pers_dirc.errors.required">
+                    "Direccion de Fiscal" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Codigo Postal</label>
+            <input type="text" class="form-control" [(ngModel)]="model.pers_codp" name="pers_codp" #pers_codp="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pers_codp.invalid }" required minlength="6" maxlength="10" />
+            <div *ngIf="f.submitted && pers_codp.invalid" class="invalid-feedback">
+                <div *ngIf="pers_codp.errors.required">
+                    "Codigo Postal" es obligatorio
+                </div>
+                <div *ngIf="pers_codp.errors.minlength">"Codigo Postal" debe tener como minimo 6 caracteres</div>
+                <div *ngIf="pers_codp.errors.maxlength">"Codigo Postal" debe tener como maximo 10 caracteres</div>
+            </div>
         </div>
 
         <div class="form-group col-md-4">
             <label for="" class="control-label">Telefono</label>
             <input type="text" class="form-control" [(ngModel)]="model.pers_telf" name="pers_telf" #pers_telf="ngModel" />
         </div>
+    </div>
 
+    <div class="form-row">
         <div class="form-group col-md-4">
             <label for="" class="control-label">Celular</label>
             <input type="text" class="form-control" [(ngModel)]="model.pers_telc" name="pers_telc" #pers_telc="ngModel" />
         </div>
-    </div>
-
-    <div class="form-row">
         <div class="form-group col-md-4">
             <label for="" class="control-label">E-mail</label>
             <input type="text" class="form-control" [(ngModel)]="model.pers_mail" name="pers_mail" #pers_mail="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pers_mail.invalid }" email />
@@ -220,7 +247,9 @@
                 <div *ngIf="pers_malt.errors.email">la Direccion de Correo es Invalida </div>
             </div>
         </div>
+    </div>
 
+    <div class="form-row">
         <div class="form-group col-md-4">
             <label for="" class="control-label">Ocupación</label>
             <select class="form-control" [(ngModel)]="model.ocup_codi" name="ocup_codi" #ocup_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ocup_codi.invalid }" required>
@@ -232,11 +261,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="form-row">
-
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
             <label for="" class="control-label">Entidad de Salud</label>
             <select class="form-control" [(ngModel)]="model.enad_codi" name="enad_codi" #enad_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && enad_codi.invalid }" required>
                           <option *ngFor="let ent of entidades" value="{{ent.enad_codi}}">{{ ent.enad_nomb }}</option>                  
@@ -248,7 +273,7 @@
             </div>
         </div>
 
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
             <label for="" class="control-label">Pagina Web</label>
             <input type="text" class="form-control" [(ngModel)]="model.pers_pweb" name="pers_pweb" #pers_pweb="ngModel" />
         </div>

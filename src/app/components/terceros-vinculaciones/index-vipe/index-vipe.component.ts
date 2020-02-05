@@ -49,7 +49,6 @@ export class IndexVipeComponent implements OnInit {
   getVipe() {
     this.dataService.sendGetRequest(this.parent_id).subscribe((data: any[]) => {
       this.models = data;
-      console.log(this.models);
       this.buttons = [
         // {
         //   id: "view",

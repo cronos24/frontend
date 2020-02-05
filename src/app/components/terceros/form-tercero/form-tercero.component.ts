@@ -22,6 +22,7 @@ export class FormTerceroComponent implements OnInit {
   entidades: any;
   ciudades: any;
   paises: Object;
+  Params_regimen: any;
 
   constructor(private paramsService: ParametrosService, private ocupacionesService: OcupacionService, private EntidadesService: EntidadService,private CiudadesService: CiudadService,private PaisesService: PaisService) { }
 
@@ -64,6 +65,11 @@ export class FormTerceroComponent implements OnInit {
       this.Params_sexo = this.parametros.filter(function(par){
         return par.parg_nomb == 'SX';
       });
+
+      this.Params_regimen = this.parametros.filter(function(par){
+        return par.parg_nomb == 'RF';
+      });
+
       });
 
       this.ocupacionesService.sendGetRequest().subscribe(data => {      

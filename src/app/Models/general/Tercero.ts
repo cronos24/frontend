@@ -31,6 +31,7 @@ export class Tercero {
   pers_pweb: String;
   pers_obse: Text;
   esta_codi: String;
+  pers_codp: String;
   pers_fmod: Date;
   pers_freg: Date;
   username: String;
@@ -41,4 +42,5 @@ export class Tercero {
   paisCodi: Pais;
   ocupCodi: Ocupacion;
   enadCodi: Entidad;
+  pers_regi: number;
 }

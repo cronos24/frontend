@@ -13,8 +13,8 @@
                         <tbody>
 
                             <tr>
-                                <th class="alert alert-success" style="text-align: center; width: 20%;">Codigo</th>
-                                <td style="width: 20%;">{{model.pers_auxi}}</td>
+                                <th class="alert alert-success" style="text-align: center; width: 16%;">Codigo</th>
+                                <td style="width: 24%;">{{model.pers_auxi}}</td>
                                 <th class="alert alert-success" style="text-align: center; width: 18%;">Naturaleza</th>
                                 <td>{{model.pers_natu}}</td>
                                 <th class="alert alert-success" style="text-align: center; width: 18%;">Tipo de Documento</th>
@@ -31,7 +31,9 @@
                             </tr>
                             <tr>
                                 <th class="alert alert-success" style="text-align: center;">Razon Social</th>
-                                <td colspan="7">{{model.pers_rsoc}}</td>
+                                <td colspan="3">{{model.pers_rsoc}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Regimen Fiscal</th>
+                                <td>{{model.pers_regi}}</td>
                             </tr>
                             <tr>
                                 <th class="alert alert-success" style="text-align: center;">Nombre Comercial</th>
@@ -57,8 +59,12 @@
 
                             </tr>
                             <tr>
-                                <th class="alert alert-success" style="text-align: center; ">Dir. Correspondencia</th>
-                                <td colspan="3">{{model.pers_dirc}}</td>
+                                <th class="alert alert-success" style="text-align: center; ">Dir. Fiscal</th>
+                                <td colspan="5">{{model.pers_dirc}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Cod. Postal</th>
+                                <td>{{model.pers_codp}}</td>
                                 <th class="alert alert-success" style="text-align: center;">Telefono Fijo</th>
                                 <td colspan="3">{{model.pers_telf}}</td>
                             </tr>
@@ -90,6 +96,7 @@
                     </table>
 
                     <app-index-vipe [parent_id]="id"></app-index-vipe>
+                    <app-index-petr [parent_id]="id"></app-index-petr>
                 </div>
 
             </div>

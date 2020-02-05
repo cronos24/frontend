@@ -52,6 +52,15 @@ import { CreateVipeComponent } from "./components/terceros-vinculaciones/create-
 import { ViewVipeComponent } from "./components/terceros-vinculaciones/view-vipe/view-vipe.component";
 import { UpdateVipeComponent } from "./components/terceros-vinculaciones/update-vipe/update-vipe.component";
 
+import { CreatePetrComponent } from "./components/terceros-impuestos/create-petr/create-petr.component";
+import { ViewPetrComponent } from "./components/terceros-impuestos/view-petr/view-petr.component";
+import { UpdatePetrComponent } from "./components/terceros-impuestos/update-petr/update-petr.component";
+
+import { IndexImpuestosComponent } from "./components/impuestos/index-impuestos/index-impuestos.component";
+import { CreateImpuestosComponent } from "./components/impuestos/create-impuestos/create-impuestos.component";
+import { UpdateImpuestosComponent } from "./components/impuestos/update-impuestos/update-impuestos.component";
+import { ViewImpuestosComponent } from "./components/impuestos/view-impuestos/view-impuestos.component";
+
 const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "about", component: AboutComponent },
@@ -90,6 +99,24 @@ const routes: Routes = [
   {
     path: "paises/view/:id",
     component: ViewPaisComponent
+  },
+
+  //Impuestos
+  {
+    path: "impuestos",
+    component: IndexImpuestosComponent
+  },
+  {
+    path: "impuestos/create",
+    component: CreateImpuestosComponent
+  },
+  {
+    path: "impuestos/update/:id",
+    component: UpdateImpuestosComponent
+  },
+  {
+    path: "impuestos/view/:id",
+    component: ViewImpuestosComponent
   },
 
   //Empresa
@@ -221,6 +248,19 @@ const routes: Routes = [
   {
     path: "terceros-vinculaciones/update/:id",
     component: UpdateVipeComponent
+  },
+  //Terceros-Impuestos
+  {
+    path: "terceros-impuestos/create/:id",
+    component: CreatePetrComponent
+  },
+  {
+    path: "terceros-impuestos/view/:id",
+    component: ViewPetrComponent
+  },
+  {
+    path: "terceros-impuestos/update/:id",
+    component: UpdatePetrComponent
   },
 ];
 
