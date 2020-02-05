@@ -58,11 +58,19 @@ import { CreatePaisComponent } from "./components/paises/create-pais/create-pais
 import { FormPaisComponent } from "./components/paises/form-pais/form-pais.component";
 import { ViewPaisComponent } from "./components/paises/view-pais/view-pais.component";
 import { UpdatePaisComponent } from "./components/paises/update-pais/update-pais.component";
+
 import { IndexTerceroComponent } from './components/terceros/index-tercero/index-tercero.component';
 import { UpdateTerceroComponent } from './components/terceros/update-tercero/update-tercero.component';
 import { FormTerceroComponent } from './components/terceros/form-tercero/form-tercero.component';
 import { CreateTerceroComponent } from './components/terceros/create-tercero/create-tercero.component';
 import { ViewTerceroComponent } from './components/terceros/view-tercero/view-tercero.component';
+
+import { IndexVipeComponent } from './components/terceros-vinculaciones/index-vipe/index-vipe.component';
+import { ViewVipeComponent } from './components/terceros-vinculaciones/view-vipe/view-vipe.component';
+import { CreateVipeComponent } from './components/terceros-vinculaciones/create-vipe/create-vipe.component';
+import { UpdateVipeComponent } from './components/terceros-vinculaciones/update-vipe/update-vipe.component';
+import { FormVipeComponent } from './components/terceros-vinculaciones/form-vipe/form-vipe.component';
+
 
 @NgModule({
   declarations: [
@@ -131,7 +139,16 @@ import { ViewTerceroComponent } from './components/terceros/view-tercero/view-te
     UpdateTerceroComponent,
     FormTerceroComponent,
     CreateTerceroComponent,
-    ViewTerceroComponent
+    ViewTerceroComponent,
+
+    //TercerosVinculaciones
+    IndexVipeComponent,
+    ViewVipeComponent,
+    CreateVipeComponent,
+    UpdateVipeComponent,
+    FormVipeComponent,
+ 
+
   ],
   imports: [
     BrowserModule,

@@ -1,15 +1,16 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
+import { TerceroVinculacion } from "../Models/general/TerceroVinculacion";
 import { HttpClient } from "@angular/common/http";
 import { environment } from "src/environments/environment";
-import { Logo } from "../Models/general/Logo";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
-export class LogoService {
-  constructor(private httpClient: HttpClient) {}
+export class TercerosVinculacionesService {
 
-  url = environment.server_url + "General/ge-tlogo";
+  constructor(private httpClient: HttpClient) { }
+
+  url = environment.server_url + "General/ge-tvipe";
 
   public sendGetRequest(id) {
     return this.httpClient.get(this.url+ "/index?id=" + id);
@@ -23,11 +24,11 @@ export class LogoService {
     return this.httpClient.delete(this.url + "/borrar?id=" + id);
   }
 
-  public sendPostRequest(model: Logo, id) {
+  public sendPostRequest(model: TerceroVinculacion, id) {
     return this.httpClient.post(this.url + "/crear?id=" + id, model);
   }
 
-  public sendPutRequest(model: Logo, id) {
+  public sendPutRequest(model: TerceroVinculacion, id) {
     return this.httpClient.put(this.url + "/editar?id=" + id, model);
   }
 }

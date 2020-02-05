@@ -48,6 +48,10 @@ import { CreateTerceroComponent } from "./components/terceros/create-tercero/cre
 import { UpdateTerceroComponent } from "./components/terceros/update-tercero/update-tercero.component";
 import { ViewTerceroComponent } from "./components/terceros/view-tercero/view-tercero.component";
 
+import { CreateVipeComponent } from "./components/terceros-vinculaciones/create-vipe/create-vipe.component";
+import { ViewVipeComponent } from "./components/terceros-vinculaciones/view-vipe/view-vipe.component";
+import { UpdateVipeComponent } from "./components/terceros-vinculaciones/update-vipe/update-vipe.component";
+
 const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "about", component: AboutComponent },
@@ -204,7 +208,20 @@ const routes: Routes = [
   {
     path: "terceros/view/:id",
     component: ViewTerceroComponent
-  }
+  },
+  //Terceros-Vinculaciones
+  {
+    path: "terceros-vinculaciones/create/:id",
+    component: CreateVipeComponent
+  },
+  {
+    path: "terceros-vinculaciones/view/:id",
+    component: ViewVipeComponent
+  },
+  {
+    path: "terceros-vinculaciones/update/:id",
+    component: UpdateVipeComponent
+  },
 ];
 
 @NgModule({

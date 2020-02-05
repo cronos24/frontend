@@ -1,16 +1,16 @@
-import { Component, OnInit, Input, ViewChild } from "@angular/core";
-import { LogoService } from "src/app/services/logo.service";
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { DataTableDirective } from "angular-datatables";
 import { Subject } from "rxjs";
 import { ToastrService } from "ngx-toastr";
 import { Router } from "@angular/router";
+import { TercerosVinculacionesService } from 'src/app/services/terceros-vinculaciones.service';
 
 @Component({
-  selector: "app-index-logo",
-  templateUrl: "./index-logo.component.html",
+  selector: 'app-index-vipe',
+  templateUrl: './index-vipe.component.html',
   styles: []
 })
-export class IndexLogoComponent implements OnInit {
+export class IndexVipeComponent implements OnInit {
   @Input("parent_id") parent_id: any;
 
   @ViewChild(DataTableDirective, { static: false })
@@ -26,18 +26,18 @@ export class IndexLogoComponent implements OnInit {
   temp = false;
 
   constructor(
-    private dataService: LogoService,
+    private dataService: TercerosVinculacionesService,
     private toastr: ToastrService,
     private route: Router
   ) {}
 
   ngOnInit() {
-    this.headers = ["Codigo", "Tipo", "Imagen", "Estado"];
+    this.headers = ["#", "Vinculacion"];
     this.dtOptions = {
       pagingType: "full_numbers",
       pageLength: 10
     };
-    this.getLogos();
+    this.getVipe();
   }
 
   displayToConsole(datatableElement: DataTableDirective): void {
@@ -46,19 +46,20 @@ export class IndexLogoComponent implements OnInit {
     );
   }
 
-  getLogos() {
+  getVipe() {
     this.dataService.sendGetRequest(this.parent_id).subscribe((data: any[]) => {
       this.models = data;
+      console.log(this.models);
       this.buttons = [
-        {
-          id: "view",
-          label: "",
-          class: "btn btn-success btn-sm",
-          icon: "fas fa-eye",
-          style: "2px;",
-          href: "#",
-          method: "showLogo"
-        },
+        // {
+        //   id: "view",
+        //   label: "",
+        //   class: "btn btn-success btn-sm",
+        //   icon: "fas fa-eye",
+        //   style: "2px;",
+        //   href: "#",
+        //   method: "showVipe"
+        // },
         {
           id: "update",
           label: "",
@@ -66,7 +67,7 @@ export class IndexLogoComponent implements OnInit {
           icon: "fas fa-pencil-alt",
           style: "margin:2px;",
           href: "#",
-          method: "editLogo"
+          method: "editVipe"
         },
         {
           id: "delete",
@@ -75,7 +76,7 @@ export class IndexLogoComponent implements OnInit {
           icon: "fas fa-ban",
           style: "margin:2px;",
           href: "#",
-          method: "deleteLogo"
+          method: "deleteVipe"
         }
       ];
 
@@ -83,42 +84,46 @@ export class IndexLogoComponent implements OnInit {
     });
   }
 
-  deleteLogo(id) {
-    if (confirm("Esta seguro de Inactivar el registro?")) {
+  deleteVipe(id) {
+    if (confirm("Esta seguro de Borrar el registro?")) {
       this.dataService.sendDeleteRequest(id).subscribe(data => {
-        if (data["status"] === 1) {
-          const index = this.models.findIndex(item => item.logo_codi === id);
-          this.models[index].esta_codi = data["model"].esta_codi;
-          this.models[index].estaCodi.esta_nomb = "INACTIVO";
+        //console.log(data);
+        if (data === 1) {
+          const index = this.models.findIndex(item => item.vipe_codi === id);
+          this.models.splice(index, 1);
+          this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+            dtInstance.row("#" + id).remove();
+            dtInstance.draw();
+          });
           this.toastr.warning(
-            "<i class='fas fa-exclamation-triangle fa-2x'></i> Registro Inactivado con Exito!!!"
+            "<i class='fas fa-exclamation-triangle fa-2x'></i> Registro Borrado con Exito!!!"
           );
         } else {
-          this.toastr.error("No se puede Inactivar el registro.");
+          this.toastr.error("No se puede borrar el registro.");
         }
       });
     }
   }
 
-  showLogo(id) {
-    this.route.navigate(["logos/view", id]);
+  showVipe(id) {
+    this.route.navigate(["terceros-vinculaciones/view", id]);
     //console.log("showEstado: " + id);
   }
 
-  editLogo(id) {
-    this.route.navigate(["logos/update", id]);
+  editVipe(id) {
+    this.route.navigate(["terceros-vinculaciones/update", id]);
     //console.log("editEstado: " + id);
   }
 
-  createLogo(id) {
-    this.route.navigate(["logos/create", id]);
+  createVipe(id) {
+    this.route.navigate(["terceros-vinculaciones/create", id]);
     //console.log("createEstado");
   }
 
   rerender() {
     this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
       dtInstance.destroy();
-      this.getLogos();
+      this.getVipe();
     });
   }
 }
