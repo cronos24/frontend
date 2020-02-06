@@ -1,1 +1,241 @@
-<p>form-producto works!</p>
+<form name="form" (ngSubmit)="f.form.valid && Save()" #f="ngForm" novalidate>
+    <div class="form-row">
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Grupo</label>
+            <select class="form-control" [(ngModel)]="model.grup_codi" name="grup_codi" #grup_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && grup_codi.invalid }" required>
+                          <option *ngFor="let grp of grupos" value="{{grp.grup_codi}}">{{ grp.grup_nomb }}</option>                          
+                      </select>
+            <div *ngIf="f.submitted && grup_codi.invalid" class="invalid-feedback">
+                <div *ngIf="grup_codi.errors.required">
+                    "Grupo" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Tipo</label>
+            <select class="form-control" [(ngModel)]="model.prod_tipo" name="prod_tipo" #prod_tipo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_tipo.invalid }" (change)="changeNatu(prod_tipo.value)" required>
+                    <option *ngFor="let tip of Params_tipo_prod" value="{{tip.parg_tdoc}}">{{ tip.parg_obse }}</option>                             
+                      </select>
+            <div *ngIf="f.submitted && prod_tipo.invalid" class="invalid-feedback">
+                <div *ngIf="prod_tipo.errors.required">
+                    "Tipo" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Unidad de Medida</label>
+            <select class="form-control" [(ngModel)]="model.umed_codi" name="umed_codi" #umed_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && umed_codi.invalid }" required>
+                          <option *ngFor="let ume of unidades" value="{{ume.umed_codi}}">{{ ume.umed_nomb }}</option>                          
+                      </select>
+            <div *ngIf="f.submitted && umed_codi.invalid" class="invalid-feedback">
+                <div *ngIf="umed_codi.errors.required">
+                    "Unidad de Medida" es obligatorio
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-row">
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Codigo de Inventario</label>
+            <input type="text" class="form-control" [(ngModel)]="model.prod_codm" name="prod_codm" #prod_codm="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_codm.invalid }" />
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Serial</label>
+            <input type="text" class="form-control" [(ngModel)]="model.prod_cods" name="prod_cods" #prod_cods="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_cods.invalid }" />
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Referencia</label>
+            <input type="text" class="form-control" [(ngModel)]="model.prod_refe" name="prod_refe" #prod_refe="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_refe.invalid }" />
+        </div>
+
+        <div class="form-group col-md-12">
+            <label for="" class="control-label">Descripcion</label>
+            <input type="text" class="form-control" [(ngModel)]="model.prod_desc" name="prod_desc" #prod_desc="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_desc.invalid }" [required]="model.pers_natu == 'N'" />
+            <div *ngIf="f.submitted && prod_desc.invalid" class="invalid-feedback">
+                <div *ngIf="prod_desc.errors.required">
+                    "Descripcion" es obligatorio
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-row" *ngIf="model.prod_tipo == 'PR'">
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Marca</label>
+            <select class="form-control" [(ngModel)]="model.marc_nomb" name="marc_nomb" #marc_nomb="ngModel" [ngClass]="{ 'is-invalid': f.submitted && marc_nomb.invalid }" [required]="model.prod_tipo == 'PR'">
+                          <option *ngFor="let mar of marcas" value="{{mar.marc_nomb}}">{{ mar.marc_nomb }}</option>                          
+                      </select>
+            <div *ngIf="f.submitted && marc_nomb.invalid" class="invalid-feedback">
+                <div *ngIf="marc_nomb.errors.required">
+                    "Marca" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Codigo de Barras</label>
+            <input type="text" class="form-control" [(ngModel)]="model.prod_codb" name="prod_codb" #prod_codb="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_codb.invalid }" [required]="model.prod_tipo == 'PR'" />
+            <div *ngIf="f.submitted && prod_codb.invalid" class="invalid-feedback">
+                <div *ngIf="prod_codb.errors.required">
+                    "Codigo de Barras" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Vence</label>
+            <select class="form-control" [(ngModel)]="model.prod_venc" name="prod_venc" #prod_venc="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_venc.invalid }" [required]="model.prod_tipo == 'PR'">
+                <option value="S">No</option>
+                <option value="N">Si</option>                        
+            </select>
+            <div *ngIf="f.submitted && prod_venc.invalid" class="invalid-feedback">
+                <div *ngIf="prod_venc.errors.required">
+                    "Vence" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Stock Minimo</label>
+            <input type="text" class="form-control" [(ngModel)]="model.prod_smin" name="prod_smin" #prod_smin="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_smin.invalid }" [required]="model.prod_tipo == 'PR'" />
+            <div *ngIf="f.submitted && prod_smin.invalid" class="invalid-feedback">
+                <div *ngIf="prod_smin.errors.required">
+                    "Stock Minimo" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Stock Maximo</label>
+            <input type="text" class="form-control" [(ngModel)]="model.prod_smax" name="prod_smax" #prod_smax="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_smax.invalid }" [required]="model.prod_tipo == 'PR'" />
+            <div *ngIf="f.submitted && prod_smax.invalid" class="invalid-feedback">
+                <div *ngIf="prod_smax.errors.required">
+                    "Stock Maximo" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Stock Existente</label>
+            <input type="text" class="form-control" [(ngModel)]="model.prod_stoc" name="prod_stoc" #prod_stoc="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_stoc.invalid }" [required]="model.prod_tipo == 'PR'" />
+            <div *ngIf="f.submitted && prod_stoc.invalid" class="invalid-feedback">
+                <div *ngIf="prod_stoc.errors.required">
+                    "Stock Existente" es obligatorio
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Valor de Compra</label>
+            <input type="text" class="form-control" [(ngModel)]="model.prod_valc" name="prod_valc" #prod_valc="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_valc.invalid }" [required]="model.prod_tipo == 'PR'" />
+            <div *ngIf="f.submitted && prod_valc.invalid" class="invalid-feedback">
+                <div *ngIf="prod_valc.errors.required">
+                    "Valor de Compra" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Costo Anterior</label>
+            <input type="text" class="form-control" [(ngModel)]="model.prod_vcoa" name="prod_vcoa" #prod_vcoa="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_vcoa.invalid }" [required]="model.prod_tipo == 'PR'" />
+            <div *ngIf="f.submitted && prod_vcoa.invalid" class="invalid-feedback">
+                <div *ngIf="prod_vcoa.errors.required">
+                    "Costo Anterior" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Porcentaje Entrada</label>
+            <input type="text" class="form-control" [(ngModel)]="model.prod_porv" name="prod_porv" #prod_porv="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_porv.invalid }" [required]="model.prod_tipo == 'PR'" />
+            <div *ngIf="f.submitted && prod_porv.invalid" class="invalid-feedback">
+                <div *ngIf="prod_porv.errors.required">
+                    "Porcentaje Entrada" es obligatorio
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+    <div class="form-row">
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Porcentaje Iva</label>
+            <input type="text" class="form-control" [(ngModel)]="model.prod_iva" name="prod_iva" #prod_iva="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_iva.invalid }" [required]="model.prod_tipo == 'PR'" />
+            <div *ngIf="f.submitted && prod_iva.invalid" class="invalid-feedback">
+                <div *ngIf="prod_iva.errors.required">
+                    "Porcentaje Iva" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Porcentaje Ic</label>
+            <input type="text" class="form-control" [(ngModel)]="model.prod_ic" name="prod_ic" #prod_ic="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_ic.invalid }" [required]="model.prod_tipo == 'PR'" />
+            <div *ngIf="f.submitted && prod_ic.invalid" class="invalid-feedback">
+                <div *ngIf="prod_ic.errors.required">
+                    "Porcentaje Ic" es obligatorio
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Garantia</label>
+            <input type="text" class="form-control" [(ngModel)]="model.prod_gara" name="prod_gara" #prod_gara="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_gara.invalid }" required/>
+            <div *ngIf="f.submitted && prod_gara.invalid" class="invalid-feedback">
+                <div *ngIf="prod_gara.errors.required">
+                    "Garantia" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="" class="control-label">Valor de Venta</label>
+            <input type="text" class="form-control" [(ngModel)]="model.prod_valv" name="prod_valv" #prod_valv="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_valv.invalid }" required/>
+            <div *ngIf="f.submitted && prod_valv.invalid" class="invalid-feedback">
+                <div *ngIf="prod_valv.errors.required">
+                    "Valor de Venta" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="" class="control-label">Seccion</label>
+            <input type="text" class="form-control" [(ngModel)]="model.prod_secc" name="prod_secc" #prod_secc="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_secc.invalid }" />
+            <div *ngIf="f.submitted && prod_secc.invalid" class="invalid-feedback">
+                <div *ngIf="prod_secc.errors.required">
+                    "Seccion" es obligatorio
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="" class="control-label">Observaciones</label>
+            <textarea class="form-control" [(ngModel)]="model.prod_obse" name="prod_obse" #prod_obse="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_obse.invalid }" rows="3"></textarea>
+        </div>
+    </div>
+
+
+    <div class="text-right">
+        <button class="btn btn-primary">Guardar</button>
+    </div>
+</form>

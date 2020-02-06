@@ -50,7 +50,7 @@ export class FormTerceroComponent implements OnInit {
   }
 
   getParams() {
-    this.paramsService.sendGetRequest().subscribe(data => {      
+      this.paramsService.sendGetRequest().subscribe(data => {      
       this.parametros = data;
       //console.log(this.parametros);
 

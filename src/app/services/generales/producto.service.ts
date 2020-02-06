@@ -9,9 +9,10 @@ import { Producto } from 'src/app/Models/general/Producto';
 export class ProductoService {
   constructor(private httpClient: HttpClient) {}
 
-  url = environment.server_url + "General/ge-tpers";
+  url = environment.server_url + "General/ge-tprod";
 
   public sendGetRequest() {
+    console.log(this.url);
     return this.httpClient.get(this.url);
   }
 

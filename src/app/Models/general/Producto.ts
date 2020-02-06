@@ -5,9 +5,11 @@ import { Estado } from './Estado';
 
 export class Producto {
     prod_codi : number;
-    grup_codi : Grupo;
+    grup_codi : number;
+    grupCodi : Grupo;
     prod_tipo : string;
-    umed_codi : Unidad;
+    umed_codi : number;
+    umedCodi : Unidad;
     prod_codm : string;
     prod_cods : string;
     prod_refe : string;
@@ -17,7 +19,8 @@ export class Producto {
     prod_valv : number;
     prod_porv : number;
     prod_gara : number;
-    esta_codi : Estado;
+    esta_codi : String;
+    estaCodi : Estado;
     prod_codb : string;
     prod_stoc : number;
     prod_smin : number;
@@ -26,6 +29,7 @@ export class Producto {
     prod_venc : string;
     prod_vcoa : number;
     prod_iva : number;
+    prod_ic : number;
     prod_vsal : string;
     prod_obse : string;
     prod_imag : string;
