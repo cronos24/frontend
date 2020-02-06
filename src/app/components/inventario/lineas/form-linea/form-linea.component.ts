@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: 'app-form-linea',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class FormLineaComponent implements OnInit {
+  @Input("model") model: any;
+  @Output() save = new EventEmitter<MouseEvent>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  Save() {
+    this.save.emit(this.model);
   }
-
 }

@@ -1,1 +1,18 @@
-<p>create-linea works!</p>
+<div class="container-fluid col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <p><button class="btn btn-danger" [routerLink]="['/lineas']"><i
+              class="fas fa-arrow-left"></i>Atras</button></p>
+            <h3>Crear Linea </h3>
+        </div>
+
+        <div class="card-body">
+            <div class="alert alert-danger" *ngIf="status == 0">
+                <li *ngFor="let item of validationErrors | keyvalue">
+                    {{ item.value }}
+                </li>
+            </div>
+            <app-form-linea #form [model]="model" (save)="Save($event)"></app-form-linea>
+        </div>
+    </div>
+</div>

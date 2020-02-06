@@ -1,1 +1,18 @@
-<p>update-unidad works!</p>
+<div class="container-fluid col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <p><button class="btn btn-danger" [routerLink]="['/unidades']"><i
+              class="fas fa-arrow-left"></i>Atras</button></p>
+            <h3>Editar Unidad No. {{ model.umed_codi}}</h3>
+        </div>
+
+        <div class="card-body">
+            <div class="alert alert-danger" *ngIf="status == 0">
+                <li *ngFor="let item of validationErrors | keyvalue">
+                    {{ item.value }}
+                </li>
+            </div>
+            <app-form-unidad #form [model]="model" (save)="Save($event)"></app-form-unidad>
+        </div>
+    </div>
+</div>

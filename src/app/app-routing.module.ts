@@ -70,6 +70,30 @@ import { CreateObligacionComponent } from "./components/generales/obligaciones/c
 import { UpdateObligacionComponent } from "./components/generales/obligaciones/update-obligacion/update-obligacion.component";
 import { ViewObligacionComponent } from "./components/generales/obligaciones/view-obligacion/view-obligacion.component";
 
+import { CreateUnidadComponent } from './components/generales/unidades/create-unidad/create-unidad.component';
+import { IndexUnidadComponent } from './components/generales/unidades/index-unidad/index-unidad.component';
+import { UpdateUnidadComponent } from './components/generales/unidades/update-unidad/update-unidad.component';
+import { ViewUnidadComponent } from './components/generales/unidades/view-unidad/view-unidad.component';
+
+import { IndexLineaComponent } from './components/inventario/lineas/index-linea/index-linea.component';
+import { CreateLineaComponent } from './components/inventario/lineas/create-linea/create-linea.component';
+import { UpdateLineaComponent } from './components/inventario/lineas/update-linea/update-linea.component';
+import { ViewLineaComponent } from './components/inventario/lineas/view-linea/view-linea.component';
+
+import { IndexCategoriaComponent } from './components/inventario/categorias/index-categoria/index-categoria.component';
+import { CreateCategoriaComponent } from './components/inventario/categorias/create-categoria/create-categoria.component';
+import { UpdateCategoriaComponent } from './components/inventario/categorias/update-categoria/update-categoria.component';
+import { ViewCategoriaComponent } from './components/inventario/categorias/view-categoria/view-categoria.component';
+
+import { IndexGrupoComponent } from './components/inventario/grupos/index-grupo/index-grupo.component';
+import { CreateGrupoComponent } from './components/inventario/grupos/create-grupo/create-grupo.component';
+import { UpdateGrupoComponent } from './components/inventario/grupos/update-grupo/update-grupo.component';
+import { ViewGrupoComponent } from './components/inventario/grupos/view-grupo/view-grupo.component';
+import { IndexProductoComponent } from './components/generales/productos/index-producto/index-producto.component';
+import { CreateProductoComponent } from './components/generales/productos/create-producto/create-producto.component';
+import { UpdateProductoComponent } from './components/generales/productos/update-producto/update-producto.component';
+import { ViewProductoComponent } from './components/generales/productos/view-producto/view-producto.component';
+
 const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "about", component: AboutComponent },
@@ -301,6 +325,95 @@ const routes: Routes = [
   {
     path: "terceros-obligaciones/update/:id",
     component: UpdatePeobComponent
+  },
+  //Unidades
+  {
+    path: "unidades",
+    component: IndexUnidadComponent
+  },
+  {
+    path: "unidades/create",
+    component: CreateUnidadComponent
+  },
+  {
+    path: "unidades/update/:id",
+    component: UpdateUnidadComponent
+  },
+  // {
+  //   path: "unidades/view/:id",
+  //   component: ViewUnidadComponent
+  // },
+
+  //Lineas
+  {
+    path: "lineas",
+    component: IndexLineaComponent
+  },
+  {
+    path: "lineas/create",
+    component: CreateLineaComponent
+  },
+  {
+    path: "lineas/update/:id",
+    component: UpdateLineaComponent
+  },
+  // {
+  //   path: "lineas/view/:id",
+  //   component: ViewLineaComponent
+  // },
+
+  //Categorias
+  {
+    path: "categorias",
+    component: IndexCategoriaComponent
+  },
+  {
+    path: "categorias/create",
+    component: CreateCategoriaComponent
+  },
+  {
+    path: "categorias/update/:id",
+    component: UpdateCategoriaComponent
+  },
+  // {
+  //   path: "categorias/view/:id",
+  //   component: ViewCategoriaComponent
+  // },
+
+  //Grupos
+  {
+    path: "grupos",
+    component: IndexGrupoComponent
+  },
+  {
+    path: "grupos/create",
+    component: CreateGrupoComponent
+  },
+  {
+    path: "grupos/update/:id",
+    component: UpdateGrupoComponent
+  },
+  // {
+  //   path: "grupos/view/:id",
+  //   component: ViewGrupoComponent
+  // },
+
+  //Productos
+  {
+    path: "productos",
+    component: IndexProductoComponent
+  },
+  {
+    path: "productos/create",
+    component: CreateProductoComponent
+  },
+  {
+    path: "productos/update/:id",
+    component: UpdateProductoComponent
+  },
+  {
+    path: "productos/view/:id",
+    component: ViewProductoComponent
   },
 
 
