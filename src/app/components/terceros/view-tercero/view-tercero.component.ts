@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TercerosService } from 'src/app/services/terceros.service';
+import { TercerosService } from 'src/app/services/generales/terceros.service';
 import { ActivatedRoute } from '@angular/router';
 import { Tercero } from 'src/app/Models/general/Tercero';
 

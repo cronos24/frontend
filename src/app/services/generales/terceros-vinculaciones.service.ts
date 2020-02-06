@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { TerceroVinculacion } from "../Models/general/TerceroVinculacion";
 import { HttpClient } from "@angular/common/http";
 import { environment } from "src/environments/environment";
+import { TerceroVinculacion } from 'src/app/Models/general/TerceroVinculacion';
 
 @Injectable({
   providedIn: 'root'

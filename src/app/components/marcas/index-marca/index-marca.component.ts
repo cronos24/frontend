@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
-import { MarcaService } from 'src/app/services/marca.service';
+import { MarcaService } from 'src/app/services/generales/marca.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 

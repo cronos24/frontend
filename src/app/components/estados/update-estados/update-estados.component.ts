@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { EstadosService } from "src/app/services/estados/estados.service";
+import { EstadosService } from "src/app/services/generales/estados/estados.service";
 import { ToastrService } from "ngx-toastr";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Estado } from "src/app/Models/general/Estado";

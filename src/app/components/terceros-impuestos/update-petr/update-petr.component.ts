@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { TerceroImpuesto } from 'src/app/Models/general/TerceroImpuesto';
-import { TercerosImpuestosService } from 'src/app/services/terceros-impuestos.service';
+import { TercerosImpuestosService } from 'src/app/services/generales/terceros-impuestos.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -15,7 +15,8 @@ export class UpdatePetrComponent implements OnInit {
   model:  TerceroImpuesto = {
     petr_codi: null,
     pers_auxi: null,
-    impu_codi: {
+    impu_codi: null,
+    impuCodi: {
       impu_codi: null,
       impu_code: null,
       inpu_desc: null,

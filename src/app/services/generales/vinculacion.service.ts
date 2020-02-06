@@ -1,15 +1,16 @@
 import { Injectable } from "@angular/core";
-import { environment } from "src/environments/environment";
 import { HttpClient } from "@angular/common/http";
-import { Obligacion } from '../Models/general/Obligacion';
+import { environment } from "src/environments/environment";
+import { Vinculacion } from 'src/app/Models/general/Vinculacion';
+
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
-export class ObligacionService {
+export class VinculacionService {
   constructor(private httpClient: HttpClient) {}
 
-  url = environment.server_url + "General/ge-tobli";
+  url = environment.server_url + "General/ge-tvinc";
 
   public sendGetRequest() {
     return this.httpClient.get(this.url);
@@ -23,11 +24,11 @@ export class ObligacionService {
     return this.httpClient.delete(this.url + "/borrar?id=" + id);
   }
 
-  public sendPostRequest(model: Obligacion) {
+  public sendPostRequest(model: Vinculacion) {
     return this.httpClient.post(this.url + "/crear", model);
   }
 
-  public sendPutRequest(model: Obligacion, id) {
+  public sendPutRequest(model: Vinculacion, id) {
     return this.httpClient.put(this.url + "/editar?id=" + id, model);
   }
 }

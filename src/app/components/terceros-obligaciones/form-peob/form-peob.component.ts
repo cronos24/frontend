@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { TercerosService } from 'src/app/services/terceros.service';
-import { ObligacionService } from 'src/app/services/obligacion.service';
+import { TercerosService } from 'src/app/services/generales/terceros.service';
+import { ObligacionService } from 'src/app/services/generales/obligacion.service';
 
 @Component({
   selector: 'app-form-peob',

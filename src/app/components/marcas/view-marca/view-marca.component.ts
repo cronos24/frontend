@@ -1,7 +1,7 @@
-import { Marca } from './../../../Models/general/Marca';
 import { Component, OnInit } from '@angular/core';
-import { MarcaService } from 'src/app/services/marca.service';
+import { MarcaService } from 'src/app/services/generales/marca.service';
 import { ActivatedRoute } from '@angular/router';
+import { Marca } from 'src/app/Models/general/Marca';
 
 @Component({
   selector: 'app-view-marca',

@@ -1,4 +1,4 @@
-import { EmpresaService } from 'src/app/services/empresa.service';
+import { EmpresaService } from 'src/app/services/generales/empresa.service';
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({

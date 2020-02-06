@@ -3,7 +3,7 @@ import { DataTableDirective } from "angular-datatables";
 import { Subject } from "rxjs";
 import { ToastrService } from "ngx-toastr";
 import { Router } from "@angular/router";
-import { TercerosVinculacionesService } from 'src/app/services/terceros-vinculaciones.service';
+import { TercerosVinculacionesService } from 'src/app/services/generales/terceros-vinculaciones.service';
 
 @Component({
   selector: 'app-index-vipe',

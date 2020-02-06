@@ -1,9 +1,9 @@
-import { EmpresaService } from './../../../services/empresa.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { EmpresaService } from 'src/app/services/generales/empresa.service';
 
 @Component({
   selector: 'app-index-empresa',

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { TerceroObligacion } from 'src/app/Models/general/TerceroObligacion';
-import { TercerosObligacionesService } from 'src/app/services/terceros-obligaciones.service';
+import { TercerosObligacionesService } from 'src/app/services/generales/terceros-obligaciones.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
 

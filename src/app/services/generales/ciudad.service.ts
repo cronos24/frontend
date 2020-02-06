@@ -1,15 +1,15 @@
-import { Tercero } from "./../Models/general/Tercero";
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { Injectable } from '@angular/core';
 import { environment } from "src/environments/environment";
+import { HttpClient } from "@angular/common/http";
+import { Ciudad } from 'src/app/Models/general/Ciudad';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
-export class TercerosService {
+export class CiudadService {
   constructor(private httpClient: HttpClient) {}
 
-  url = environment.server_url + "General/ge-tpers";
+  url = environment.server_url + "General/ge-tciud";
 
   public sendGetRequest() {
     return this.httpClient.get(this.url);
@@ -23,11 +23,11 @@ export class TercerosService {
     return this.httpClient.delete(this.url + "/borrar?id=" + id);
   }
 
-  public sendPostRequest(model: Tercero) {
+  public sendPostRequest(model: Ciudad) {
     return this.httpClient.post(this.url + "/crear", model);
   }
 
-  public sendPutRequest(model: Tercero, id) {
+  public sendPutRequest(model: Ciudad, id) {
     return this.httpClient.put(this.url + "/editar?id=" + id, model);
   }
 }

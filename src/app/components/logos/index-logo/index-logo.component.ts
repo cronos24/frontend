@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewChild } from "@angular/core";
-import { LogoService } from "src/app/services/logo.service";
+import { LogoService } from "src/app/services/generales/logo.service";
 import { DataTableDirective } from "angular-datatables";
 import { Subject } from "rxjs";
 import { ToastrService } from "ngx-toastr";

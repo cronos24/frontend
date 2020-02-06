@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Ocupacion } from "src/app/Models/general/Ocupacion";
-import { OcupacionService } from "src/app/services/ocupacion.service";
+import { OcupacionService } from "src/app/services/generales/ocupacion.service";
 import { ToastrService } from "ngx-toastr";
 import { ActivatedRoute, Router } from "@angular/router";
 

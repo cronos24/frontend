@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Ciudad } from "src/app/Models/general/Ciudad";
-import { environment } from "src/environments/environment";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { Marca } from 'src/app/Models/general/Marca';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class CiudadService {
+export class MarcaService {
   constructor(private httpClient: HttpClient) {}
 
-  url = environment.server_url + "General/ge-tciud";
+  url = environment.server_url + "General/ge-tmarc";
 
   public sendGetRequest() {
     return this.httpClient.get(this.url);
@@ -23,11 +24,11 @@ export class CiudadService {
     return this.httpClient.delete(this.url + "/borrar?id=" + id);
   }
 
-  public sendPostRequest(model: Ciudad) {
+  public sendPostRequest(model: Marca) {
     return this.httpClient.post(this.url + "/crear", model);
   }
 
-  public sendPutRequest(model: Ciudad, id) {
+  public sendPutRequest(model: Marca, id) {
     return this.httpClient.put(this.url + "/editar?id=" + id, model);
   }
 }

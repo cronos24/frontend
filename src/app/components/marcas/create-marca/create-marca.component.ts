@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Marca } from 'src/app/Models/general/Marca';
-import { MarcaService } from 'src/app/services/marca.service';
+import { MarcaService } from 'src/app/services/generales/marca.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
 

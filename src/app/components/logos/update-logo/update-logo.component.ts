@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { Logo } from "src/app/Models/general/Logo";
-import { LogoService } from "src/app/services/logo.service";
+import { LogoService } from "src/app/services/generales/logo.service";
 import { ToastrService } from "ngx-toastr";
 import { ActivatedRoute, Router } from "@angular/router";
 

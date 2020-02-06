@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { DataTableDirective } from "angular-datatables";
 import { Subject } from "rxjs";
-import { EntidadService } from "src/app/services/entidad.service";
+import { EntidadService } from "src/app/services/generales/entidad.service";
 import { ToastrService } from "ngx-toastr";
 import { Router } from "@angular/router";
 

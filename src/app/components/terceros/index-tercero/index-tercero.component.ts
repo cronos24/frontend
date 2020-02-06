@@ -3,7 +3,7 @@ import { DataTableDirective } from "angular-datatables";
 import { Subject } from "rxjs";
 import { ToastrService } from "ngx-toastr";
 import { Router } from "@angular/router";
-import { TercerosService } from "src/app/services/terceros.service";
+import { TercerosService } from "src/app/services/generales/terceros.service";
 
 @Component({
   selector: "app-index-tercero",

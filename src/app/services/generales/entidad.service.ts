@@ -1,7 +1,7 @@
-import { Entidad } from "./../Models/general/Entidad";
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { environment } from "src/environments/environment";
+import { Entidad } from 'src/app/Models/general/Entidad';
 
 @Injectable({
   providedIn: "root"

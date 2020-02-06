@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Empresa } from "src/app/Models/general/Empresa";
-import { EmpresaService } from "src/app/services/empresa.service";
+import { EmpresaService } from "src/app/services/generales/empresa.service";
 import { ToastrService } from "ngx-toastr";
 import { ActivatedRoute, Router } from "@angular/router";
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { EstadosService } from "src/app/services/estados/estados.service";
+import { EstadosService } from "src/app/services/generales/estados/estados.service";
 import { Estado } from "src/app/Models/general/Estado";
 
 @Component({

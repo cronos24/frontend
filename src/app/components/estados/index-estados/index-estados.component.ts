@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { EstadosService } from "../../../services/estados/estados.service";
 import { DataTablesModule, DataTableDirective } from "angular-datatables";
 import { ToastrService } from "ngx-toastr";
 import { Subject } from "rxjs";
 import { Route } from "@angular/compiler/src/core";
 import { Router } from "@angular/router";
+import { EstadosService } from 'src/app/services/generales/estados/estados.service';
 
 @Component({
   selector: "app-components-index-estados",

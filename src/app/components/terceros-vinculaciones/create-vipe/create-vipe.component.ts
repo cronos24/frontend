@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { TerceroVinculacion } from 'src/app/Models/general/TerceroVinculacion';
-import { TercerosVinculacionesService } from 'src/app/services/terceros-vinculaciones.service';
+import { TercerosVinculacionesService } from 'src/app/services/generales/terceros-vinculaciones.service';
 import { ToastrService } from "ngx-toastr";
 import { ActivatedRoute, Router } from "@angular/router";
 

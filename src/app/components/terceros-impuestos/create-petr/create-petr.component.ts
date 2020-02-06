@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { TerceroImpuesto } from 'src/app/Models/general/TerceroImpuesto';
-import { TercerosImpuestosService } from 'src/app/services/terceros-impuestos.service';
+import { TercerosImpuestosService } from 'src/app/services/generales/terceros-impuestos.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
 

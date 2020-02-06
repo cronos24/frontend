@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { ParametrosService } from 'src/app/services/parametros.service';
-import { OcupacionService } from 'src/app/services/ocupacion.service';
-import { EntidadService } from 'src/app/services/entidad.service';
-import { CiudadService } from 'src/app/services/ciudad.service';
-import { PaisService } from 'src/app/services/pais.service';
+import { ParametrosService } from 'src/app/services/generales/parametros.service';
+import { OcupacionService } from 'src/app/services/generales/ocupacion.service';
+import { EntidadService } from 'src/app/services/generales/entidad.service';
+import { CiudadService } from 'src/app/services/generales/ciudad.service';
+import { PaisService } from 'src/app/services/generales/pais.service';
 
 @Component({
   selector: 'app-form-tercero',

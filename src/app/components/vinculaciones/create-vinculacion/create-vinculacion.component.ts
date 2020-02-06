@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Vinculacion } from "src/app/Models/general/Vinculacion";
-import { VinculacionService } from "src/app/services/vinculacion.service";
+import { VinculacionService } from "src/app/services/generales/vinculacion.service";
 import { ToastrService } from "ngx-toastr";
 import { ActivatedRoute, Router } from "@angular/router";
 

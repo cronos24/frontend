@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { OcupacionService } from "src/app/services/ocupacion.service";
+import { OcupacionService } from "src/app/services/generales/ocupacion.service";
 import { ToastrService } from "ngx-toastr";
 import { Router } from "@angular/router";
 import { DataTableDirective } from "angular-datatables";

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { LogoService } from "src/app/services/logo.service";
+import { LogoService } from "src/app/services/generales/logo.service";
 import { ActivatedRoute } from "@angular/router";
 import { Logo } from "src/app/Models/general/Logo";
 

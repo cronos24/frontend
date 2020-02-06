@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { DataTableDirective } from "angular-datatables";
 import { Subject } from "rxjs";
-import { PaisService } from "src/app/services/pais.service";
+import { PaisService } from "src/app/services/generales/pais.service";
 import { ToastrService } from "ngx-toastr";
 import { Router } from "@angular/router";
 

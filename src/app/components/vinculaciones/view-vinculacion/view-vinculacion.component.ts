@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Vinculacion } from "src/app/Models/general/Vinculacion";
-import { VinculacionService } from "src/app/services/vinculacion.service";
+import { VinculacionService } from "src/app/services/generales/vinculacion.service";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({

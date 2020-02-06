@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Tercero } from 'src/app/Models/general/Tercero';
-import { TercerosService } from 'src/app/services/terceros.service';
+import { TercerosService } from 'src/app/services/generales/terceros.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
 

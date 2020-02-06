@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Pais } from "src/app/Models/general/Pais";
-import { PaisService } from "src/app/services/pais.service";
+import { PaisService } from "src/app/services/generales/pais.service";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({

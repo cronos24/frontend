@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { TercerosService } from 'src/app/services/terceros.service';
-import { VinculacionService } from 'src/app/services/vinculacion.service';
+import { TercerosService } from 'src/app/services/generales/terceros.service';
+import { VinculacionService } from 'src/app/services/generales/vinculacion.service';
 
 @Component({
   selector: 'app-form-vipe',

@@ -1,15 +1,15 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
-import { Marca } from '../Models/general/Marca';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { environment } from "src/environments/environment";
+import { Tercero } from 'src/app/Models/general/Tercero';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
-export class MarcaService {
+export class TercerosService {
   constructor(private httpClient: HttpClient) {}
 
-  url = environment.server_url + "General/ge-tmarc";
+  url = environment.server_url + "General/ge-tpers";
 
   public sendGetRequest() {
     return this.httpClient.get(this.url);
@@ -23,11 +23,11 @@ export class MarcaService {
     return this.httpClient.delete(this.url + "/borrar?id=" + id);
   }
 
-  public sendPostRequest(model: Marca) {
+  public sendPostRequest(model: Tercero) {
     return this.httpClient.post(this.url + "/crear", model);
   }
 
-  public sendPutRequest(model: Marca, id) {
+  public sendPutRequest(model: Tercero, id) {
     return this.httpClient.put(this.url + "/editar?id=" + id, model);
   }
 }

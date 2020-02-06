@@ -1,16 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { environment } from "src/environments/environment";
-import { TerceroObligacion } from '../Models/general/TerceroObligacion';
+import { Logo } from 'src/app/Models/general/Logo';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
-export class TercerosObligacionesService {
+export class LogoService {
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(private httpClient: HttpClient) { }
-
-  url = environment.server_url + "General/ge-tpeob";
+  url = environment.server_url + "General/ge-tlogo";
 
   public sendGetRequest(id) {
     return this.httpClient.get(this.url+ "/index?id=" + id);
@@ -24,11 +23,11 @@ export class TercerosObligacionesService {
     return this.httpClient.delete(this.url + "/borrar?id=" + id);
   }
 
-  public sendPostRequest(model: TerceroObligacion, id) {
+  public sendPostRequest(model: Logo, id) {
     return this.httpClient.post(this.url + "/crear?id=" + id, model);
   }
 
-  public sendPutRequest(model: TerceroObligacion, id) {
+  public sendPutRequest(model: Logo, id) {
     return this.httpClient.put(this.url + "/editar?id=" + id, model);
   }
 }

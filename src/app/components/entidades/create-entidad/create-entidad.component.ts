@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Entidad } from "src/app/Models/general/Entidad";
-import { EntidadService } from "src/app/services/entidad.service";
+import { EntidadService } from "src/app/services/generales/entidad.service";
 import { ToastrService } from "ngx-toastr";
 import { ActivatedRoute, Router } from "@angular/router";
 

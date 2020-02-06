@@ -3,7 +3,7 @@ import { DataTableDirective } from "angular-datatables";
 import { Subject } from "rxjs";
 import { ToastrService } from "ngx-toastr";
 import { Router } from "@angular/router";
-import { VinculacionService } from "src/app/services/vinculacion.service";
+import { VinculacionService } from "src/app/services/generales/vinculacion.service";
 @Component({
   selector: "app-index-vinculacion",
   templateUrl: "./index-vinculacion.component.html",

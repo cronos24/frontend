@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
-import { TercerosObligacionesService } from 'src/app/services/terceros-obligaciones.service';
+import { TercerosObligacionesService } from 'src/app/services/generales/terceros-obligaciones.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { TercerosImpuestosService } from 'src/app/services/terceros-impuestos.service';
+import { TercerosImpuestosService } from 'src/app/services/generales/terceros-impuestos.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
