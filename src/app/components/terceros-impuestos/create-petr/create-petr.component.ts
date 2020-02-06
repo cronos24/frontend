@@ -15,7 +15,8 @@ export class CreatePetrComponent implements OnInit {
   model:  TerceroImpuesto = {
     petr_codi: null,
     pers_auxi: null,
-    impu_codi: {
+    impu_codi:null,
+    impuCodi: {
       impu_codi: null,
       impu_code: null,
       inpu_desc: null,
