@@ -1,1 +1,88 @@
-<p>view-producto works!</p>
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            <p><button class="btn btn-danger" [routerLink]="['/productos']"><i class="fas fa-arrow-left"></i>Atras</button></p>
+            <h3>Producto No. {{model.prod_codi}}</h3>
+        </div>
+        <div class="card-body">
+
+
+            <div class="table-responsive">
+                <div class="col-md-12">
+                    <table class="table table-striped table-bordered table-sm">
+                        <tbody>
+
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center; width: 16%;">Codigo</th>
+                                <td style="width: 24%;">{{model.prod_codi}}</td>
+                                <th class="alert alert-success" style="text-align: center; width: 18%;">Grupo</th>
+                                <td>{{model.grupCodi.grup_nomb}}</td>
+                                <th class="alert alert-success" style="text-align: center; width: 18%;">Tipo</th>
+                                <td>{{model.prod_tipo}}</td>
+
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Unidad de Medida</th>
+                                <td>{{model.umedCodi.umed_nomb}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Codigo de Inventario</th>
+                                <td>{{model.prod_codm}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Serial</th>
+                                <td>{{model.prod_cods}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Referencia</th>
+                                <td>{{model.prod_refe}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Descripcion</th>
+                                <td colspan="3">{{model.prod_desc}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center; ">Marca</th>
+                                <td>{{model.marc_nomb}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Codigo de Barras</th>
+                                <td>{{model.prod_codb}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Vence</th>
+                                <td colspan="3">{{model.prod_venc}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Stock Minimo</th>
+                                <td>{{model.prod_smin}}</td>
+                                <th class="alert alert-success" style="text-align: center; ">Stock Maximo</th>
+                                <td>{{model.prod_smax}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Stock Existente</th>
+                                <td>{{model.prod_stoc}}</td>
+
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Valor de Compra</th>
+                                <td>{{model.prod_valc}}</td>
+                                <th class="alert alert-success" style="text-align: center; ">Costo Anterior</th>
+                                <td>{{model.prod_vcoa}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Porcentaje Entrada</th>
+                                <td>{{model.prod_porv}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Porcentaje Iva</th>
+                                <td>{{model.prod_iva}}</td>
+                                <th class="alert alert-success" style="text-align: center; ">Porcentaje Ic</th>
+                                <td>{{model.prod_ic}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Garantia</th>
+                                <td>{{model.prod_gara}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Valor de Venta</th>
+                                <td>{{model.prod_valv}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Seccion</th>
+                                <td colspan="3">{{model.prod_secc}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Observaciones</th>
+                                <td colspan="7">{{model.prod_obse}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

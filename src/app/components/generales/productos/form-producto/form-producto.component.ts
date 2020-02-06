@@ -26,23 +26,6 @@ export class FormProductoComponent implements OnInit {
     
   }
 
-  changeNatu(value){
-    switch(value) { 
-      case 'J': { 
-        this.model.pers_nom1=null;
-        this.model.pers_nom2=null;
-        this.model.pers_ape1=null;
-        this.model.pers_ape2=null;
-         break; 
-      } 
-      case 'N': { 
-         this.model.pers_rsoc=null;
-         break; 
-      } 
-   } 
-    
-  
-  }
 
   getParams() {
       this.grupoService.sendGetRequest().subscribe(data => {      

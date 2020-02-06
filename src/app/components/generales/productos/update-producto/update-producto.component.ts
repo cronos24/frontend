@@ -89,7 +89,21 @@ export class UpdateProductoComponent implements OnInit {
   }
   Save(e) {
     this.model = e;
-
+    switch(this.model.prod_tipo) { 
+      case 'SV': { 
+        this.model.marc_nomb=null;
+        this.model.prod_codb=null;
+        this.model.prod_venc=null;
+        this.model.prod_smin=null;
+        this.model.prod_smax=null;
+        this.model.prod_stoc=null;
+        this.model.prod_valc=null;
+        this.model.prod_vcoa=null;
+        this.model.prod_porv=null;
+         break; 
+      } 
+    
+   }
     this.dataService.sendPutRequest(this.model, this.id).subscribe(
       data => {
         if (data["status"] === 1) {
