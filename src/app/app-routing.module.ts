@@ -4,71 +4,71 @@ import { Routes, RouterModule } from "@angular/router";
 import { AboutComponent } from "./about/about.component";
 import { HomeComponent } from "./home/home.component";
 
-import { EstadosIndexComponent } from "./components/estados/index-estados/index-estados.component";
-import { ViewEstadosComponent } from "./components/estados/view-estados/view-estados.component";
-import { CreateEstadosComponent } from "./components/estados/create-estados/create-estados.component";
-import { UpdateEstadosComponent } from "./components/estados/update-estados/update-estados.component";
+import { EstadosIndexComponent } from "./components/generales/estados/index-estados/index-estados.component";
+import { ViewEstadosComponent } from "./components/generales/estados/view-estados/view-estados.component";
+import { CreateEstadosComponent } from "./components/generales/estados/create-estados/create-estados.component";
+import { UpdateEstadosComponent } from "./components/generales/estados/update-estados/update-estados.component";
 
-import { ViewEmpresaComponent } from "./components/empresas/view-empresa/view-empresa.component";
-import { UpdateEmpresaComponent } from "./components/empresas/update-empresa/update-empresa.component";
-import { CreateEmpresaComponent } from "./components/empresas/create-empresa/create-empresa.component";
-import { IndexEmpresaComponent } from "./components/empresas/index-empresa/index-empresa.component";
+import { ViewEmpresaComponent } from "./components/generales/empresas/view-empresa/view-empresa.component";
+import { UpdateEmpresaComponent } from "./components/generales/empresas/update-empresa/update-empresa.component";
+import { CreateEmpresaComponent } from "./components/generales/empresas/create-empresa/create-empresa.component";
+import { IndexEmpresaComponent } from "./components/generales/empresas/index-empresa/index-empresa.component";
 
-import { IndexVinculacionComponent } from "./components/vinculaciones/index-vinculacion/index-vinculacion.component";
-import { CreateVinculacionComponent } from "./components/vinculaciones/create-vinculacion/create-vinculacion.component";
-import { UpdateVinculacionComponent } from "./components/vinculaciones/update-vinculacion/update-vinculacion.component";
-import { ViewVinculacionComponent } from "./components/vinculaciones/view-vinculacion/view-vinculacion.component";
+import { IndexVinculacionComponent } from "./components/generales/vinculaciones/index-vinculacion/index-vinculacion.component";
+import { CreateVinculacionComponent } from "./components/generales/vinculaciones/create-vinculacion/create-vinculacion.component";
+import { UpdateVinculacionComponent } from "./components/generales/vinculaciones/update-vinculacion/update-vinculacion.component";
+import { ViewVinculacionComponent } from "./components/generales/vinculaciones/view-vinculacion/view-vinculacion.component";
 
-import { IndexOcupacionComponent } from "./components/ocupaciones/index-ocupacion/index-ocupacion.component";
-import { CreateOcupacionComponent } from "./components/ocupaciones/create-ocupacion/create-ocupacion.component";
-import { UpdateOcupacionComponent } from "./components/ocupaciones/update-ocupacion/update-ocupacion.component";
-import { ViewOcupacionComponent } from "./components/ocupaciones/view-ocupacion/view-ocupacion.component";
+import { IndexOcupacionComponent } from "./components/generales/ocupaciones/index-ocupacion/index-ocupacion.component";
+import { CreateOcupacionComponent } from "./components/generales/ocupaciones/create-ocupacion/create-ocupacion.component";
+import { UpdateOcupacionComponent } from "./components/generales/ocupaciones/update-ocupacion/update-ocupacion.component";
+import { ViewOcupacionComponent } from "./components/generales/ocupaciones/view-ocupacion/view-ocupacion.component";
 
-import { CreateLogoComponent } from "./components/logos/create-logo/create-logo.component";
-import { ViewLogoComponent } from "./components/logos/view-logo/view-logo.component";
-import { UpdateLogoComponent } from "./components/logos/update-logo/update-logo.component";
+import { CreateLogoComponent } from "./components/generales/logos/create-logo/create-logo.component";
+import { ViewLogoComponent } from "./components/generales/logos/view-logo/view-logo.component";
+import { UpdateLogoComponent } from "./components/generales/logos/update-logo/update-logo.component";
 
-import { IndexMarcaComponent } from "./components/marcas/index-marca/index-marca.component";
-import { CreateMarcaComponent } from "./components/marcas/create-marca/create-marca.component";
-import { UpdateMarcaComponent } from "./components/marcas/update-marca/update-marca.component";
-import { ViewMarcaComponent } from "./components/marcas/view-marca/view-marca.component";
+import { IndexMarcaComponent } from "./components/generales/marcas/index-marca/index-marca.component";
+import { CreateMarcaComponent } from "./components/generales/marcas/create-marca/create-marca.component";
+import { UpdateMarcaComponent } from "./components/generales/marcas/update-marca/update-marca.component";
+import { ViewMarcaComponent } from "./components/generales/marcas/view-marca/view-marca.component";
 
-import { IndexEntidadComponent } from "./components/entidades/index-entidad/index-entidad.component";
-import { CreateEntidadComponent } from "./components/entidades/create-entidad/create-entidad.component";
-import { UpdateEntidadComponent } from "./components/entidades/update-entidad/update-entidad.component";
-import { ViewEntidadComponent } from "./components/entidades/view-entidad/view-entidad.component";
+import { IndexEntidadComponent } from "./components/generales/entidades/index-entidad/index-entidad.component";
+import { CreateEntidadComponent } from "./components/generales/entidades/create-entidad/create-entidad.component";
+import { UpdateEntidadComponent } from "./components/generales/entidades/update-entidad/update-entidad.component";
+import { ViewEntidadComponent } from "./components/generales/entidades/view-entidad/view-entidad.component";
 
-import { IndexPaisComponent } from "./components/paises/index-pais/index-pais.component";
-import { CreatePaisComponent } from "./components/paises/create-pais/create-pais.component";
-import { UpdatePaisComponent } from "./components/paises/update-pais/update-pais.component";
-import { ViewPaisComponent } from "./components/paises/view-pais/view-pais.component";
+import { IndexPaisComponent } from "./components/generales/paises/index-pais/index-pais.component";
+import { CreatePaisComponent } from "./components/generales/paises/create-pais/create-pais.component";
+import { UpdatePaisComponent } from "./components/generales/paises/update-pais/update-pais.component";
+import { ViewPaisComponent } from "./components/generales/paises/view-pais/view-pais.component";
 
-import { IndexTerceroComponent } from "./components/terceros/index-tercero/index-tercero.component";
-import { CreateTerceroComponent } from "./components/terceros/create-tercero/create-tercero.component";
-import { UpdateTerceroComponent } from "./components/terceros/update-tercero/update-tercero.component";
-import { ViewTerceroComponent } from "./components/terceros/view-tercero/view-tercero.component";
+import { IndexTerceroComponent } from "./components/generales/terceros/index-tercero/index-tercero.component";
+import { CreateTerceroComponent } from "./components/generales/terceros/create-tercero/create-tercero.component";
+import { UpdateTerceroComponent } from "./components/generales/terceros/update-tercero/update-tercero.component";
+import { ViewTerceroComponent } from "./components/generales/terceros/view-tercero/view-tercero.component";
 
-import { CreateVipeComponent } from "./components/terceros-vinculaciones/create-vipe/create-vipe.component";
-import { ViewVipeComponent } from "./components/terceros-vinculaciones/view-vipe/view-vipe.component";
-import { UpdateVipeComponent } from "./components/terceros-vinculaciones/update-vipe/update-vipe.component";
+import { CreateVipeComponent } from "./components/generales/terceros-vinculaciones/create-vipe/create-vipe.component";
+import { ViewVipeComponent } from "./components/generales/terceros-vinculaciones/view-vipe/view-vipe.component";
+import { UpdateVipeComponent } from "./components/generales/terceros-vinculaciones/update-vipe/update-vipe.component";
 
-import { CreatePetrComponent } from "./components/terceros-impuestos/create-petr/create-petr.component";
-import { ViewPetrComponent } from "./components/terceros-impuestos/view-petr/view-petr.component";
-import { UpdatePetrComponent } from "./components/terceros-impuestos/update-petr/update-petr.component";
+import { CreatePetrComponent } from "./components/generales/terceros-impuestos/create-petr/create-petr.component";
+import { ViewPetrComponent } from "./components/generales/terceros-impuestos/view-petr/view-petr.component";
+import { UpdatePetrComponent } from "./components/generales/terceros-impuestos/update-petr/update-petr.component";
 
-import { CreatePeobComponent } from "./components/terceros-obligaciones/create-peob/create-peob.component";
-import { ViewPeobComponent } from "./components/terceros-obligaciones/view-peob/view-peob.component";
-import { UpdatePeobComponent } from "./components/terceros-obligaciones/update-peob/update-peob.component";
+import { CreatePeobComponent } from "./components/generales/terceros-obligaciones/create-peob/create-peob.component";
+import { ViewPeobComponent } from "./components/generales/terceros-obligaciones/view-peob/view-peob.component";
+import { UpdatePeobComponent } from "./components/generales/terceros-obligaciones/update-peob/update-peob.component";
 
-import { IndexImpuestosComponent } from "./components/impuestos/index-impuestos/index-impuestos.component";
-import { CreateImpuestosComponent } from "./components/impuestos/create-impuestos/create-impuestos.component";
-import { UpdateImpuestosComponent } from "./components/impuestos/update-impuestos/update-impuestos.component";
-import { ViewImpuestosComponent } from "./components/impuestos/view-impuestos/view-impuestos.component";
+import { IndexImpuestosComponent } from "./components/generales/impuestos/index-impuestos/index-impuestos.component";
+import { CreateImpuestosComponent } from "./components/generales/impuestos/create-impuestos/create-impuestos.component";
+import { UpdateImpuestosComponent } from "./components/generales/impuestos/update-impuestos/update-impuestos.component";
+import { ViewImpuestosComponent } from "./components/generales/impuestos/view-impuestos/view-impuestos.component";
 
-import { IndexObligacionComponent } from "./components/obligaciones/index-obligacion/index-obligacion.component";
-import { CreateObligacionComponent } from "./components/obligaciones/create-obligacion/create-obligacion.component";
-import { UpdateObligacionComponent } from "./components/obligaciones/update-obligacion/update-obligacion.component";
-import { ViewObligacionComponent } from "./components/obligaciones/view-obligacion/view-obligacion.component";
+import { IndexObligacionComponent } from "./components/generales/obligaciones/index-obligacion/index-obligacion.component";
+import { CreateObligacionComponent } from "./components/generales/obligaciones/create-obligacion/create-obligacion.component";
+import { UpdateObligacionComponent } from "./components/generales/obligaciones/update-obligacion/update-obligacion.component";
+import { ViewObligacionComponent } from "./components/generales/obligaciones/view-obligacion/view-obligacion.component";
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
