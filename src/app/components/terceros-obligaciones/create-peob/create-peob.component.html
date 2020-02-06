@@ -1,0 +1,18 @@
+<div class="container-fluid col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <p><button class="btn btn-danger" [routerLink]="['/terceros/view', model.pers_auxi]"><i
+              class="fas fa-arrow-left"></i>Atras</button></p>
+            <h3>Agregar Obligacion Fiscal</h3>
+        </div>
+
+        <div class="card-body">
+            <div class="alert alert-danger" *ngIf="status == 0">
+                <li *ngFor="let item of validationErrors | keyvalue">
+                    {{ item.value }}
+                </li>
+            </div>
+            <app-form-peob #form [model]="model" (save)="Save($event)"></app-form-peob>
+        </div>
+    </div>
+</div>

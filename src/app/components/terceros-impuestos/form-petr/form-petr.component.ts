@@ -13,16 +13,15 @@ export class FormPetrComponent implements OnInit {
   datos: any[];
   impuestos: any[];
 
-  constructor(private dataService: TercerosService, private vincService: ImpuestoService) { }
+  constructor(private dataService: TercerosService, private impuService: ImpuestoService) { }
 
   ngOnInit() {
     this.dataService.sendGetRequest().subscribe((data: any[]) => {
       this.datos = data;
     });
 
-    this.vincService.sendGetRequest().subscribe((data: any[]) => {
-      this.impuestos = data;
-      console.log(this.impuestos);
+    this.impuService.sendGetRequest().subscribe((data: any[]) => {
+      this.impuestos = data;      
     });
   }
 

@@ -56,10 +56,19 @@ import { CreatePetrComponent } from "./components/terceros-impuestos/create-petr
 import { ViewPetrComponent } from "./components/terceros-impuestos/view-petr/view-petr.component";
 import { UpdatePetrComponent } from "./components/terceros-impuestos/update-petr/update-petr.component";
 
+import { CreatePeobComponent } from "./components/terceros-obligaciones/create-peob/create-peob.component";
+import { ViewPeobComponent } from "./components/terceros-obligaciones/view-peob/view-peob.component";
+import { UpdatePeobComponent } from "./components/terceros-obligaciones/update-peob/update-peob.component";
+
 import { IndexImpuestosComponent } from "./components/impuestos/index-impuestos/index-impuestos.component";
 import { CreateImpuestosComponent } from "./components/impuestos/create-impuestos/create-impuestos.component";
 import { UpdateImpuestosComponent } from "./components/impuestos/update-impuestos/update-impuestos.component";
 import { ViewImpuestosComponent } from "./components/impuestos/view-impuestos/view-impuestos.component";
+
+import { IndexObligacionComponent } from "./components/obligaciones/index-obligacion/index-obligacion.component";
+import { CreateObligacionComponent } from "./components/obligaciones/create-obligacion/create-obligacion.component";
+import { UpdateObligacionComponent } from "./components/obligaciones/update-obligacion/update-obligacion.component";
+import { ViewObligacionComponent } from "./components/obligaciones/view-obligacion/view-obligacion.component";
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
@@ -117,6 +126,24 @@ const routes: Routes = [
   {
     path: "impuestos/view/:id",
     component: ViewImpuestosComponent
+  },
+
+  //Obligaciones
+  {
+    path: "obligaciones",
+    component: IndexObligacionComponent
+  },
+  {
+    path: "obligaciones/create",
+    component: CreateObligacionComponent
+  },
+  {
+    path: "obligaciones/update/:id",
+    component: UpdateObligacionComponent
+  },
+  {
+    path: "obligaciones/view/:id",
+    component: ViewObligacionComponent
   },
 
   //Empresa
@@ -262,6 +289,24 @@ const routes: Routes = [
     path: "terceros-impuestos/update/:id",
     component: UpdatePetrComponent
   },
+  //Terceros-Impuestos
+  {
+    path: "terceros-obligaciones/create/:id",
+    component: CreatePeobComponent
+  },
+  {
+    path: "terceros-obligaciones/view/:id",
+    component: ViewPeobComponent
+  },
+  {
+    path: "terceros-obligaciones/update/:id",
+    component: UpdatePeobComponent
+  },
+
+
+  
+
+
 ];
 
 @NgModule({

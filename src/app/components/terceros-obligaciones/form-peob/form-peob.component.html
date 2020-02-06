@@ -1,0 +1,33 @@
+<form name="form" (ngSubmit)="f.form.valid && Save()" #f="ngForm" novalidate>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="" class="control-label">Tercero</label>
+            <select class="form-control" [(ngModel)]="model.pers_auxi" name="pers_auxi" #pers_auxi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pers_auxi.invalid }" required disabled>
+            <option disabled selected>Selecciona un Tercero</option>
+            <option [value]="item.pers_auxi" *ngFor="let item of this.datos">{{item.pers_rsoc}}</option>
+            </select>
+            <div *ngIf="f.submitted && pers_auxi.invalid" class="invalid-feedback">
+                <div *ngIf="pers_auxi.errors.required">"Tercero" es obligatorio</div>
+            </div>
+        </div>
+
+
+        <div class="form-group col-md-6">
+            <label for="" class="control-label">Obligacion Fiscal</label>
+            <select class="form-control" [(ngModel)]="model.obli_codi" name="obli_codi" #obli_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && obli_codi.invalid }" required>
+                          <option *ngFor="let obl of this.obligaciones" value="{{obl.obli_codi}}">{{ obl.obli_code+' '+obl.obli_desc }}</option>                  
+            </select>
+            <div *ngIf="f.submitted && obli_codi.invalid" class="invalid-feedback">
+                <div *ngIf="obli_codi.errors.required">
+                    "Obligacion Fiscal" es obligatorio
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="text-left">
+        <button class="btn btn-primary">Guardar</button>
+    </div>
+</form>

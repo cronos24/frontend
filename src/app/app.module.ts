@@ -83,6 +83,18 @@ import { UpdateImpuestosComponent } from './components/impuestos/update-impuesto
 import { IndexImpuestosComponent } from './components/impuestos/index-impuestos/index-impuestos.component';
 import { ViewImpuestosComponent } from './components/impuestos/view-impuestos/view-impuestos.component';
 
+import { ViewObligacionComponent } from './components/obligaciones/view-obligacion/view-obligacion.component';
+import { FormObligacionComponent } from './components/obligaciones/form-obligacion/form-obligacion.component';
+import { CreateObligacionComponent } from './components/obligaciones/create-obligacion/create-obligacion.component';
+import { UpdateObligacionComponent } from './components/obligaciones/update-obligacion/update-obligacion.component';
+import { IndexObligacionComponent } from './components/obligaciones/index-obligacion/index-obligacion.component';
+
+import { IndexPeobComponent } from './components/terceros-obligaciones/index-peob/index-peob.component';
+import { FormPeobComponent } from './components/terceros-obligaciones/form-peob/form-peob.component';
+import { CreatePeobComponent } from './components/terceros-obligaciones/create-peob/create-peob.component';
+import { UpdatePeobComponent } from './components/terceros-obligaciones/update-peob/update-peob.component';
+import { ViewPeobComponent } from './components/terceros-obligaciones/view-peob/view-peob.component';
+
 
 
 @NgModule({
@@ -174,6 +186,20 @@ import { ViewImpuestosComponent } from './components/impuestos/view-impuestos/vi
     UpdateImpuestosComponent,
     IndexImpuestosComponent,
     ViewImpuestosComponent,
+
+    //Obligaciones
+    ViewObligacionComponent,
+    FormObligacionComponent,
+    CreateObligacionComponent,
+    UpdateObligacionComponent,
+    IndexObligacionComponent,
+
+    //TercerosObligaciones
+    IndexPeobComponent,
+    FormPeobComponent,
+    CreatePeobComponent,
+    UpdatePeobComponent,
+    ViewPeobComponent,
    
     
 
