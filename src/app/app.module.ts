@@ -119,6 +119,11 @@ import { IndexProductoComponent } from './components/generales/productos/index-p
 import { CreateProductoComponent } from './components/generales/productos/create-producto/create-producto.component';
 import { UpdateProductoComponent } from './components/generales/productos/update-producto/update-producto.component';
 import { FormProductoComponent } from './components/generales/productos/form-producto/form-producto.component';
+import { FormResolucionComponent } from './components/facturacion/resolucion/form-resolucion/form-resolucion.component';
+import { IndexResolucionComponent } from './components/facturacion/resolucion/index-resolucion/index-resolucion.component';
+import { ViewResolucionComponent } from './components/facturacion/resolucion/view-resolucion/view-resolucion.component';
+import { CreateResolucionComponent } from './components/facturacion/resolucion/create-resolucion/create-resolucion.component';
+import { UpdateResolucionComponent } from './components/facturacion/resolucion/update-resolucion/update-resolucion.component';
 
 
 
@@ -250,6 +255,11 @@ import { FormProductoComponent } from './components/generales/productos/form-pro
     CreateProductoComponent,
     UpdateProductoComponent,
     FormProductoComponent,
+    FormResolucionComponent,
+    IndexResolucionComponent,
+    ViewResolucionComponent,
+    CreateResolucionComponent,
+    UpdateResolucionComponent,
    
     
 

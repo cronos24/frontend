@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            <p><button class="btn btn-danger" [routerLink]="['/resoluciones']"><i class="fas fa-arrow-left"></i>Atras</button></p>
+            <h3>Resoluciones No. {{model.cias_codi}}</h3>
+        </div>
+        <div class="card-body">
+
+
+            <div class="table-responsive">
+                <div class="col-md-12">
+                    <table class="table table-striped table-bordered table-sm">
+                        <tbody>
+
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center; width: 15%;">Codigo</th>
+                                <td style="width: 18%;">{{model.reso_codi}}</td>
+                                <th class="alert alert-success" style="text-align: center; width: 15%;">Tipo Factura</th>
+                                <td style="width: 19%;">{{ (model.reso_tfac=='C') ? 'Contingencia' : 'Factura' }}</td>
+                                <th class="alert alert-success" style="text-align: center; width: 15%;">Tipo Resolucion</th>
+                                <td style="width: 18%;">{{ model.reso_tipo }}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Empresa</th>
+                                <td colspan="3">{{model.ciasCodi.cias_rsoc}}</td>
+                                <th class="alert alert-success" style="text-align: center; width: 18%;">Fecha</th>
+                                <td>{{model.reso_fech}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Resolucion</th>
+                                <td>{{model.reso_reso}}</td>
+                                <th class="alert alert-success" style="text-align: center; width: 18%;">Inicial</th>
+                                <td>{{model.reso_ini}}</td>
+                                <th class="alert alert-success" style="text-align: center; width: 18%;">Final</th>
+                                <td>{{model.reso_fin}}</td>
+                            </tr>
+
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Prefijo</th>
+                                <td>{{model.reso_pref}}</td>
+                                <th class="alert alert-success" style="text-align: center; width: 18%;">Consecutivo Actual</th>
+                                <td>{{model.reso_cons}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Estado</th>
+                                <td>{{model.estaCodi.esta_nomb}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

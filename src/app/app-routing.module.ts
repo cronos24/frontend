@@ -89,10 +89,18 @@ import { IndexGrupoComponent } from './components/inventario/grupos/index-grupo/
 import { CreateGrupoComponent } from './components/inventario/grupos/create-grupo/create-grupo.component';
 import { UpdateGrupoComponent } from './components/inventario/grupos/update-grupo/update-grupo.component';
 import { ViewGrupoComponent } from './components/inventario/grupos/view-grupo/view-grupo.component';
+
+
 import { IndexProductoComponent } from './components/generales/productos/index-producto/index-producto.component';
 import { CreateProductoComponent } from './components/generales/productos/create-producto/create-producto.component';
 import { UpdateProductoComponent } from './components/generales/productos/update-producto/update-producto.component';
 import { ViewProductoComponent } from './components/generales/productos/view-producto/view-producto.component';
+
+
+import { IndexResolucionComponent } from './components/facturacion/resolucion/index-resolucion/index-resolucion.component';
+import { CreateResolucionComponent } from './components/facturacion/resolucion/create-resolucion/create-resolucion.component';
+import { UpdateResolucionComponent } from './components/facturacion/resolucion/update-resolucion/update-resolucion.component';
+import { ViewResolucionComponent } from './components/facturacion/resolucion/view-resolucion/view-resolucion.component';
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
@@ -414,6 +422,24 @@ const routes: Routes = [
   {
     path: "productos/view/:id",
     component: ViewProductoComponent
+  },
+
+  //Productos
+  {
+    path: "resoluciones",
+    component: IndexResolucionComponent
+  },
+  {
+    path: "resoluciones/create",
+    component: CreateResolucionComponent
+  },
+  {
+    path: "resoluciones/update/:id",
+    component: UpdateResolucionComponent
+  },
+  {
+    path: "resoluciones/view/:id",
+    component: ViewResolucionComponent
   },
 
 
