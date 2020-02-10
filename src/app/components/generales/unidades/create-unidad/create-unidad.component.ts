@@ -12,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CreateUnidadComponent implements OnInit {
   model: Unidad = {
     umed_codi: null,
+    umed_codd: null,
     umed_nomb: null,
     umed_abre: null
   };

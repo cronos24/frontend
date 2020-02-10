@@ -30,7 +30,7 @@ export class IndexUnidadComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.headers = ["Codigo", "Nombre", "Abreviatura"];
+    this.headers = ["Id", "Codigo Dian", "Nombre", "Abreviatura"];
     this.dtOptions = {
       pagingType: "full_numbers",
       pageLength: 10

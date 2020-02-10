@@ -95,8 +95,8 @@
         <div class="form-group col-md-4">
             <label for="" class="control-label">Vence</label>
             <select class="form-control" [(ngModel)]="model.prod_venc" name="prod_venc" #prod_venc="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_venc.invalid }" [required]="model.prod_tipo == 'PR'">
-                <option value="S">No</option>
-                <option value="N">Si</option>                        
+                <option value="S">Si</option>
+                <option value="N">No</option>                        
             </select>
             <div *ngIf="f.submitted && prod_venc.invalid" class="invalid-feedback">
                 <div *ngIf="prod_venc.errors.required">
@@ -171,21 +171,27 @@
     <div class="form-row">
 
         <div class="form-group col-md-4">
-            <label for="" class="control-label">Porcentaje Iva</label>
-            <input type="text" class="form-control" [(ngModel)]="model.prod_iva" name="prod_iva" #prod_iva="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_iva.invalid }" [required]="model.prod_tipo == 'PR'" />
+            <label for="" class="control-label">Iva</label>
+            <select class="form-control" [(ngModel)]="model.prod_iva" name="prod_iva" #prod_iva="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_iva.invalid }" [required]="model.prod_tipo == 'PR'">
+                <option value="S">Si</option>
+                <option value="N">No</option>                        
+            </select>
             <div *ngIf="f.submitted && prod_iva.invalid" class="invalid-feedback">
                 <div *ngIf="prod_iva.errors.required">
-                    "Porcentaje Iva" es obligatorio
+                    "Iva" es obligatorio
                 </div>
             </div>
         </div>
 
         <div class="form-group col-md-4">
-            <label for="" class="control-label">Porcentaje Ic</label>
-            <input type="text" class="form-control" [(ngModel)]="model.prod_ic" name="prod_ic" #prod_ic="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_ic.invalid }" [required]="model.prod_tipo == 'PR'" />
+            <label for="" class="control-label">Impuesto al Consumo</label>
+            <select class="form-control" [(ngModel)]="model.prod_ic" name="prod_ic" #prod_ic="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_ic.invalid }" [required]="model.prod_tipo == 'PR'">
+                <option value="S">Si</option>
+                <option value="N">No</option>                        
+            </select>
             <div *ngIf="f.submitted && prod_ic.invalid" class="invalid-feedback">
                 <div *ngIf="prod_ic.errors.required">
-                    "Porcentaje Ic" es obligatorio
+                    "Impuesto al Consumo" es obligatorio
                 </div>
             </div>
         </div>
@@ -193,7 +199,7 @@
 
 
         <div class="form-group col-md-4">
-            <label for="" class="control-label">Garantia</label>
+            <label for="" class="control-label">Garantia(dias)</label>
             <input type="text" class="form-control" [(ngModel)]="model.prod_gara" name="prod_gara" #prod_gara="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_gara.invalid }" required/>
             <div *ngIf="f.submitted && prod_gara.invalid" class="invalid-feedback">
                 <div *ngIf="prod_gara.errors.required">

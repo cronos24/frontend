@@ -28,8 +28,8 @@ export class Producto {
     prod_secc : string;
     prod_venc : string;
     prod_vcoa : number;
-    prod_iva : number;
-    prod_ic : number;
+    prod_iva : string;
+    prod_ic : string;
     prod_vsal : string;
     prod_obse : string;
     prod_imag : string;
