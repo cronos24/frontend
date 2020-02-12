@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Resolucion } from 'src/app/Models/facturacion/resolucion';
+import { Resolucion } from 'src/app/Models/facturacion/Resolucion';
 import { ResolucionService } from 'src/app/services/facturacion/resolucion.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -15,7 +15,8 @@ export class UpdateResolucionComponent implements OnInit {
   model: Resolucion = {
     reso_codi: null,
     reso_tfac: "",
-    sede_codi: 1,
+    sede_codi: null,
+    sedeCodi:null,
     cias_codi: null,
     ciasCodi: null,
     reso_fech: null,

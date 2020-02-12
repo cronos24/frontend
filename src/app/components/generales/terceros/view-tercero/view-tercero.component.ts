@@ -45,6 +45,7 @@ export class ViewTerceroComponent implements OnInit {
     esta_usua: "",
     pais_codi: null,
     sede_codi: null,
+    sedeCodi: null,
     esta_codi: "",
     pers_codp: "",
     pers_regi:null,

@@ -8,7 +8,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { ToastrModule } from "ngx-toastr";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FormsModule } from "@angular/forms";
-
+import { Select2Module } from 'ng2-select2';
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
 
@@ -124,12 +124,37 @@ import { IndexResolucionComponent } from './components/facturacion/resolucion/in
 import { ViewResolucionComponent } from './components/facturacion/resolucion/view-resolucion/view-resolucion.component';
 import { CreateResolucionComponent } from './components/facturacion/resolucion/create-resolucion/create-resolucion.component';
 import { UpdateResolucionComponent } from './components/facturacion/resolucion/update-resolucion/update-resolucion.component';
+import { IndexDetfComponent } from './components/facturacion/factura-detalle/index-detf/index-detf.component';
+import { ViewDetfComponent } from './components/facturacion/factura-detalle/view-detf/view-detf.component';
+import { FormDetfComponent } from './components/facturacion/factura-detalle/form-detf/form-detf.component';
+import { CreateDetfComponent } from './components/facturacion/factura-detalle/create-detf/create-detf.component';
+import { UpdateDetfComponent } from './components/facturacion/factura-detalle/update-detf/update-detf.component';
+import { UpdateFacturaComponent } from './components/facturacion/factura/update-factura/update-factura.component';
+import { CreateFacturaComponent } from './components/facturacion/factura/create-factura/create-factura.component';
+import { FormFacturaComponent } from './components/facturacion/factura/form-factura/form-factura.component';
+import { IndexFacturaComponent } from './components/facturacion/factura/index-factura/index-factura.component';
+import { ViewFacturaComponent } from './components/facturacion/factura/view-factura/view-factura.component';
+import { FormSedeComponent } from './components/generales/sedes/form-sede/form-sede.component';
+import { CreateSedeComponent } from './components/generales/sedes/create-sede/create-sede.component';
+import { UpdateSedeComponent } from './components/generales/sedes/update-sede/update-sede.component';
+import { IndexSedeComponent } from './components/generales/sedes/index-sede/index-sede.component';
+import { ViewSedeComponent } from './components/generales/sedes/view-sede/view-sede.component';
+import { ViewProyectoComponent } from './components/generales/proyectos/view-proyecto/view-proyecto.component';
+import { IndexProyectoComponent } from './components/generales/proyectos/index-proyecto/index-proyecto.component';
+import { CreateProyectoComponent } from './components/generales/proyectos/create-proyecto/create-proyecto.component';
+import { UpdateProyectoComponent } from './components/generales/proyectos/update-proyecto/update-proyecto.component';
+import { FormProyectoComponent } from './components/generales/proyectos/form-proyecto/form-proyecto.component';
+import { FormSproComponent } from './components/generales/sub-proyectos/form-spro/form-spro.component';
+import { CreateSproComponent } from './components/generales/sub-proyectos/create-spro/create-spro.component';
+import { UpdateSproComponent } from './components/generales/sub-proyectos/update-spro/update-spro.component';
+import { IndexSproComponent } from './components/generales/sub-proyectos/index-spro/index-spro.component';
+import { ViewSproComponent } from './components/generales/sub-proyectos/view-spro/view-spro.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent,    
 
     HomeComponent,
     AboutComponent,
@@ -230,36 +255,77 @@ import { UpdateResolucionComponent } from './components/facturacion/resolucion/u
     CreatePeobComponent,
     UpdatePeobComponent,
     ViewPeobComponent,
+
+    //Linea
     ViewLineaComponent,
     IndexLineaComponent,
     CreateLineaComponent,
     UpdateLineaComponent,
     FormLineaComponent,
+
+    //Categoria
     FormCategoriaComponent,
     UpdateCategoriaComponent,
     CreateCategoriaComponent,
     IndexCategoriaComponent,
     ViewCategoriaComponent,
+    
+    //Grupo
     ViewGrupoComponent,
     IndexGrupoComponent,
     CreateGrupoComponent,
     UpdateGrupoComponent,
     FormGrupoComponent,
+
+    //Unidades de medida
     FormUnidadComponent,
     UpdateUnidadComponent,
     CreateUnidadComponent,
     IndexUnidadComponent,
     ViewUnidadComponent,
+
+    //Producto
     ViewProductoComponent,
     IndexProductoComponent,
     CreateProductoComponent,
     UpdateProductoComponent,
     FormProductoComponent,
+
+    //Reoluciones
     FormResolucionComponent,
     IndexResolucionComponent,
     ViewResolucionComponent,
     CreateResolucionComponent,
     UpdateResolucionComponent,
+
+    //Factura-detalle
+    IndexDetfComponent,
+    ViewDetfComponent,
+    FormDetfComponent,
+    CreateDetfComponent,
+    UpdateDetfComponent,
+
+    //Factura
+    UpdateFacturaComponent,
+    CreateFacturaComponent,
+    FormFacturaComponent,
+    IndexFacturaComponent,
+    ViewFacturaComponent,
+    FormSedeComponent,
+    CreateSedeComponent,
+    UpdateSedeComponent,
+    IndexSedeComponent,
+    ViewSedeComponent,
+    ViewProyectoComponent,
+    IndexProyectoComponent,
+    CreateProyectoComponent,
+    UpdateProyectoComponent,
+    FormProyectoComponent,
+    FormSproComponent,
+    CreateSproComponent,
+    UpdateSproComponent,
+    IndexSproComponent,
+    ViewSproComponent,
    
     
 
@@ -269,6 +335,7 @@ import { UpdateResolucionComponent } from './components/facturacion/resolucion/u
     AppRoutingModule,
     DataTablesModule,
     HttpClientModule,
+    Select2Module,
     FormsModule,
     HttpClientXsrfModule.withOptions({
       cookieName: "XSRF-TOKEN",

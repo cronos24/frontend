@@ -57,7 +57,8 @@ export class CreateProductoComponent implements OnInit {
     prod_obse : "",
     prod_imag : "",
     prod_reqs : "",
-    sede_codi : 1,
+    sede_codi : null,
+    sedeCodi : null, 
     usua_codi : 1,
     };
     validationErrors: any[] = [];

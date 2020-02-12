@@ -208,7 +208,7 @@
             </div>
         </div>
 
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
             <label for="" class="control-label">Valor de Venta</label>
             <input type="text" class="form-control" [(ngModel)]="model.prod_valv" name="prod_valv" #prod_valv="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_valv.invalid }" required/>
             <div *ngIf="f.submitted && prod_valv.invalid" class="invalid-feedback">
@@ -218,12 +218,24 @@
             </div>
         </div>
 
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
             <label for="" class="control-label">Seccion</label>
             <input type="text" class="form-control" [(ngModel)]="model.prod_secc" name="prod_secc" #prod_secc="ngModel" [ngClass]="{ 'is-invalid': f.submitted && prod_secc.invalid }" />
             <div *ngIf="f.submitted && prod_secc.invalid" class="invalid-feedback">
                 <div *ngIf="prod_secc.errors.required">
                     "Seccion" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Sede</label>
+            <select class="form-control" [(ngModel)]="model.sede_codi" name="sede_codi" #sede_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && sede_codi.invalid }" required>
+                <option *ngFor="let sed of sedes" value="{{sed.sede_codi}}">{{ sed.sede_nomb }}</option>   
+            </select>
+            <div *ngIf="f.submitted && sede_codi.invalid" class="invalid-feedback">
+                <div *ngIf="sede_codi.errors.required">
+                    "Sede" es obligatorio
                 </div>
             </div>
         </div>

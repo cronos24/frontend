@@ -1,11 +1,13 @@
 import { Estado } from '../general/Estado';
 import { Empresa } from '../general/Empresa';
+import { Sede } from '../general/Sede';
 
 
 export class Resolucion {
     reso_codi: number;
     reso_tfac: string;
     sede_codi: number;
+    sedeCodi: Sede;
     cias_codi: number;
     ciasCodi: Empresa;
     reso_fech: Date;

@@ -14,15 +14,17 @@
 
                             <tr>
                                 <th class="alert alert-success" style="text-align: center; width: 15%;">Codigo</th>
-                                <td style="width: 18%;">{{model.reso_codi}}</td>
+                                <td>{{model.reso_codi}}</td>
                                 <th class="alert alert-success" style="text-align: center; width: 15%;">Tipo Factura</th>
-                                <td style="width: 19%;">{{ (model.reso_tfac=='C') ? 'Contingencia' : 'Factura' }}</td>
+                                <td style="width: 15%;">{{ (model.reso_tfac=='C') ? 'Contingencia' : 'Factura' }}</td>
                                 <th class="alert alert-success" style="text-align: center; width: 15%;">Tipo Resolucion</th>
-                                <td style="width: 18%;">{{ model.reso_tipo }}</td>
+                                <td style="width: 15%;">{{ model.reso_tipo }}</td>
                             </tr>
                             <tr>
                                 <th class="alert alert-success" style="text-align: center;">Empresa</th>
-                                <td colspan="3">{{model.ciasCodi.cias_rsoc}}</td>
+                                <td>{{model.ciasCodi.cias_rsoc}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Sede</th>
+                                <td>{{model.sedeCodi.sede_nomb}}</td>
                                 <th class="alert alert-success" style="text-align: center; width: 18%;">Fecha</th>
                                 <td>{{model.reso_fech}}</td>
                             </tr>
@@ -42,6 +44,10 @@
                                 <td>{{model.reso_cons}}</td>
                                 <th class="alert alert-success" style="text-align: center;">Estado</th>
                                 <td>{{model.estaCodi.esta_nomb}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Sede</th>
+                                <td colspan="5">{{model.sedeCodi.sede_nomb}}</td>
                             </tr>
                         </tbody>
                     </table>

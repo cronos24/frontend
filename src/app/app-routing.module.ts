@@ -102,6 +102,17 @@ import { CreateResolucionComponent } from './components/facturacion/resolucion/c
 import { UpdateResolucionComponent } from './components/facturacion/resolucion/update-resolucion/update-resolucion.component';
 import { ViewResolucionComponent } from './components/facturacion/resolucion/view-resolucion/view-resolucion.component';
 
+import { CreateDetfComponent } from './components/facturacion/factura-detalle/create-detf/create-detf.component';
+import { UpdateDetfComponent } from './components/facturacion/factura-detalle/update-detf/update-detf.component';
+import { ViewDetfComponent } from './components/facturacion/factura-detalle/view-detf/view-detf.component';
+
+import { IndexFacturaComponent } from './components/facturacion/factura/index-factura/index-factura.component';
+import { ViewFacturaComponent } from './components/facturacion/factura/view-factura/view-factura.component';
+import { UpdateFacturaComponent } from './components/facturacion/factura/update-factura/update-factura.component';
+import { CreateFacturaComponent } from './components/facturacion/factura/create-factura/create-factura.component';
+
+
+
 const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "about", component: AboutComponent },
@@ -424,7 +435,7 @@ const routes: Routes = [
     component: ViewProductoComponent
   },
 
-  //Productos
+  //Resoluciones
   {
     path: "resoluciones",
     component: IndexResolucionComponent
@@ -442,7 +453,37 @@ const routes: Routes = [
     component: ViewResolucionComponent
   },
 
+  //Factura-Detalle
+  {
+    path: "factura-detalle/create/:id",
+    component: CreateDetfComponent
+  },
+  {
+    path: "factura-detalle/view/:id",
+    component: ViewDetfComponent
+  },
+  {
+    path: "factura-detalle/update/:id",
+    component: UpdateDetfComponent
+  },
 
+  //Facturas
+  {
+    path: "facturas",
+    component: IndexFacturaComponent
+  },
+  {
+    path: "facturas/create",
+    component: CreateFacturaComponent
+  },
+  {
+    path: "facturas/update/:id",
+    component: UpdateFacturaComponent
+  },
+  {
+    path: "facturas/view/:id",
+    component: ViewFacturaComponent
+  },
   
 
 

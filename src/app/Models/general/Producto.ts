@@ -1,6 +1,7 @@
 import { Unidad } from './Unidad';
 import { Grupo } from '../inventario/Grupo';
 import { Estado } from './Estado';
+import { Sede } from './Sede';
 
 
 export class Producto {
@@ -35,5 +36,6 @@ export class Producto {
     prod_imag : string;
     prod_reqs : string;
     sede_codi : number;
+    sedeCodi: Sede;
     usua_codi : number;
 }

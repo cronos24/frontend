@@ -46,6 +46,7 @@ export class UpdateTerceroComponent implements OnInit {
     esta_usua: "",
     pais_codi: null,
     sede_codi: null,
+    sedeCodi: null,
     esta_codi: "",
     pers_codp: "000000",
     pers_regi: null,

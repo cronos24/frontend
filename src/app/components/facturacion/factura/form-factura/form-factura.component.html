@@ -1,0 +1,103 @@
+<form name="form" (ngSubmit)="f.form.valid && Save()" #f="ngForm" novalidate>
+
+
+    <div class="form-row">
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Tipo de Factura</label>
+            <select class="form-control" [(ngModel)]="model.fact_tipo" name="fact_tipo" #fact_tipo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && fact_tipo.invalid }" required>
+                        <option value="CR">Credito</option>
+                        <option value="CO">Contado</option> 
+                       </select>
+            <div *ngIf="f.submitted && fact_tipo.invalid" class="invalid-feedback">
+                <div *ngIf="fact_tipo.errors.required">
+                    "Tipo de Factura" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Empresa</label>
+            <select class="form-control" [(ngModel)]="model.cias_codi" name="cias_codi" #cias_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cias_codi.invalid }" disabled required>
+                          <option *ngFor="let emp of this.empresas" value="{{emp.cias_codi}}">{{ emp.cias_rsoc }}</option>                  
+            </select>
+            <div *ngIf="f.submitted && cias_codi.invalid" class="invalid-feedback">
+                <div *ngIf="cias_codi.errors.required">
+                    "Empresa" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Sede</label>
+            <select class="form-control" [(ngModel)]="model.sede_codi" name="sede_codi" #sede_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && sede_codi.invalid }" required>
+                <option *ngFor="let sede of this.sedes" value="{{sede.sede_codi}}">{{ sede.sede_nomb }}</option>                  
+            </select>
+            <div *ngIf="f.submitted && sede_codi.invalid" class="invalid-feedback">
+                <div *ngIf="sede_codi.errors.required">
+                    "Sede" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Fecha Registro</label>
+            <input type="date" class="form-control" [(ngModel)]="model.reso_fech" name="reso_fech" #reso_fech="ngModel" [ngClass]="{ 'is-invalid': f.submitted && reso_fech.invalid }" required/>
+            <div *ngIf="f.submitted && reso_fech.invalid" class="invalid-feedback">
+                <div *ngIf="reso_fech.errors.required">
+                    "Fecha Registro" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Fecha Vencimiento</label>
+            <input type="date" class="form-control" [(ngModel)]="model.fact_venc" name="fact_venc" #fact_venc="ngModel" [ngClass]="{ 'is-invalid': f.submitted && fact_venc.invalid }" required/>
+            <div *ngIf="f.submitted && fact_venc.invalid" class="invalid-feedback">
+                <div *ngIf="fact_venc.errors.required">
+                    "Fecha" es obligatorio
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Resolucion</label>
+            <select class="form-control" [(ngModel)]="model.reso_codi" name="reso_codi" #reso_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && reso_codi.invalid }" required>
+                          <option *ngFor="let reso of this.resoluciones" value="{{reso.reso_codi}}">{{ reso.reso_tfac+'-'+reso.reso_pref+'-'+reso.reso_reso }}</option>                  
+            </select>
+            <div *ngIf="f.submitted && reso_codi.invalid" class="invalid-feedback">
+                <div *ngIf="reso_codi.errors.required">
+                    "Resolucion" es obligatorio
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group col-md-12">
+            <label for="" class="control-label">Tercero</label>
+            <select class="form-control pers_auxi" [(ngModel)]="model.pers_auxi" name="pers_auxi" #pers_auxi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pers_auxi.invalid }" (change)="changeReso(pers_auxi.value)" required>
+                <option *ngFor="let ter of this.terceros" value="{{ter.pers_auxi}}">{{ ter.pers_rsoc }}</option>
+              </select>
+
+            <div *ngIf="f.submitted && pers_auxi.invalid" class="invalid-feedback">
+                <div *ngIf="pers_auxi.errors.required">
+                    "Tercero" es obligatorio
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="form-group col-md-12">
+            <label for="" class="control-label">Observaciones</label>
+            <textarea class="form-control" [(ngModel)]="model.fact_obse" name="fact_obse" #fact_obse="ngModel" [ngClass]="{ 'is-invalid': f.submitted && fact_obse.invalid }" rows="3"></textarea>
+        </div>
+
+    </div>
+
+
+    <div class="text-left">
+        <button class="btn btn-primary">Guardar</button>
+    </div>
+</form>

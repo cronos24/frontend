@@ -278,6 +278,18 @@
             <input type="text" class="form-control" [(ngModel)]="model.pers_pweb" name="pers_pweb" #pers_pweb="ngModel" />
         </div>
 
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Sede</label>
+            <select class="form-control" [(ngModel)]="model.sede_codi" name="sede_codi" #sede_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && sede_codi.invalid }" required>
+                          <option *ngFor="let sede of sedes" value="{{sede.sede_codi}}">{{ sede.sede_nomb }}</option>                  
+            </select>
+            <div *ngIf="f.submitted && sede_codi.invalid" class="invalid-feedback">
+                <div *ngIf="sede_codi.errors.required">
+                    "Sede" es obligatorio
+                </div>
+            </div>
+        </div>
+
 
     </div>
 

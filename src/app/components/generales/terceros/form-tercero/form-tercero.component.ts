@@ -4,6 +4,7 @@ import { OcupacionService } from 'src/app/services/generales/ocupacion.service';
 import { EntidadService } from 'src/app/services/generales/entidad.service';
 import { CiudadService } from 'src/app/services/generales/ciudad.service';
 import { PaisService } from 'src/app/services/generales/pais.service';
+import { SedeService } from 'src/app/services/generales/sede.service';
 
 @Component({
   selector: 'app-form-tercero',
@@ -23,8 +24,9 @@ export class FormTerceroComponent implements OnInit {
   ciudades: any;
   paises: Object;
   Params_regimen: any;
+  sedes: Object;
 
-  constructor(private paramsService: ParametrosService, private ocupacionesService: OcupacionService, private EntidadesService: EntidadService,private CiudadesService: CiudadService,private PaisesService: PaisService) { }
+  constructor(private paramsService: ParametrosService, private ocupacionesService: OcupacionService, private EntidadesService: EntidadService,private CiudadesService: CiudadService,private PaisesService: PaisService, private SedeService: SedeService) { }
 
   ngOnInit() {
     this.getParams();
@@ -86,6 +88,10 @@ export class FormTerceroComponent implements OnInit {
 
       this.PaisesService.sendGetRequest().subscribe(data => {      
         this.paises = data;          
+      });
+
+      this.SedeService.sendGetRequest().subscribe(data => {      
+        this.sedes = data;          
       });
   }
   

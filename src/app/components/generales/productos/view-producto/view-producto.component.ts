@@ -24,6 +24,7 @@ export class ViewProductoComponent implements OnInit {
     prod_tipo : "",
     umed_codi :null,
     umedCodi : {
+      umed_codd:null,
       umed_codi:null,
       umed_nomb:null,
       umed_abre:null,
@@ -51,13 +52,14 @@ export class ViewProductoComponent implements OnInit {
     prod_secc : "",
     prod_venc : "",
     prod_vcoa : null,
-    prod_iva : 0,
-    prod_ic  : 0,
+    prod_iva : null,
+    prod_ic  : null,
     prod_vsal : "",
     prod_obse : "",
     prod_imag : "",
     prod_reqs : "",
     sede_codi : 1,
+    sedeCodi: null,
     usua_codi : 1,
     };
 

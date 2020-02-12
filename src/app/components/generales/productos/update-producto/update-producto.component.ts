@@ -26,6 +26,7 @@ export class UpdateProductoComponent implements OnInit {
     umed_codi :null,
     umedCodi : {
       umed_codi:null,
+      umed_codd:null,
       umed_nomb:null,
       umed_abre:null,
     },
@@ -52,13 +53,14 @@ export class UpdateProductoComponent implements OnInit {
     prod_secc : "",
     prod_venc : "",
     prod_vcoa : null,
-    prod_iva : 0,
-    prod_ic  : 0,
+    prod_iva : "",
+    prod_ic  : "",
     prod_vsal : "",
     prod_obse : "",
     prod_imag : "",
     prod_reqs : "",
     sede_codi : 1,
+    sedeCodi:null,
     usua_codi : 1,
     };
 

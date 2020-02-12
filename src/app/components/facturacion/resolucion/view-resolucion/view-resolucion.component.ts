@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ResolucionService } from 'src/app/services/facturacion/resolucion.service';
 import { ActivatedRoute } from '@angular/router';
-import { Resolucion } from 'src/app/Models/facturacion/resolucion';
+import { Resolucion } from 'src/app/Models/facturacion/Resolucion';
 
 @Component({
   selector: 'app-view-resolucion',
@@ -14,7 +14,8 @@ export class ViewResolucionComponent implements OnInit {
   model: Resolucion = {
     reso_codi: null,
     reso_tfac: "",
-    sede_codi: 1,
+    sede_codi: null,
+    sedeCodi: null,
     cias_codi: null,
     ciasCodi: null,
     reso_fech: null,

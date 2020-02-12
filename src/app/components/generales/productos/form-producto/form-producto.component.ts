@@ -3,6 +3,7 @@ import { GrupoService } from 'src/app/services/inventario/grupo.service';
 import { UnidadService } from 'src/app/services/generales/unidad.service';
 import { MarcaService } from 'src/app/services/generales/marca.service';
 import { ParametrosService } from 'src/app/services/generales/parametros.service';
+import { SedeService } from 'src/app/services/generales/sede.service';
 
 @Component({
   selector: 'app-form-producto',
@@ -18,8 +19,9 @@ export class FormProductoComponent implements OnInit {
   marcas: any;
   params: any;
   Params_tipo_prod: any;
+  sedes: Object;
 
-  constructor(private paramsService: ParametrosService, private grupoService: GrupoService, private umedService: UnidadService, private marcaService: MarcaService) { }
+  constructor(private paramsService: ParametrosService, private grupoService: GrupoService, private umedService: UnidadService, private marcaService: MarcaService, private sedeService: SedeService) { }
 
   ngOnInit() {
     this.getParams();
@@ -48,6 +50,11 @@ export class FormProductoComponent implements OnInit {
 
       this.marcaService.sendGetRequest().subscribe(data => {      
         this.marcas = data;           
+      });
+
+      this.sedeService.sendGetRequest().subscribe(data => {      
+        this.sedes = data;   
+        console.log(this.sedes);        
       });
   }
   
