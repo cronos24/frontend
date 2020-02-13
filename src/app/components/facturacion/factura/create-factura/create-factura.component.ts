@@ -12,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CreateFacturaComponent implements OnInit {
   model: Factura = {
     fact_codi: null,
-    fact_tipo: "",
+    fact_tipo: null,
     sede_codi: null,
     sedeCodi: null,
     proy_codi: null,
@@ -29,16 +29,17 @@ export class CreateFacturaComponent implements OnInit {
     pers_auxi: null,
     fact_peri: null,
     fact_venc: null,
-    fact_obse: "",
-    esta_codi: "",
+    fact_obse: null,
+    esta_codi: "A",
     estaCodi: {
       esta_codi: null,
       esta_colo: null,
       esta_nomb: null,
       esta_tipo: null
     },
+
     usu_logi: null,
-    temp_codi: null,
+    temp_codi: 1,
   };
   validationErrors: any[] = [];
   status: any;

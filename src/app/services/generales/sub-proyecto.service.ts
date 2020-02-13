@@ -12,8 +12,8 @@ export class SubProyectoService {
 
   url = environment.server_url + "General/ge-tspro";
 
-  public sendGetRequest(id) {
-    return this.httpClient.get(this.url+ "/index?id=" + id);
+  public sendGetRequest() {
+    return this.httpClient.get(this.url+ "/index");
   }
 
   public sendShowRequest(id) {

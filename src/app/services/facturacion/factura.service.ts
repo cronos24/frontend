@@ -12,6 +12,7 @@ export class FacturaService {
   url = environment.server_url + "Facturacion/fc-tfact";
 
   public sendGetRequest() {
+    console.log(this.url);
     return this.httpClient.get(this.url);
   }
 

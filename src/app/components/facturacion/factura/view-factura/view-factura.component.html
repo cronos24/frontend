@@ -1,1 +1,64 @@
-<p>view-factura works!</p>
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            <p><button class="btn btn-danger" [routerLink]="['/facturas']"><i class="fas fa-arrow-left"></i>Atras</button></p>
+            <h3>Editar Factura No. {{ model.reso_pref+'-'+model.fact_cons}}</h3>
+        </div>
+        <div class="card-body">
+
+
+            <div class="table-responsive">
+                <div class="col-md-12">
+                    <table class="table table-striped table-bordered table-sm">
+                        <tbody>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center; width: 15%;">Codigo</th>
+                                <td>{{model.fact_codi}}</td>
+                                <th class="alert alert-success" style="text-align: center; width: 15%;">Tipo</th>
+                                <td>{{model.fact_tipo=='CR'? 'CREDITO': 'DEBITO'}}</td>
+                                <th class="alert alert-success" style="text-align: center; width: 15%;">Sede</th>
+                                <td>{{model.sedeCodi.sede_nomb}}</td>
+                            </tr>
+
+
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Proyecto</th>
+                                <td>{{model.proyCodi.proy_nomb}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Sub Proyecto</th>
+                                <td>{{model.sproCodi.spro_nomb}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Resolucion</th>
+                                <td>{{model.resoCodi.reso_tfac+'-'+model.resoCodi.reso_pref+'-'+model.resoCodi.reso_reso}}</td>
+                            </tr>
+
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Fecha Registro</th>
+                                <td>{{model.fact_fech}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Fecha Vencimiento</th>
+                                <td>{{model.fact_venc}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Consecutivo</th>
+                                <td>{{model.reso_pref+'-'+model.fact_cons}}</td>
+
+                            </tr>
+
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Tercero</th>
+                                <td colspan="5">{{model.persAuxi.pers_rsoc}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Observaciones</th>
+                                <td colspan="5">{{model.fact_obse}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Estado</th>
+                                <td colspan="5">{{model.estaCodi.esta_nomb}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
