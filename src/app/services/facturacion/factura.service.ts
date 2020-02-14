@@ -20,6 +20,10 @@ export class FacturaService {
     return this.httpClient.get(this.url + "/view?id=" + id);
   }
 
+  public sendCloseRequest(id) {
+    return this.httpClient.get(this.url + "/close?id=" + id);
+  }
+
   public sendDeleteRequest(id) {
     return this.httpClient.delete(this.url + "/borrar?id=" + id);
   }

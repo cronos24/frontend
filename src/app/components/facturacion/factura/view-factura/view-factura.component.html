@@ -1,7 +1,13 @@
 <div class="container-fluid">
     <div class="card">
         <div class="card-header">
-            <p><button class="btn btn-danger" [routerLink]="['/facturas']"><i class="fas fa-arrow-left"></i>Atras</button></p>
+            <p><button class="btn btn-danger" [routerLink]="['/facturas']"><i class="fas fa-arrow-left"></i>Atras</button>
+                <button style="position: relative;left: 20px;" *ngIf="this.estado_factura == 'A'" (click)="this.closeFact(model.fact_codi, model)" type="button" class="btn btn-warning"><i class="fas fa-times-circle"
+                style="color: white;"></i> <font style="color: white; font-weight: 400;">     Cerrar Factura</font> </button>
+                <button style="position: relative;left: 20px;" *ngIf="this.estado_factura == 'PE'" (click)="this.closeFact(model.fact_codi, model)" type="button" class="btn btn-success"><i class="fas far fa-share-square"
+                    style="color: white;"></i> <font style="color: white; font-weight: 400;">  Enviar Factura Dian</font> </button>
+                <button style="position: relative;left: 20px;" *ngIf="this.estado_factura == 'N'" (click)="this.closeFact(model.fact_codi, model)" type="button" class="btn btn-danger"><i class="fas far fa-share-square"
+                        style="color: white;"></i> <font style="color: white; font-weight: 400;">  Enviar Nota Dian</font> </button></p>
             <h3>Editar Factura No. {{ model.reso_pref+'-'+model.fact_cons}}</h3>
         </div>
         <div class="card-body">
@@ -54,7 +60,7 @@
                             </tr>
                         </tbody>
                     </table>
-
+                    <app-index-detf [parent_id]="id" [estado_factura]="estado_factura"></app-index-detf>
 
                 </div>
 

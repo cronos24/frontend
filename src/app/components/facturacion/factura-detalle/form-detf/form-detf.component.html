@@ -1,1 +1,97 @@
-<p>form-detf works!</p>
+<form name="form" (ngSubmit)="f.form.valid && Save()" #f="ngForm" novalidate>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Factura</label>
+            <select class="form-control" [(ngModel)]="model.fact_codi" name="fact_codi" #fact_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && fact_codi.invalid }" required disabled>
+            <option disabled selected>Selecciona una Factura</option>
+            <option [value]="fact.fact_codi" *ngFor="let fact of this.factura">{{fact.reso_pref+'-'+fact.fact_cons}}</option>
+            </select>
+            <div *ngIf="f.submitted && fact_codi.invalid" class="invalid-feedback">
+                <div *ngIf="fact_codi.errors.required">"Tercero" es obligatorio</div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Producto</label>
+            <select class="form-control prod_codi" ng-model="prod_codi" [(ngModel)]="model.prod_codi" name="prod_codi" #prod_codi="ngModel" id="prod_codi" [ngClass]="{ 'is-invalid': f.submitted && prod_codi.invalid }" required>
+                <option *ngFor="let prod of this.productos" value="{{prod.prod_codi}}">{{ prod.prod_desc }}</option>
+              </select>
+            <div *ngIf="f.submitted && prod_codi.invalid" class="invalid-feedback">
+                <div *ngIf="prod_codi.errors.required">
+                    "Producto" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Unidad de Medida</label>
+            <select class="form-control" [(ngModel)]="model.umed_codi" name="umed_codi" #umed_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && umed_codi.invalid }" [disabled]="model.prod_codi == '' || model.prod_codi == null" required>
+                <option hidden [value]=null  selected>Seleccione una opcion </option>
+                          <option *ngFor="let umed of unidades" value="{{umed.umed_codi}}">{{ umed.umed_nomb }}</option>                          
+                      </select>
+            <div *ngIf="f.submitted && umed_codi.invalid" class="invalid-feedback">
+                <div *ngIf="umed_codi.errors.required">
+                    "Unidad de Medida" no puede ir vacio
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Cantidad</label>
+            <input type="number" min="0" step="0.01" class="form-control" [(ngModel)]="model.detf_cant" name="detf_cant" #detf_cant="ngModel" [ngClass]="{ 'is-invalid': f.submitted && detf_cant.invalid }" [disabled]="model.prod_codi == '' || model.prod_codi == null" required/>
+            <div *ngIf="f.submitted && detf_cant.invalid" class="invalid-feedback">
+                <div *ngIf="detf_cant.errors.required">
+                    "Cantidad" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Valor Unitario</label>
+            <input type="number" min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control" [(ngModel)]="model.detf_valu" name="detf_valu" #detf_valu="ngModel" [ngClass]="{ 'is-invalid': f.submitted && detf_valu.invalid }" [disabled]="model.prod_codi == '' || model.prod_codi == null"
+                required/>
+            <div *ngIf="f.submitted && detf_valu.invalid" class="invalid-feedback">
+                <div *ngIf="detf_valu.errors.required">
+                    "Valor Unitario" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Descuento(%)</label>
+            <input type="number" min="0" class="form-control" [(ngModel)]="model.detf_dcto" name="detf_dcto" #detf_dcto="ngModel" [ngClass]="{ 'is-invalid': f.submitted && detf_dcto.invalid }" [disabled]="model.prod_codi == '' || model.prod_codi == null" required/>
+            <div *ngIf="f.submitted && detf_dcto.invalid" class="invalid-feedback">
+                <div *ngIf="detf_dcto.errors.required">
+                    "Descuento" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Iva(%)</label>
+            <input type="number" min="0" class="form-control" [(ngModel)]="model.detf_iva" name="detf_iva" #detf_iva="ngModel" [ngClass]="{ 'is-invalid': f.submitted && detf_iva.invalid }" [disabled]="model.prod_codi == '' || model.prod_codi == null" required/>
+            <div *ngIf="f.submitted && detf_iva.invalid" class="invalid-feedback">
+                <div *ngIf="detf_iva.errors.required">
+                    "Iva" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="" class="control-label">Impuesto al Consumo(%)</label>
+            <input type="number" min="0" class="form-control" [(ngModel)]="model.detf_ic" name="detf_ic" #detf_ic="ngModel" [ngClass]="{ 'is-invalid': f.submitted && detf_ic.invalid }" [disabled]="model.prod_codi == '' || model.prod_codi == null" required/>
+            <div *ngIf="f.submitted && detf_ic.invalid" class="invalid-feedback">
+                <div *ngIf="detf_ic.errors.required">
+                    "Impuesto al Consumo" es obligatorio
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="text-left">
+        <button class="btn btn-primary">Guardar</button>
+    </div>
+</form>

@@ -1,9 +1,11 @@
 import { Unidad } from '../general/Unidad';
 import { Producto } from '../general/Producto';
+import { Factura } from './Factura';
 
 export class FacturaDetalle {
     detf_codi: number;
     fact_codi: number;
+    factCodi: Factua;
     prod_codi: number;
     prodCodi: Producto;
     detf_cant: number;

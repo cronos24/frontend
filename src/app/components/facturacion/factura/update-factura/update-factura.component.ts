@@ -29,6 +29,7 @@ export class UpdateFacturaComponent implements OnInit {
     reso_pref: null,
     fact_cons: null,
     pers_auxi: null,
+    persAuxi:null,
     fact_peri: null,
     fact_venc: null,
     fact_obse: null,

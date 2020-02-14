@@ -22,6 +22,7 @@ export class IndexFacturaComponent implements OnInit {
   headers = [];
 
   temp = false;
+  fact_activa: any;
 
   constructor(
     private dataService: FacturaService,
@@ -48,7 +49,13 @@ export class IndexFacturaComponent implements OnInit {
   getFact() {
     this.dataService.sendGetRequest().subscribe((data: any[]) => {
       this.models = data;
-      console.log(this.models);
+
+      this.fact_activa = this.models.filter(function(fact){
+        return fact.esta_codi == 'A';
+        });
+
+        this.fact_activa = this.fact_activa.length;
+    
       this.buttons = [
         {
           id: "view",
@@ -57,6 +64,7 @@ export class IndexFacturaComponent implements OnInit {
           icon: "fas fa-eye",
           style: "2px;",
           href: "#",
+          show: true,
           method: "showFact"
         },
         {
@@ -66,15 +74,17 @@ export class IndexFacturaComponent implements OnInit {
           icon: "fas fa-pencil-alt",
           style: "margin:2px;",
           href: "#",
+          show: true,
           method: "editFact"
         },
         {
           id: "delete",
           label: "",
           class: "btn btn-danger btn-sm",
-          icon: "fas fa-trash-alt",
+          icon: "fas fa-ban",
           style: "margin:2px;",
           href: "#",
+          show: true,
           method: "deleteFact"
         }
       ];
@@ -83,34 +93,43 @@ export class IndexFacturaComponent implements OnInit {
     });
   }
 
-  deleteFact(id) {
-    if (confirm("Esta seguro de Borrar el registro?")) {
-      this.dataService.sendDeleteRequest(id).subscribe(data => {
-        if (data === 1) {
-          const index = this.models.findIndex(item => item.Fact_codi === id);
-          this.models.splice(index, 1);
-          this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
-            dtInstance.row("#" + id).remove();
-            dtInstance.draw();
-          });
-          this.toastr.warning(
-            "<i class='fas fa-exclamation-triangle fa-2x'></i> Registro Borrado con Exito!!!"
-          );
-        } else {
-          this.toastr.error("No se puede borrar el registro.");
-        }
-      });
+  deleteFact(id, model) {
+
+    if (model.esta_codi=='EN') {
+      if (confirm("Esta seguro de Anular el registro?")) {
+        this.dataService.sendDeleteRequest(id).subscribe(data => {
+          if (data["status"] === 1) {
+            const index = this.models.findIndex(item => item.fact_codi === id);
+            this.models[index].esta_codi = data["model"].esta_codi;
+            this.models[index].estaCodi.esta_nomb = "ANULADO";
+            this.toastr.warning(
+              "<i class='fas fa-exclamation-triangle fa-2x'></i> Registro Anulado con Exito!!!"
+            );
+          } else {
+            this.toastr.error("No se puede Anulador el registro.");
+          }
+        
+        });
+      }
+    }else{
+      this.toastr.error(
+        "<i class='fas fa-exclamation-triangle fa-2x'></i> No se puede Anular una factura que no ha sido enviada a la DIAN."
+      );
     }
+    
   }
 
-  showFact(id) {
+  showFact(id, model) {
     this.route.navigate(["facturas/view", id]);
-    //console.log("showEstado: " + id);
-  }
+   }
 
-  editFact(id) {
-    this.route.navigate(["facturas/update", id]);
-    //console.log("editEstado: " + id);
+  editFact(id, model) {
+    if(model.esta_codi=='A'){
+      this.route.navigate(["facturas/update", id]);
+    }else{
+      this.toastr.error("<i class='fas fa-ban'></i> La factura no se encuentra activa.");
+    }
+
   }
 
   createFact() {

@@ -4,6 +4,7 @@ import { Resolucion } from './Resolucion';
 import { Sede } from '../general/Sede';
 import { Proyecto } from '../general/Proyecto';
 import { SubProyecto } from '../general/SubProyecto';
+import { Tercero } from '../general/Tercero';
 
 export class Factura {
     fact_codi: number;
@@ -22,6 +23,7 @@ export class Factura {
     reso_pref: string;
     fact_cons: number;
     pers_auxi: number;
+    persAuxi: Tercero;
     fact_peri: number;
     fact_venc: Date;
     fact_obse: string;
