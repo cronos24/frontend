@@ -1,18 +1,18 @@
 <div class="container-fluid col-md-12">
-  <div class="card">
-    <div class="card-header">
-      <p><button class="btn btn-danger" [routerLink]="['/empresas/view', model.cias_codi]"><i
+    <div class="card">
+        <div class="card-header">
+            <p><button class="btn btn-danger" [routerLink]="['/empresas/view', model.cias_codi]"><i
             class="fas fa-arrow-left"></i>Atras</button></p>
-      <h3>Editar Logo No. {{ model.logo_codi}}</h3>
-    </div>
+            <h3>Editar Logo No. {{ model.logo_codi}}</h3>
+        </div>
 
-    <div class="card-body">
-      <div class="alert alert-danger" *ngIf="status == 0">
-        <li *ngFor="let item of validationErrors | keyvalue">
-          {{ item.value }}
-        </li>
-      </div>
-      <app-form-logo #form [model]="model" (save)="Save($event)"></app-form-logo>
+        <div class="card-body">
+            <div class="alert alert-danger" *ngIf="status == 0">
+                <li *ngFor="let item of validationErrors | keyvalue">
+                    {{ item.value }}
+                </li>
+            </div>
+            <app-form-logo #form [model]="model" (save)="Save($event)"></app-form-logo>
+        </div>
     </div>
-  </div>
 </div>

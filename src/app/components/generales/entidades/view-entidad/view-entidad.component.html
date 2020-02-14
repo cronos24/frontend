@@ -2,10 +2,7 @@
     <div class="card">
         <div class="card-header">
             <p>
-                <button
-                    class="btn btn-danger"
-                    [routerLink]="['/entidades']"
-                >
+                <button class="btn btn-danger" [routerLink]="['/entidades']">
                     <i class="fas fa-arrow-left"></i>
                     Atras
                 </button>
@@ -20,28 +17,19 @@
                         <tbody>
 
                             <tr>
-                                <th
-                                    class="alert alert-success"
-                                    style="text-align: center; width: 15%;"
-                                >
+                                <th class="alert alert-success" style="text-align: center; width: 15%;">
                                     Codigo
                                 </th>
                                 <td>{{model.enad_codi}}</td>
                             </tr>
                             <tr>
-                                <th
-                                    class="alert alert-success"
-                                    style="text-align: center;"
-                                >
+                                <th class="alert alert-success" style="text-align: center;">
                                     Nombre
                                 </th>
                                 <td>{{model.enad_nomb}}</td>
                             </tr>
                             <tr>
-                                <th
-                                    class="alert alert-success"
-                                    style="text-align: center;"
-                                >
+                                <th class="alert alert-success" style="text-align: center;">
                                     Estado
                                 </th>
                                 <td>{{model.estaCodi.esta_nomb}}</td>
