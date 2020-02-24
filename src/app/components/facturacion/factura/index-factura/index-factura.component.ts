@@ -127,7 +127,7 @@ export class IndexFacturaComponent implements OnInit {
     if(model.esta_codi=='A'){
       this.route.navigate(["facturas/update", id]);
     }else{
-      this.toastr.error("<i class='fas fa-ban'></i> La factura no se encuentra activa.");
+      this.toastr.error("<i class='fas fa-ban'></i> El estado de la factura no permite modificaciones.");
     }
 
   }

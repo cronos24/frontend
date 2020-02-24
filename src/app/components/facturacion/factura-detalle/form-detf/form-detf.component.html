@@ -39,7 +39,8 @@
 
         <div class="form-group col-md-4">
             <label for="" class="control-label">Cantidad</label>
-            <input type="number" min="0" step="0.01" class="form-control" [(ngModel)]="model.detf_cant" name="detf_cant" #detf_cant="ngModel" [ngClass]="{ 'is-invalid': f.submitted && detf_cant.invalid }" [disabled]="model.prod_codi == '' || model.prod_codi == null" required/>
+            <input type="number" min="0" step="0.01" class="form-control" [(ngModel)]="model.detf_cant" name="detf_cant" #detf_cant="ngModel" [ngClass]="{ 'is-invalid': f.submitted && detf_cant.invalid }" [disabled]="model.prod_codi == '' || model.prod_codi == null"
+                required/>
             <div *ngIf="f.submitted && detf_cant.invalid" class="invalid-feedback">
                 <div *ngIf="detf_cant.errors.required">
                     "Cantidad" es obligatorio
@@ -86,6 +87,11 @@
                     "Impuesto al Consumo" es obligatorio
                 </div>
             </div>
+        </div>
+
+        <div class="form-group col-md-12">
+            <label for="" class="control-label">Notas</label>
+            <textarea class="form-control" [(ngModel)]="model.detf_nota" name="detf_nota" #detf_nota="ngModel" [ngClass]="{ 'is-invalid': f.submitted && detf_nota.invalid }" rows="3"></textarea>
         </div>
 
     </div>

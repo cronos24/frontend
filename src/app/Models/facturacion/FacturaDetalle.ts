@@ -5,7 +5,7 @@ import { Factura } from './Factura';
 export class FacturaDetalle {
     detf_codi: number;
     fact_codi: number;
-    factCodi: Factua;
+    factCodi: Factura;
     prod_codi: number;
     prodCodi: Producto;
     detf_cant: number;
@@ -13,6 +13,7 @@ export class FacturaDetalle {
     detf_dcto: number;
     detf_iva: number;
     detf_ic: number;
+    detf_nota: string;
     umed_codi: number;
     umedCodi: Unidad;
   }

@@ -47,7 +47,6 @@ export class IndexLineaComponent implements OnInit {
   getLinea() {
     this.dataService.sendGetRequest().subscribe((data: any[]) => {
       this.models = data;
-      console.log(this.models);
       this.buttons = [
         // {
         //   id: "view",

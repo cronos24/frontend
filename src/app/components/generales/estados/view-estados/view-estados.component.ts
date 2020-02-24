@@ -32,7 +32,7 @@ export class ViewEstadosComponent implements OnInit {
 
   view(id) {
     this.dataService.sendShowRequest(id).subscribe(data => {
-      console.log(data);
+      //console.log(data);
       this.estado = data[0];
     });
   }

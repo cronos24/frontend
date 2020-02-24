@@ -110,6 +110,17 @@ import { IndexFacturaComponent } from './components/facturacion/factura/index-fa
 import { ViewFacturaComponent } from './components/facturacion/factura/view-factura/view-factura.component';
 import { UpdateFacturaComponent } from './components/facturacion/factura/update-factura/update-factura.component';
 import { CreateFacturaComponent } from './components/facturacion/factura/create-factura/create-factura.component';
+import { CreateFpagComponent } from './components/facturacion/factura-pago/create-fpag/create-fpag.component';
+import { ViewFpagComponent } from './components/facturacion/factura-pago/view-fpag/view-fpag.component';
+import { UpdateFpagComponent } from './components/facturacion/factura-pago/update-fpag/update-fpag.component';
+import { IndexMpagComponent } from './components/facturacion/medios-pago/index-mpag/index-mpag.component';
+import { CreateMpagComponent } from './components/facturacion/medios-pago/create-mpag/create-mpag.component';
+import { UpdateMpagComponent } from './components/facturacion/medios-pago/update-mpag/update-mpag.component';
+import { ViewMpagComponent } from './components/facturacion/medios-pago/view-mpag/view-mpag.component';
+import { IndexMetpComponent } from './components/facturacion/metodos-pago/index-metp/index-metp.component';
+import { CreateMetpComponent } from './components/facturacion/metodos-pago/create-metp/create-metp.component';
+import { UpdateMetpComponent } from './components/facturacion/metodos-pago/update-metp/update-metp.component';
+import { ViewMetpComponent } from './components/facturacion/metodos-pago/view-metp/view-metp.component';
 
 
 
@@ -483,6 +494,56 @@ const routes: Routes = [
   {
     path: "facturas/view/:id",
     component: ViewFacturaComponent
+  },
+
+  //Factura-Pago
+  {
+    path: "factura-pago/create/:id",
+    component: CreateFpagComponent
+  },
+  {
+    path: "factura-pago/view/:id",
+    component: ViewFpagComponent
+  },
+  {
+    path: "factura-pago/update/:id",
+    component: UpdateFpagComponent
+  },
+
+  //Medios de pago
+  {
+    path: "medios-pago",
+    component: IndexMpagComponent
+  },
+  {
+    path: "medios-pago/create",
+    component: CreateMpagComponent
+  },
+  {
+    path: "medios-pago/update/:id",
+    component: UpdateMpagComponent
+  },
+  {
+    path: "medios-pago/view/:id",
+    component: ViewMpagComponent
+  },
+
+  //Metodos de pago
+  {
+    path: "metodos-pago",
+    component: IndexMetpComponent
+  },
+  {
+    path: "metodos-pago/create",
+    component: CreateMetpComponent
+  },
+  {
+    path: "metodos-pago/update/:id",
+    component: UpdateMetpComponent
+  },
+  {
+    path: "metodos-pago/view/:id",
+    component: ViewMetpComponent
   },
   
 

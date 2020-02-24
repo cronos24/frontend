@@ -12,7 +12,6 @@ export class FacturaService {
   url = environment.server_url + "Facturacion/fc-tfact";
 
   public sendGetRequest() {
-    console.log(this.url);
     return this.httpClient.get(this.url);
   }
 
@@ -22,6 +21,10 @@ export class FacturaService {
 
   public sendCloseRequest(id) {
     return this.httpClient.get(this.url + "/close?id=" + id);
+  }
+
+  public sendFactDianRequest(id) {
+    return this.httpClient.get(this.url + "/send-fact?id=" + id);
   }
 
   public sendDeleteRequest(id) {

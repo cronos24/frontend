@@ -82,20 +82,17 @@ export class IndexResolucionComponent implements OnInit {
   }
 
   deleteReso(id) {
-    if (confirm("Esta seguro de Borrar el registro?")) {
+    if (confirm("Esta seguro de Inactivar el registro?")) {
       this.dataService.sendDeleteRequest(id).subscribe(data => {
-        if (data === 1) {
+        if (data["status"] === 1) {
           const index = this.models.findIndex(item => item.reso_codi === id);
-          this.models.splice(index, 1);
-          this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
-            dtInstance.row("#" + id).remove();
-            dtInstance.draw();
-          });
+          this.models[index].esta_codi = data["model"].esta_codi;
+          this.models[index].estaCodi.esta_nomb = "INACTIVO";
           this.toastr.warning(
-            "<i class='fas fa-exclamation-triangle fa-2x'></i> Registro Borrado con Exito!!!"
+            "<i class='fas fa-exclamation-triangle fa-2x'></i> Registro Inactivado con Exito!!!"
           );
         } else {
-          this.toastr.error("No se puede borrar el registro.");
+          this.toastr.error("No se puede Inactivar el registro.");
         }
       });
     }

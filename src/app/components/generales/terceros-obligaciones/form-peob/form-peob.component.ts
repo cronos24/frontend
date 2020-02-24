@@ -22,7 +22,6 @@ export class FormPeobComponent implements OnInit {
 
     this.obliService.sendGetRequest().subscribe((data: any[]) => {
       this.obligaciones = data;      
-      console.log(this.obligaciones);
     });
   }
 

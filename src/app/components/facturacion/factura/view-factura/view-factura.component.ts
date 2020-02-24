@@ -128,13 +128,39 @@ export class ViewFacturaComponent implements OnInit {
       ocupCodi: null,
       enadCodi: null,
       pers_regi: null,
+
     },
     usu_logi: null,
     temp_codi: 1,
-    
+    oper_codi: null,
+    docu_codi: null,
+    docuCodi: {
+      docu_codi: null,
+      docu_codd: null,
+      docu_desc: null,
+    },
+    operCodi: {
+      oper_codi: null,
+      oper_codd: null,
+      oper_desc: null,
+    },
+    ciasCodi: {
+      cias_codi: null,
+      cias_rsoc: null,
+    },
+    mone_codi: null,
+    moneCodi: {
+      mone_codi: null,
+      mone_pais: null,
+      mone_nomb: null,
+      mone_iso: null,
+      mone_simb: null,
+    },
+    fact_tcam: null,    
   };
 
   estado_factura: string;
+  tipo_factura: string;
 
   constructor(
     private dataService: FacturaService,
@@ -154,6 +180,7 @@ export class ViewFacturaComponent implements OnInit {
     this.dataService.sendShowRequest(id).subscribe(data => {
       this.model = data[0];
       this.estado_factura = this.model.esta_codi;
+      this.tipo_factura = this.model.fact_tipo;
     });
   }
 
@@ -165,19 +192,43 @@ export class ViewFacturaComponent implements OnInit {
           this.model.esta_codi='PE';
           this.model.estaCodi.esta_nomb='PENDIENTE ENVIO';
           this.estado_factura ='PE'; 
-          this.toastr.info(
+          this.toastr.success(
             "<i class='far fa-info-circle fa-2x'></i>  Factura cerrada con Exito!!!"
-          );
-          
+          );          
         } else {
           this.toastr.error(
-            " <i class='fas fa-ban fa-2x'></i> El formulario tiene algunos errores."+data["errors"]
+            " <i class='fas fa-ban fa-2x'></i> El formulario tiene algunos errores: "+data["errors"]
           );        
         }
       });
     }else{
       this.toastr.info(
         "<i class='far fa-info-circle fa-2x'></i>  La factura ya se encuentra cerrada!!!"
+      );
+    }
+    
+  }
+
+  sendFact(id, model) {
+
+    if (model.esta_codi=='PE') {
+      this.dataService.sendFactDianRequest(id).subscribe(data => {
+        if (data["status"] === 1) {
+          this.model.esta_codi='EN';
+          this.model.estaCodi.esta_nomb='ENVIADO';
+          this.estado_factura ='EN'; 
+          this.toastr.success(
+            "<i class='far fa-info-circle fa-2x'></i>  Factura enviada con Exito!!!"
+          );          
+        } else {
+          this.toastr.error(
+            " <i class='fas fa-ban fa-2x'></i> Se produjeron algunos errores: "+data["errors"]
+          );        
+        }
+      });
+    }else{
+      this.toastr.info(
+        "<i class='far fa-info-circle fa-2x'></i>  La factura no puede ser enviada!!!"
       );
     }
     

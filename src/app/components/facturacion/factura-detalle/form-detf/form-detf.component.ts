@@ -39,7 +39,10 @@ export class FormDetfComponent implements OnInit {
     });
 
     this.prodService.sendGetRequest().subscribe((data: any[]) => {
-      this.productos = data;
+      var prods = data;
+      this.productos = prods.filter(function(pro){
+        return (pro.prod_stoc > 0);
+        });
     });
 
     this.umedService.sendGetRequest().subscribe((data: any[]) => {

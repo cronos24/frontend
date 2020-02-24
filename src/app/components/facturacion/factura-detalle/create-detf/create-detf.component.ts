@@ -23,6 +23,7 @@ export class CreateDetfComponent implements OnInit {
     detf_dcto: 0,
     detf_iva: null,
     detf_ic: null,
+    detf_nota: null,
     umed_codi: null,
     umedCodi: null
   };

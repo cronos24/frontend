@@ -6,6 +6,9 @@ import { TercerosService } from 'src/app/services/generales/terceros.service';
 import { SedeService } from 'src/app/services/generales/sede.service';
 import { ProyectoService } from 'src/app/services/generales/proyecto.service';
 import { SubProyectoService } from 'src/app/services/generales/sub-proyecto.service';
+import { DocumentoService } from 'src/app/services/facturacion/documento.service';
+import { OperacionService } from 'src/app/services/facturacion/operacion.service';
+import { MonedaService } from 'src/app/services/generales/moneda.service';
 
 
 @Component({
@@ -24,10 +27,13 @@ export class FormFacturaComponent implements OnInit {
   sedes: any[];
   proyectos: any[];
   subproyectos: any[];
+  documentos: any[];
+  operaciones: any[];
+  monedas: any[];
 
    
 
-  constructor(private empreService: EmpresaService, private resoService: ResolucionService, private persService: TercerosService, private sedeService: SedeService, private proyService: ProyectoService, private sproService: SubProyectoService) {}
+  constructor(private empreService: EmpresaService, private resoService: ResolucionService, private persService: TercerosService, private sedeService: SedeService, private proyService: ProyectoService, private sproService: SubProyectoService, private docuService: DocumentoService, private operService: OperacionService, private moneService: MonedaService) {}
 
   ngOnInit() {
 
@@ -53,6 +59,18 @@ export class FormFacturaComponent implements OnInit {
       this.sedes= data;
     }); 
 
+    this.docuService.sendGetRequest().subscribe((data: any[]) => {
+      this.documentos= data;
+    }); 
+
+    this.operService.sendGetRequest().subscribe((data: any[]) => {
+      this.operaciones= data;
+    }); 
+
+    this.moneService.sendGetRequest().subscribe((data: any[]) => {
+      this.monedas= data;
+      console.log(this.monedas);
+    }); 
 
     this.proyService.sendGetRequest().subscribe((data: any[]) => {
       this.proyectos= data;

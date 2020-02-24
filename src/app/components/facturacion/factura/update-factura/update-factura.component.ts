@@ -42,6 +42,10 @@ export class UpdateFacturaComponent implements OnInit {
     },
     usu_logi: null,
     temp_codi: 1,
+    oper_codi: null,
+    docu_codi: null,
+    mone_codi: null,
+    fact_tcam: null,
   };
   validationErrors: any[] = [];
   status: any;

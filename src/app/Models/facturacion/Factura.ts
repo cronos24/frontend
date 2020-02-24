@@ -31,4 +31,8 @@ export class Factura {
     estaCodi: Estado;
     usu_logi: number;
     temp_codi: number;
+    oper_codi: number;
+    docu_codi: number;
+    mone_codi: number;
+    fact_tcam: number;
 }

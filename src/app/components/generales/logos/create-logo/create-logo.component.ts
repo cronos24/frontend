@@ -50,7 +50,6 @@ export class CreateLogoComponent implements OnInit {
 
   Save(e) {
     this.model = e;
-    console.log(this.model);
     this.dataService.sendPostRequest(this.model, this.id).subscribe(
       data => {
         if (data["status"] === 1) {

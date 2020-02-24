@@ -37,7 +37,6 @@ export class ViewEntidadComponent implements OnInit {
 
   view(id) {
     this.dataService.sendShowRequest(id).subscribe(data => {
-      console.log(data);
       this.model = data[0];
     });
   }

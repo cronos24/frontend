@@ -46,7 +46,7 @@ export class UpdateEstadosComponent implements OnInit {
     //console.log(this.estado);
     this.dataService.sendPutRequest(this.estado, this.id).subscribe(
       data => {
-        console.log(data);
+        //console.log(data);
         //this.estado = data[0];
         this.toastr.success(
           "<i class='far fa-thumbs-up fa-2x'></i>  Registro Modificado con Exito!!!"

@@ -36,10 +36,14 @@ export class CreateFacturaComponent implements OnInit {
       esta_colo: null,
       esta_nomb: null,
       esta_tipo: null
-    },
-
+    },    
+    persAuxi: null,
     usu_logi: null,
     temp_codi: 1,
+    oper_codi: 5,
+    docu_codi: 1,
+    mone_codi: 26,
+    fact_tcam: 0,
   };
   validationErrors: any[] = [];
   status: any;

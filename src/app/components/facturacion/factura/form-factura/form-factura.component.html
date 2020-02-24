@@ -4,6 +4,19 @@
     <div class="form-row">
 
         <div class="form-group col-md-4">
+            <label for="" class="control-label">Tipo Documento</label>
+            <select class="form-control" [(ngModel)]="model.docu_codi" name="docu_codi" #docu_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && docu_codi.invalid }" [value]="model.docu_codi" required>
+                            <option hidden [value]=null  selected>Seleccione una opcion </option>
+                          <option *ngFor="let doc of this.documentos" value="{{doc.docu_codi}}">{{ doc.docu_desc }}</option>                  
+            </select>
+            <div *ngIf="f.submitted && docu_codi.invalid" class="invalid-feedback">
+                <div *ngIf="docu_codi.errors.required">
+                    "Tipo Documento" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
             <label for="" class="control-label">Tipo de Factura</label>
             <select class="form-control" [(ngModel)]="model.fact_tipo" name="fact_tipo" #fact_tipo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && fact_tipo.invalid }" [value]="model.fact_tipo" required>
                 <option hidden [value]=null  selected>Seleccione una opcion </option>
@@ -18,6 +31,19 @@
         </div>
 
         <div class="form-group col-md-4">
+            <label for="" class="control-label">Tipo Operacion</label>
+            <select class="form-control" [(ngModel)]="model.oper_codi" name="oper_codi" #oper_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && oper_codi.invalid }" [value]="model.oper_codi" required>
+                            <option hidden [value]=null  selected>Seleccione una opcion </option>
+                          <option *ngFor="let oper of this.operaciones" value="{{oper.oper_codi}}">{{ oper.oper_desc }}</option>                  
+            </select>
+            <div *ngIf="f.submitted && oper_codi.invalid" class="invalid-feedback">
+                <div *ngIf="oper_codi.errors.required">
+                    "Tipo Operacion" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
             <label for="" class="control-label">Empresa</label>
             <select class="form-control" [(ngModel)]="model.cias_codi" name="cias_codi" #cias_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cias_codi.invalid }" [value]="model.cias_codi" disabled required>
                           <option *ngFor="let emp of this.empresas" value="{{emp.cias_codi}}">{{ emp.cias_rsoc }}</option>                  
@@ -29,7 +55,7 @@
             </div>
         </div>
 
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
             <label for="" class="control-label">Sede</label>
             <select class="form-control" [(ngModel)]="model.sede_codi" name="sede_codi" #sede_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && sede_codi.invalid }" (change)="changeSede(sede_codi.value)" [value]="model.sede_codi" required>
                 <option hidden [value]=null  selected>Seleccione una opcion </option>
@@ -78,7 +104,8 @@
 
         <div class="form-group col-md-6">
             <label for="" class="control-label">Proyecto</label>
-            <select class="form-control" [(ngModel)]="model.proy_codi" name="proy_codi" #proy_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && proy_codi.invalid }" (change)="changeProy(proy_codi.value)" [disabled]="model.sede_codi == '' || model.sede_codi == null" [value]="model.proy_codi" required>
+            <select class="form-control" [(ngModel)]="model.proy_codi" name="proy_codi" #proy_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && proy_codi.invalid }" (change)="changeProy(proy_codi.value)" [disabled]="model.sede_codi == '' || model.sede_codi == null"
+                [value]="model.proy_codi" required>
                             <option hidden [value]=null  selected>Seleccione una opcion </option>
                           <option *ngFor="let proy of this.proyectos" value="{{proy.proy_codi}}">{{ proy.proy_nomb }}</option>                  
             </select>
@@ -91,7 +118,7 @@
 
         <div class="form-group col-md-6">
             <label for="" class="control-label">Sub Proyecto</label>
-            <select class="form-control" [(ngModel)]="model.spro_codi" name="spro_codi" #spro_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && spro_codi.invalid }" [disabled]="model.proy_codi == '' || model.proy_codi == null" [value]="model.spro_codi" required >
+            <select class="form-control" [(ngModel)]="model.spro_codi" name="spro_codi" #spro_codi="ngModel" [ngClass]="{ 'is-invalid': f.submitted && spro_codi.invalid }" [disabled]="model.proy_codi == '' || model.proy_codi == null" [value]="model.spro_codi" required>
                 <option hidden [value]=null  selected>Seleccione una opcion </option>
                           <option *ngFor="let spro of this.subproyectos" value="{{spro.spro_codi}}">{{ spro.spro_nomb }}</option>                  
             </select>
@@ -111,6 +138,28 @@
             <div *ngIf="f.submitted && pers_auxi.invalid" class="invalid-feedback">
                 <div *ngIf="pers_auxi.errors.required">
                     "Tercero" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="" class="control-label">Moneda</label>
+            <select class="form-control mone_codi" ng-model="mone_codi" [(ngModel)]="model.mone_codi" name="mone_codi" #mone_codi="ngModel" id="mone_codi" [ngClass]="{ 'is-invalid': f.submitted && mone_codi.invalid }" required>
+                <option *ngFor="let mone of this.monedas" value="{{mone.mone_codi}}">{{ mone.mone_iso+'-'+mone.mone_pais }}</option>
+              </select>
+            <div *ngIf="f.submitted && mone_codi.invalid" class="invalid-feedback">
+                <div *ngIf="mone_codi.errors.required">
+                    "Moneda" es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="" class="control-label">Tasa de Cambio</label>
+            <input type="number" min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control" [(ngModel)]="model.fact_tcam" name="fact_tcam" #fact_tcam="ngModel" [ngClass]="{ 'is-invalid': f.submitted && fact_tcam.invalid }" [required]="model.mone_codi != 26" />
+            <div *ngIf="f.submitted && fact_tcam.invalid" class="invalid-feedback">
+                <div *ngIf="fact_tcam.errors.required">
+                    "Tasa de Cambio" es obligatorio
                 </div>
             </div>
         </div>

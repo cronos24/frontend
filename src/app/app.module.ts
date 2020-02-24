@@ -94,11 +94,13 @@ import { FormPeobComponent } from './components/generales/terceros-obligaciones/
 import { CreatePeobComponent } from './components/generales/terceros-obligaciones/create-peob/create-peob.component';
 import { UpdatePeobComponent } from './components/generales/terceros-obligaciones/update-peob/update-peob.component';
 import { ViewPeobComponent } from './components/generales/terceros-obligaciones/view-peob/view-peob.component';
+
 import { ViewLineaComponent } from './components/inventario/lineas/view-linea/view-linea.component';
 import { IndexLineaComponent } from './components/inventario/lineas/index-linea/index-linea.component';
 import { CreateLineaComponent } from './components/inventario/lineas/create-linea/create-linea.component';
 import { UpdateLineaComponent } from './components/inventario/lineas/update-linea/update-linea.component';
 import { FormLineaComponent } from './components/inventario/lineas/form-linea/form-linea.component';
+
 import { FormCategoriaComponent } from './components/inventario/categorias/form-categoria/form-categoria.component';
 import { UpdateCategoriaComponent } from './components/inventario/categorias/update-categoria/update-categoria.component';
 import { CreateCategoriaComponent } from './components/inventario/categorias/create-categoria/create-categoria.component';
@@ -109,46 +111,72 @@ import { IndexGrupoComponent } from './components/inventario/grupos/index-grupo/
 import { CreateGrupoComponent } from './components/inventario/grupos/create-grupo/create-grupo.component';
 import { UpdateGrupoComponent } from './components/inventario/grupos/update-grupo/update-grupo.component';
 import { FormGrupoComponent } from './components/inventario/grupos/form-grupo/form-grupo.component';
+
 import { FormUnidadComponent } from './components/generales/unidades/form-unidad/form-unidad.component';
 import { UpdateUnidadComponent } from './components/generales/unidades/update-unidad/update-unidad.component';
 import { CreateUnidadComponent } from './components/generales/unidades/create-unidad/create-unidad.component';
 import { IndexUnidadComponent } from './components/generales/unidades/index-unidad/index-unidad.component';
 import { ViewUnidadComponent } from './components/generales/unidades/view-unidad/view-unidad.component';
+
 import { ViewProductoComponent } from './components/generales/productos/view-producto/view-producto.component';
 import { IndexProductoComponent } from './components/generales/productos/index-producto/index-producto.component';
 import { CreateProductoComponent } from './components/generales/productos/create-producto/create-producto.component';
 import { UpdateProductoComponent } from './components/generales/productos/update-producto/update-producto.component';
 import { FormProductoComponent } from './components/generales/productos/form-producto/form-producto.component';
+
 import { FormResolucionComponent } from './components/facturacion/resolucion/form-resolucion/form-resolucion.component';
 import { IndexResolucionComponent } from './components/facturacion/resolucion/index-resolucion/index-resolucion.component';
 import { ViewResolucionComponent } from './components/facturacion/resolucion/view-resolucion/view-resolucion.component';
 import { CreateResolucionComponent } from './components/facturacion/resolucion/create-resolucion/create-resolucion.component';
 import { UpdateResolucionComponent } from './components/facturacion/resolucion/update-resolucion/update-resolucion.component';
+
 import { IndexDetfComponent } from './components/facturacion/factura-detalle/index-detf/index-detf.component';
 import { ViewDetfComponent } from './components/facturacion/factura-detalle/view-detf/view-detf.component';
 import { FormDetfComponent } from './components/facturacion/factura-detalle/form-detf/form-detf.component';
 import { CreateDetfComponent } from './components/facturacion/factura-detalle/create-detf/create-detf.component';
 import { UpdateDetfComponent } from './components/facturacion/factura-detalle/update-detf/update-detf.component';
+
 import { UpdateFacturaComponent } from './components/facturacion/factura/update-factura/update-factura.component';
 import { CreateFacturaComponent } from './components/facturacion/factura/create-factura/create-factura.component';
 import { FormFacturaComponent } from './components/facturacion/factura/form-factura/form-factura.component';
 import { IndexFacturaComponent } from './components/facturacion/factura/index-factura/index-factura.component';
 import { ViewFacturaComponent } from './components/facturacion/factura/view-factura/view-factura.component';
+
 import { FormSedeComponent } from './components/generales/sedes/form-sede/form-sede.component';
 import { CreateSedeComponent } from './components/generales/sedes/create-sede/create-sede.component';
 import { UpdateSedeComponent } from './components/generales/sedes/update-sede/update-sede.component';
 import { IndexSedeComponent } from './components/generales/sedes/index-sede/index-sede.component';
 import { ViewSedeComponent } from './components/generales/sedes/view-sede/view-sede.component';
+
 import { ViewProyectoComponent } from './components/generales/proyectos/view-proyecto/view-proyecto.component';
 import { IndexProyectoComponent } from './components/generales/proyectos/index-proyecto/index-proyecto.component';
 import { CreateProyectoComponent } from './components/generales/proyectos/create-proyecto/create-proyecto.component';
 import { UpdateProyectoComponent } from './components/generales/proyectos/update-proyecto/update-proyecto.component';
 import { FormProyectoComponent } from './components/generales/proyectos/form-proyecto/form-proyecto.component';
+
 import { FormSproComponent } from './components/generales/sub-proyectos/form-spro/form-spro.component';
 import { CreateSproComponent } from './components/generales/sub-proyectos/create-spro/create-spro.component';
 import { UpdateSproComponent } from './components/generales/sub-proyectos/update-spro/update-spro.component';
 import { IndexSproComponent } from './components/generales/sub-proyectos/index-spro/index-spro.component';
 import { ViewSproComponent } from './components/generales/sub-proyectos/view-spro/view-spro.component';
+
+import { ViewMpagComponent } from './components/facturacion/medios-pago/view-mpag/view-mpag.component';
+import { IndexMpagComponent } from './components/facturacion/medios-pago/index-mpag/index-mpag.component';
+import { FormMpagComponent } from './components/facturacion/medios-pago/form-mpag/form-mpag.component';
+import { CreateMpagComponent } from './components/facturacion/medios-pago/create-mpag/create-mpag.component';
+import { UpdateMpagComponent } from './components/facturacion/medios-pago/update-mpag/update-mpag.component';
+
+import { IndexMetpComponent } from './components/facturacion/metodos-pago/index-metp/index-metp.component';
+import { ViewMetpComponent } from './components/facturacion/metodos-pago/view-metp/view-metp.component';
+import { FormMetpComponent } from './components/facturacion/metodos-pago/form-metp/form-metp.component';
+import { CreateMetpComponent } from './components/facturacion/metodos-pago/create-metp/create-metp.component';
+import { UpdateMetpComponent } from './components/facturacion/metodos-pago/update-metp/update-metp.component';
+
+import { UpdateFpagComponent } from './components/facturacion/factura-pago/update-fpag/update-fpag.component';
+import { CreateFpagComponent } from './components/facturacion/factura-pago/create-fpag/create-fpag.component';
+import { FormFpagComponent } from './components/facturacion/factura-pago/form-fpag/form-fpag.component';
+import { IndexFpagComponent } from './components/facturacion/factura-pago/index-fpag/index-fpag.component';
+import { ViewFpagComponent } from './components/facturacion/factura-pago/view-fpag/view-fpag.component';
 
 
 
@@ -311,21 +339,48 @@ import { ViewSproComponent } from './components/generales/sub-proyectos/view-spr
     FormFacturaComponent,
     IndexFacturaComponent,
     ViewFacturaComponent,
+
+    //Sede
     FormSedeComponent,
     CreateSedeComponent,
     UpdateSedeComponent,
     IndexSedeComponent,
     ViewSedeComponent,
+
+    //Proyectos
     ViewProyectoComponent,
     IndexProyectoComponent,
     CreateProyectoComponent,
     UpdateProyectoComponent,
     FormProyectoComponent,
+
+    //SubProyectos
     FormSproComponent,
     CreateSproComponent,
     UpdateSproComponent,
     IndexSproComponent,
     ViewSproComponent,
+
+    //Medios de Pago
+    ViewMpagComponent,
+    IndexMpagComponent,
+    FormMpagComponent,
+    CreateMpagComponent,
+    UpdateMpagComponent,
+
+    //Metodos de Pago
+    IndexMetpComponent,
+    ViewMetpComponent,
+    FormMetpComponent,
+    CreateMetpComponent,
+    UpdateMetpComponent,
+
+    //Factura Pagos
+    UpdateFpagComponent,
+    CreateFpagComponent,
+    FormFpagComponent,
+    IndexFpagComponent,
+    ViewFpagComponent,
    
     
 
