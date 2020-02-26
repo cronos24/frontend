@@ -13,7 +13,7 @@
                     <thead>
                         <tr class="bg-success">
                             <th *ngFor="let header of this.headers" style="text-align: center;">{{ header }}</th>
-                            <th *ngIf="(this.estado_factura == 'PE') && (this.tipo_factura != 'CR')"></th>
+                            <th *ngIf="((this.estado_factura == 'PE') && (this.tipo_factura != 'CR'))"></th>
                         </tr>
                     </thead>
                     <tbody>

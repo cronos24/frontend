@@ -5,6 +5,9 @@ import { Sede } from '../general/Sede';
 import { Proyecto } from '../general/Proyecto';
 import { SubProyecto } from '../general/SubProyecto';
 import { Tercero } from '../general/Tercero';
+import { Documento } from './Documento';
+import { Operacion } from './Operacion';
+import { Moneda } from '../general/Moneda';
 
 export class Factura {
     fact_codi: number;
@@ -35,4 +38,7 @@ export class Factura {
     docu_codi: number;
     mone_codi: number;
     fact_tcam: number;
+    docuCodi: Documento;
+    operCodi: Operacion;
+    moneCodi: Moneda;
 }

@@ -53,7 +53,6 @@ export class ViewFacturaComponent implements OnInit {
       spro_desc: null,
     },
     cias_codi: 1,
-    ciasCodi: null,
     fact_fech: null,
     reso_codi: null,
     resoCodi: {
@@ -137,16 +136,30 @@ export class ViewFacturaComponent implements OnInit {
     docuCodi: {
       docu_codi: null,
       docu_codd: null,
-      docu_desc: null,
+      docu_desc: null,      
     },
     operCodi: {
       oper_codi: null,
       oper_codd: null,
       oper_desc: null,
+
     },
     ciasCodi: {
       cias_codi: null,
       cias_rsoc: null,
+      cias_celu: null,
+      cias_dire: null,
+      cias_dive: null,
+      cias_mail: null,
+      cias_nit: null,
+      cias_notf: null,
+      cias_regi: null,
+      cias_slog: null,
+      cias_tels: null,
+      cias_tipo: null,
+      cias_web: null,    
+      estaCodi: null,
+      esta_codi: null,
     },
     mone_codi: null,
     moneCodi: {
@@ -208,6 +221,7 @@ export class ViewFacturaComponent implements OnInit {
     }
     
   }
+ 
 
   sendFact(id, model) {
 
