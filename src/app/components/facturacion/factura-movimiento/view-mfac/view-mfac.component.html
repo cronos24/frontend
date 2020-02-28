@@ -1,0 +1,108 @@
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            <p><button class="btn btn-danger" [routerLink]="['/facturas/view', model.fact_codi]"><i
+                class="fas fa-arrow-left"></i>Atras</button></p>
+            <h3>Movimiento No. {{model.mfac_codi}}</h3>
+        </div>
+        <div class="card-body">
+
+
+            <div class="table-responsive">
+                <div class="col-md-12">
+                    <table class="table table-striped table-bordered table-sm">
+                        <tbody>
+
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center; width: 15%;">Codigo</th>
+                                <td style="width: 10%;">{{model.mfac_codd}}</td>
+                                <th class="alert alert-success" style="text-align: center; width: 15%;">Factura</th>
+                                <td style="width: 10%;">{{ model.mfac_codd }}</td>
+                                <th class="alert alert-success" style="text-align: center; width: 15%;">Tipo Fecha Respuesta</th>
+                                <td>{{ model.mfac_fres }}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Cufe</th>
+                                <td colspan="5">{{model.mfac_cufe}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Valido Retorno</th>
+                                <td>{{model.mfac_vali}}</td>
+                                <th class="alert alert-success" style="text-align: center;">hash Retorno</th>
+                                <td colspan="3">{{model.mfac_hash}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Mensaje Retorno</th>
+                                <td colspan="5">{{model.mfac_mess}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Mensaje Validacion</th>
+                                <td colspan="5">{{model.mfac_mval}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Codigo QR</th>
+                                <td colspan="5">
+                                    <p> <a class="btn btn-link" data-toggle="collapse" href="#collapseQr" role="button" aria-expanded="false" aria-controls="collapseQr">
+                                          Ver Codigo QR!!!
+                                        </a>
+                                    </p>
+                                    <div class="collapse" id="collapseQr">
+                                        <div class="card card-body">
+                                            <qrcode [qrdata]="myAngularxQrCode" [width]="300" [errorCorrectionLevel]="'M'"></qrcode>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Validacion Notificaciones</th>
+                                <td colspan="5">{{model.mfac_rnot}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Validacion Rechazo</th>
+                                <td colspan="3">{{model.mfac_rval}}</td>
+                                <th class="alert alert-success" style="text-align: center;">Resultado</th>
+                                <td>{{model.mfac_resu}}</td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Xml</th>
+                                <td colspan="5">
+                                    <p> <a class="btn btn-link" data-toggle="collapse" href="#collapseXml" role="button" aria-expanded="false" aria-controls="collapseXml">
+                                          Ver Respuesta Xml!!!
+                                        </a>
+                                    </p>
+                                    <div class="collapse" id="collapseXml">
+                                        <div class="card card-body">
+                                            <code>
+                                                {{XmlCode}}
+                                              </code>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="alert alert-success" style="text-align: center;">Parametros</th>
+                                <td colspan="5">
+                                    <p> <a class="btn btn-link" data-toggle="collapse" href="#collapseParams" role="button" aria-expanded="false" aria-controls="collapseParams">
+                                          Ver Parametros Enviados a la Dian!!!
+                                        </a>
+                                    </p>
+                                    <div class="collapse" id="collapseParams">
+                                        <div class="card card-body">
+                                            <code>
+                                                {{ParametrosCode}}
+                                              </code>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

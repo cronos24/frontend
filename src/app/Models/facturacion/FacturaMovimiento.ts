@@ -16,4 +16,5 @@ export class FacturaMovimiento {
     mfac_resu: string;
     mfac_tcuf: string;
     mfac_xml: string;
+    mfac_para: string;
   }

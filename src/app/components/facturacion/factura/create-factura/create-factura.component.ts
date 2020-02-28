@@ -44,6 +44,24 @@ export class CreateFacturaComponent implements OnInit {
     docu_codi: 1,
     mone_codi: 26,
     fact_tcam: 0,
+    docuCodi: {
+      docu_codi: null,
+      docu_codd: null,
+      docu_desc: null,      
+    },
+    operCodi: {
+      oper_codi: null,
+      oper_codd: null,
+      oper_desc: null,
+
+    },
+    moneCodi: {
+      mone_codi: null,
+      mone_pais: null,
+      mone_nomb: null,
+      mone_iso: null,
+      mone_simb: null,
+    },
   };
   validationErrors: any[] = [];
   status: any;

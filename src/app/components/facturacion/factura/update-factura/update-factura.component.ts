@@ -46,6 +46,24 @@ export class UpdateFacturaComponent implements OnInit {
     docu_codi: null,
     mone_codi: null,
     fact_tcam: null,
+    docuCodi: {
+      docu_codi: null,
+      docu_codd: null,
+      docu_desc: null,      
+    },
+    operCodi: {
+      oper_codi: null,
+      oper_codd: null,
+      oper_desc: null,
+
+    },
+    moneCodi: {
+      mone_codi: null,
+      mone_pais: null,
+      mone_nomb: null,
+      mone_iso: null,
+      mone_simb: null,
+    },
   };
   validationErrors: any[] = [];
   status: any;
@@ -60,10 +78,17 @@ export class UpdateFacturaComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    
     this.sub = this.route.params.subscribe(params => {
       this.id = params["id"];
       this.Edit(this.id);
     });
+    if(this.model.esta_codi!='A'){
+      this.toastr.error(
+        " <i class='fas fa-ban fa-2x'></i> El estado de la factura no permite modificaciones."
+      );
+      this.route2.navigate(["facturas/view", this.model.fact_codi]);
+    }
   }
 
   Edit(id) {

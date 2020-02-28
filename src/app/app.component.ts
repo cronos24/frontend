@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Helper } from './Helpers/Helper';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular';
+  constructor() {  
+      Helper.isNextStep = false;
+      Helper.Message = null;
+   }
 }

@@ -121,6 +121,8 @@ import { IndexMetpComponent } from './components/facturacion/metodos-pago/index-
 import { CreateMetpComponent } from './components/facturacion/metodos-pago/create-metp/create-metp.component';
 import { UpdateMetpComponent } from './components/facturacion/metodos-pago/update-metp/update-metp.component';
 import { ViewMetpComponent } from './components/facturacion/metodos-pago/view-metp/view-metp.component';
+import { AuthGuard } from './Guards/auth.guard';
+import { ViewMfacComponent } from './components/facturacion/factura-movimiento/view-mfac/view-mfac.component';
 
 
 
@@ -489,7 +491,8 @@ const routes: Routes = [
   },
   {
     path: "facturas/update/:id",
-    component: UpdateFacturaComponent
+    component: UpdateFacturaComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "facturas/view/:id",
@@ -509,6 +512,13 @@ const routes: Routes = [
     path: "factura-pago/update/:id",
     component: UpdateFpagComponent
   },
+
+  //Factura-Movimientos
+  {
+    path: "factura-movimiento/view/:id",
+    component: ViewMfacComponent
+  },
+
 
   //Medios de pago
   {

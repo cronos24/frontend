@@ -11,6 +11,7 @@ import { FormsModule } from "@angular/forms";
 import { Select2Module } from 'ng2-select2';
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
+import { QRCodeModule } from 'angularx-qrcode';
 
 import { EstadosIndexComponent } from "./components/generales/estados/index-estados/index-estados.component";
 import { CreateEstadosComponent } from "./components/generales/estados/create-estados/create-estados.component";
@@ -177,6 +178,11 @@ import { CreateFpagComponent } from './components/facturacion/factura-pago/creat
 import { FormFpagComponent } from './components/facturacion/factura-pago/form-fpag/form-fpag.component';
 import { IndexFpagComponent } from './components/facturacion/factura-pago/index-fpag/index-fpag.component';
 import { ViewFpagComponent } from './components/facturacion/factura-pago/view-fpag/view-fpag.component';
+import { AuthGuard } from './Guards/auth.guard';
+
+import { ViewMfacComponent } from './components/facturacion/factura-movimiento/view-mfac/view-mfac.component';
+import { IndexMfacComponent } from './components/facturacion/factura-movimiento/index-mfac/index-mfac.component';
+
 
 
 
@@ -381,8 +387,10 @@ import { ViewFpagComponent } from './components/facturacion/factura-pago/view-fp
     FormFpagComponent,
     IndexFpagComponent,
     ViewFpagComponent,
-   
-    
+
+    //Factura Movimientos
+    ViewMfacComponent,
+    IndexMfacComponent,
 
   ],
   imports: [
@@ -392,6 +400,7 @@ import { ViewFpagComponent } from './components/facturacion/factura-pago/view-fp
     HttpClientModule,
     Select2Module,
     FormsModule,
+    QRCodeModule,
     HttpClientXsrfModule.withOptions({
       cookieName: "XSRF-TOKEN",
       headerName: "X-XSRF-TOKEN"
@@ -405,7 +414,7 @@ import { ViewFpagComponent } from './components/facturacion/factura-pago/view-fp
       progressBar: true
     })
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

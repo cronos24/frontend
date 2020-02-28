@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Factura } from 'src/app/Models/facturacion/Factura';
 import { FacturaService } from 'src/app/services/facturacion/factura.service';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { IndexFpagComponent } from '../../factura-pago/index-fpag/index-fpag.component';
+import { FacturaPagoService } from 'src/app/services/facturacion/factura-pago.service';
+import { IndexMfacComponent } from '../../factura-movimiento/index-mfac/index-mfac.component';
+import { FacturaMovimientoService } from 'src/app/services/facturacion/factura-movimiento.service';
 
 @Component({
   selector: 'app-view-factura',
@@ -10,6 +14,9 @@ import { ToastrService } from 'ngx-toastr';
   styles: []
 })
 export class ViewFacturaComponent implements OnInit {
+  @ViewChild(IndexFpagComponent, { static: false }) pagos_factura: IndexFpagComponent ;
+  @ViewChild(IndexMfacComponent, { static: false }) movimientos_factura: IndexMfacComponent ; 
+
   id: any;
   sub: any;
   model: Factura = {
@@ -171,22 +178,25 @@ export class ViewFacturaComponent implements OnInit {
     },
     fact_tcam: null,    
   };
+  proceso: boolean;
 
   estado_factura: string;
   tipo_factura: string;
 
   constructor(
     private dataService: FacturaService,
+    private pagosService: FacturaPagoService,
+    private movimientosService: FacturaMovimientoService,
     private route: ActivatedRoute,
     private toastr: ToastrService,
-  ) { }
+  ) { this.proceso= false; }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.id = params["id"];
       this.view(this.id);
     });
-    this.estado_factura = "A";
+    this.estado_factura = "A";    
   }
 
   view(id) {
@@ -198,16 +208,54 @@ export class ViewFacturaComponent implements OnInit {
   }
 
   closeFact(id, model) {
-
+    this.proceso= true;
     if (model.esta_codi=='A') {
       this.dataService.sendCloseRequest(id).subscribe(data => {
+        this.proceso= false;
         if (data["status"] === 1) {
           this.model.esta_codi='PE';
           this.model.estaCodi.esta_nomb='PENDIENTE ENVIO';
           this.estado_factura ='PE'; 
           this.toastr.success(
             "<i class='far fa-info-circle fa-2x'></i>  Factura cerrada con Exito!!!"
-          );          
+          );  
+          
+          if (this.model.fact_tipo=="CR") {
+            this.pagosService.sendGetRequest(this.model.fact_codi).subscribe((data: any[]) => {
+              this.pagos_factura.models = data;
+              this.pagos_factura.buttons = [
+                {
+                  id: "view",
+                  label: "",
+                  class: "btn btn-success btn-sm",
+                  icon: "fas fa-eye",
+                  style: "2px;",
+                  href: "#",
+                  method: "showFpag"
+                },
+                {
+                  id: "update",
+                  label: "",
+                  class: "btn btn-primary btn-sm",
+                  icon: "fas fa-pencil-alt",
+                  style: "margin:2px;",
+                  href: "#",
+                  method: "editFpag"
+                },
+                {
+                  id: "delete",
+                  label: "",
+                  class: "btn btn-danger btn-sm",
+                  icon: "fas fa-ban",
+                  style: "margin:2px;",
+                  href: "#",
+                  method: "deleteFpag"
+                }
+              ];
+        
+            });
+          }
+          
         } else {
           this.toastr.error(
             " <i class='fas fa-ban fa-2x'></i> El formulario tiene algunos errores: "+data["errors"]
@@ -224,16 +272,33 @@ export class ViewFacturaComponent implements OnInit {
  
 
   sendFact(id, model) {
-
+    this.proceso= true;
     if (model.esta_codi=='PE') {
       this.dataService.sendFactDianRequest(id).subscribe(data => {
+        this.proceso= false;
         if (data["status"] === 1) {
           this.model.esta_codi='EN';
           this.model.estaCodi.esta_nomb='ENVIADO';
           this.estado_factura ='EN'; 
           this.toastr.success(
             "<i class='far fa-info-circle fa-2x'></i>  Factura enviada con Exito!!!"
-          );          
+          );     
+          this.movimientosService.sendGetRequest(this.model.fact_codi).subscribe((data: any[]) => {
+            this.movimientos_factura.models = data;
+            this.movimientos_factura.buttons = [
+              {
+                id: "view",
+                label: "",
+                class: "btn btn-success btn-sm",
+                icon: "fas fa-eye",
+                style: "2px;",
+                href: "#",
+                method: "showFpag"
+              },
+             
+            ];
+      
+          });     
         } else {
           this.toastr.error(
             " <i class='fas fa-ban fa-2x'></i> Se produjeron algunos errores: "+data["errors"]

@@ -4,6 +4,7 @@ import { FacturaService } from 'src/app/services/facturacion/factura.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
+import { Helper } from 'src/app/Helpers/Helper';
 
 @Component({
   selector: 'app-index-factura',
@@ -124,9 +125,13 @@ export class IndexFacturaComponent implements OnInit {
    }
 
   editFact(id, model) {
+    //
+
     if(model.esta_codi=='A'){
-      this.route.navigate(["facturas/update", id]);
+      Helper.isNextStep = true;
+      this.route.navigate(["facturas/update", id]);      
     }else{
+      Helper.Message = 'El estado de la factura no permite modificaciones';
       this.toastr.error("<i class='fas fa-ban'></i> El estado de la factura no permite modificaciones.");
     }
 
